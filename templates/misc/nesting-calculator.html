@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% block title %} Nesting Calculator {% endblock %}
+{% block content %}
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-4">
+                <div id="routing-calculator"> 
+                <div id="forming-calculator">
+                    <h2>Forming Calculator</h2>
+                    <form id="forming-form">
+                        <div>
+                            <label class="form-label routing-label" for="bends">Bends: </label>
+                            <input class="form-control routing-input" type="text" id="bends">
+                            <br>
+                            <label class="form-label routing-label" for="rolls">Rolls: </label>
+                            <input class="form-control routing-input" type="text" id="rolls">
+                            <br>
+                            <label class="form-label routing-label" for="forming-time">Form Time: </label>
+                            <h3 id="forming-time"></h3>
+                            <br>
+                        </div>
+                    </form>
+                </div>
+                <div class="my-5 id="laser-calculator">
+                <h2>Laser Calculator</h2>
+                <form>
+                    <form id="laser-form">
+                        <div>
+                            <label class="form-label routing-label" for="hours">Hours: </label>
+                            <input class="form-control routing-input" type="text" id="hours">
+                            <br>
+                            <label class="form-label routing-label" for="minutes">Minutes: </label>
+                            <input class="form-control routing-input" type="text" id="minutes">
+                            <br>
+                            <label class="form-label routing-label" for="seconds">Seconds: </label>
+                            <input class="form-control routing-input" type="text" id="seconds">
+                            <br>
+                            <label class="form-label routing-label" for="laser-time">Laser Time: </label>
+                            <h3 id="laser-time"></h3>
+                        </div>
+                    </form>
+                </form>
+                </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-5">
+                <div id="nesting-calculator">
+                    <h2>Nesting Calculator</h2>
+                    <form id="nesting-form">
+                        <div>
+                            <label class="form-label nesting-label" for="part_x">Part X: </label>
+                            <input class="form-control nesting-input"  type="text" id="part_x" placeholder="Part X Size" required> 
+                            <br>
+                            <label class="form-label nesting-label"  for="part_y">Part Y: </label>
+                            <input class="form-control nesting-input" type="text" id="part_y" placeholder="Part Y Size" required>
+                            <br>
+                            <label class="form-label nesting-label"  for="sheet_x">Sheet X: </label>
+                            <input class="form-control nesting-input" type="text" id="sheet_x" placeholder="Sheet X Size" required>
+                            <br>
+                            <label class="form-label nesting-label"  for="sheet_y">Sheet Y: </label>
+                            <input class="form-control nesting-input" type="text" id="sheet_y" placeholder="Sheet Y Size" required>
+                            <br>
+                            <label class="form-label nesting-label"  for="spacing">Spacing: </label>
+                            <input class="form-control nesting-input" type="text" id="spacing" placeholder="Spacing (0.4 is default)">
+                            <br>
+                            <label class="form-lable text-center" for="fillers" id="filler-label">Gauge/Mat: </label>
+                            <select class="form-select" name="fillers" id="fillers">
+                                <option value="None">None</option>
+                                <option value="14G AZ">14G AZ</option>
+                                <option value="14G SS">14G SS</option>
+                                <option value="16G AZ">16G AZ</option>
+                                <option value="16G SS">16G SS</option>
+                                <option value="18G AZ">18G AZ</option>
+                                <option value="18G SS">18G SS</option>
+                                <option value="20G AZ">20G AZ</option>
+                                <option value="20G SS">20G SS</option>
+                            </select>
+                            <div class="container my-3">
+                                <div class="row">
+                                    <div class="col-3"></div>
+                                    <div class="col-6">            
+                                        <label class="form-check-label" for="rotate" id="rotate-label">Can Rotate?</label>
+                                        <input class="form-check-input" type="checkbox" id="rotate">
+                                    </div>
+                                    <div class="col-3"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-grid">
+                            <button class="btn btn-primary" id="nest-submit">Submit</button>
+                        </div>
+                    </form>
+                    <div id="nesting-results">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+        </div>  
+    </div>
+    <script src="/static/nesting_calculator/nesting-parts.js"></script>
+    <script src="/static/nesting_calculator/routingCalculator.js"></script>
+    <script src="/static/nesting_calculator/nestingCalculator.js"></script>
+    <script src="/static/nesting_calculator/nesting-main.js"></script>
+{% endblock %}

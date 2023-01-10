@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://bluestar-prod-docs.com/routes/" />
+      <link rel="shortcut icon" href="/static/documentation/img/favicon.ico" />
+    <title>Routes - Prizer-Bluestar Production Hub</title>
+    <link rel="stylesheet" href="/static/documentation/css/theme.css" />
+    <link rel="stylesheet" href="/static/documentation/css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Routes";
+        var mkdocs_page_input_path = "routes.md";
+        var mkdocs_page_url = "/routes/";
+      </script>
+    
+    <script src="/static/documentation/js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="/static/documentation/js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="{{url_for('proto.home')}}" class="icon icon-home"> Prizer-Bluestar Production Hub
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="{{url_for('docs.search')}}" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="{{url_for('docs.home')}}">Home</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="{{url_for('docs.models')}}">Models</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="./">Routes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#_1">/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-homepage-with-at-a-glance-information">GET -&gt; Returns homepage with at-a-glance information</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#nesting_calculator">/nesting_calculator</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-nesting-calculator-page-for-routing-help-andor-nesting-estimates">GET -&gt; Returns nesting calculator page for routing help and/or nesting estimates</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blanksinventory">/blanks/inventory</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-all-blanks-from-database-and-also-form-to-add-new-blanks">GET -&gt; Returns page with all blanks from database and also form to add new blanks</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-adds-new-blank-to-database">POST -&gt; Adds new blank to database</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete-deletes-blank-from-database">DELETE -&gt; Deletes blank from database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#eco">/eco</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-all-parts-from-database-with-filters-to-sortsearch-for-parts">GET -&gt; Returns page with all parts from database with filters to sort/search for parts</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#data_explorer">/data_explorer</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-nests-for-all-machines-from-database-with-filters-to-sortsearch-for-nests">GET -&gt; Returns page with nests for all machines from database with filters to sort/search for nests</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amada">/amada/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-links-to-other-amada-routes">GET -&gt; Returns page with links to other Amada routes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amadablankcam">/amada/blankcam</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-sop-for-amada-3i-software-blankcam">GET -&gt; Returns page with SOP for Amada 3i software BlankCAM</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amadadata_explorer_sop">/amada/data_explorer_sop</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-amada-3i-software-dataexplorer">GET -&gt; Returns page with manual for Amada 3i software DataExplorer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amadamaterial_explorer_sop">/amada/material_explorer_sop</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-amada-3i-software-materialexplorer">GET -&gt; Returns page with manual for Amada 3i software MaterialExplorer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amadaparameter_explorer_sop">/amada/parameter_explorer_sop</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-amada-3i-software-parameterexplorer">GET -&gt; Returns page with manual for Amada 3i software ParameterExplorer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trumpf">/trumpf/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-links-to-other-trumpf-routes">GET -&gt; Returns page with links to other Trumpf routes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trumpftrutops">/trumpf/trutops</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-sop-for-trumpf-trutops-software">GET -&gt; Returns page with SOP for Trumpf TruTops software</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trumpfoffline_loading">/trumpf/offline_loading</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-sop-for-trumpf-offline-loading-of-programs">GET -&gt; Returns page with SOP for Trumpf Offline Loading of programs</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#punch">/punch/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-links-to-other-punch-routes">GET -&gt; Returns page with links to other Punch routes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#punchsop">/punch/sop</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-sop-for-punch-press-software">GET -&gt; Returns page with SOP for Punch Press software</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#forming">/forming/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-links-to-other-forming-routes">GET -&gt; Returns page with links to other Forming routes</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingsalvagnini_guide">/forming/salvagnini_guide</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-salvagnini-software">GET -&gt; Returns page with manual for Salvagnini software</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingbend_operation">/forming/bend_operation</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-bend-operation-on-amada-machine">GET -&gt; Returns page with manual for Bend Operation on Amada machine</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingbend_parameters">/forming/bend_parameters</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-bend-parameters-on-amada-machine">GET -&gt; Returns page with manual for Bend Parameters on Amada machine</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingusers_guide">/forming/users_guide</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-users-guide-on-amada-machine">GET -&gt; Returns page with manual for Users Guide on Amada machine</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingdata_explorer_sop">/forming/data_explorer_sop</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-amada-3i-software-dataexplorer_1">GET -&gt; Returns page with manual for Amada 3i software DataExplorer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingmaterial_explorer_sop">/forming/material_explorer_sop</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-amada-3i-software-materialexplorer_1">GET -&gt; Returns page with manual for Amada 3i software MaterialExplorer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingparameter_explorer_sop">/forming/parameter_explorer_sop</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-manual-for-amada-3i-software-parameterexplorer_1">GET -&gt; Returns page with manual for Amada 3i software ParameterExplorer</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errors">/errors/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-error-log">GET -&gt; Returns page with error log</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errorsadd">/errors/add</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-add-new-error">GET -&gt; Returns page with form to add new error</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-adds-new-error-to-database">POST -&gt; Adds new error to database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errorsid">/errors/:id</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-error-details">GET -&gt; Returns page with error details</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errorseditid">/errors/edit/:id</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-edit-error">GET -&gt; Returns page with form to edit error</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-edits-error-in-database">POST -&gt; Edits error in database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errorsidadd">/errors/:id/add</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-add-images-to-error">GET -&gt; Returns page with form to add images to error</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-adds-images-to-error-in-database-and-sends-file-to-aws-s3-bucket">POST -&gt; Adds images to error in database and sends file to AWS S3 Bucket</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#requests">/requests/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-all-requests-from-database">GET -&gt; Returns page with all requests from database</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-adds-new-request-to-database">POST -&gt; Adds new request to database</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#delete-signals-deletion-countdown-of-request-actually-removed-in-get-route-once-5-days-have-passed-authorization-needed">DELETE -&gt; Signals deletion countdown of request. Actually removed in GET route once 5 days have passed. Authorization needed</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#userssignup">/users/signup</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-create-new-user">GET -&gt; Returns page with form to create new user</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-creates-new-user-in-database-with-temporary-password-and-sends-email-to-user-with-link-to-reset-password">POST -&gt; Creates new user in database with temporary password and sends email to user with link to reset password</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usersverification">/users/verification</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-verify-user">GET -&gt; Returns page with form to verify user</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-verifies-user-in-database-redirects-to-change-password">POST -&gt; Verifies user in database. Redirects to change password</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#userslogin">/users/login</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-login-user">GET -&gt; Returns page with form to login user</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-verifies-user-in-database-logs-in-and-redirects-to-dashboard">POST -&gt; Verifies user in database. Logs in and redirects to dashboard</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#userslogout">/users/logout</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-logs-out-user-and-redirects-to-login-page">GET -&gt; Logs out user and redirects to login page</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#userschange-password">/users/change-password</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-change-password">GET -&gt; Returns page with form to change password</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-changes-password-in-database">POST -&gt; Changes password in database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#proto">/proto/</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-dashboard-that-is-being-used-as-homepage">GET -&gt; Returns dashboard that is being used as homepage</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoall_projects">/proto/all_projects</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-all-projects-listed">GET -&gt; Returns page with all projects listed</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protocreateproject">/proto/createProject</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-create-new-project">GET -&gt; Returns page with form to create new project</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-creates-new-project-in-database">POST -&gt; Creates new project in database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoproject_name">/proto/:project_name</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-project-details">GET -&gt; Returns page with project details</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoproject_nameedit">/proto/:project_name/edit</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-edit-project-details">GET -&gt; Returns page with form to edit project details</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-edits-project-details-in-database">POST -&gt; Edits project details in database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoproject_namecreate_part">/proto/:project_name/create_part</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-create-new-part">GET -&gt; Returns page with form to create new part</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-creates-new-part-in-database">POST -&gt; Creates new part in database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoproject_namepart_number">/proto/:project_name/:part_number</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-part-details">GET -&gt; Returns page with part details</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoproject_namepart_numberedit">/proto/:project_name/:part_number/edit</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-edit-part-details">GET -&gt; Returns page with form to edit part details</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-edits-part-details-in-database">POST -&gt; Edits part details in database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoproject_namepart_numberadd_file">/proto/:project_name/:part_number/add_file</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-form-to-add-file-to-part">GET -&gt; Returns page with form to add file to part</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#post-uploads-file-to-aws-s3-bucket-and-adds-file-info-to-database">POST -&gt; Uploads file to AWS S3 Bucket and adds file info to database</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoproject_namepart_numberfile_nameversions">/proto/:project_name/:part_number/:file_name/versions</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-all-versions-of-a-file-for-download">GET -&gt; Returns page with all versions of a file for download</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protomy_projects">/proto/my_projects</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-page-with-my-projects">GET -&gt; Returns page with my projects</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#protoupdate_process">/proto/update_process</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#post-updates-process-of-part-in-database-with-truefalse">POST -&gt; Updates process of part in database with True/False</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#blanksdata">/blanks/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-blanks-in-the-database-sorted-by-material_id-in-json-format">GET -&gt; Returns all blanks in the database sorted by material_id in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#materialsdata">/materials/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-materials-in-the-database-in-json-format">GET -&gt; Returns all materials in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ecodata">/eco/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-parts-in-the-database-in-json-format">GET -&gt; Returns all parts in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ecodataobsolete">/eco/data/obsolete</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-obsolete-parts-in-the-database-in-json-format">GET -&gt; Returns all obsolete parts in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#amadadata">/amada/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-parts-nested-on-amada-in-the-database-in-json-format">GET -&gt; Returns all parts nested on Amada in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#trumpfdata">/trumpf/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-parts-nested-on-trumpf-in-the-database-in-json-format">GET -&gt; Returns all parts nested on Trumpf in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#punchdata">/punch/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-parts-nested-on-punch-press-in-the-database-in-json-format">GET -&gt; Returns all parts nested on Punch Press in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#formingdata">/forming/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-parts-nested-on-forming-machines-in-the-database-in-json-format">GET -&gt; Returns all parts nested on Forming Machines in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#errorsdata">/errors/data</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-errors-in-the-database-in-json-format">GET -&gt; Returns all errors in the database in JSON format</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get_all_projects_incomplete">/get_all_projects_incomplete</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-projects-in-the-database-that-are-incomplete-as-orm-objects">GET -&gt; Returns all projects in the database that are incomplete as ORM objects</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get_all_projects_complete">/get_all_projects_complete</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-all-projects-in-the-database-that-are-complete-as-orm-objects">GET -&gt; Returns all projects in the database that are complete as ORM objects</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get_my_projects_incomplete">/get_my_projects_incomplete</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-my-projects-in-the-database-that-are-incomplete-as-orm-objects">GET -&gt; Returns my projects in the database that are incomplete as ORM objects</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#get_my_projects_complete">/get_my_projects_complete</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#get-returns-my-projects-in-the-database-that-are-complete-as-orm-objects">GET -&gt; Returns my projects in the database that are complete as ORM objects</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="{{url_for('proto.home')}}">Prizer-Bluestar Production Hub</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Routes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h2 id="routes">Routes</h2>
+<h4 id="_1">/</h4>
+<h6 id="get-returns-homepage-with-at-a-glance-information"><strong>GET</strong> -&gt; Returns homepage with at-a-glance information</h6>
+<p><br></p>
+<h4 id="nesting_calculator">/nesting_calculator</h4>
+<h6 id="get-returns-nesting-calculator-page-for-routing-help-andor-nesting-estimates"><strong>GET</strong> -&gt; Returns nesting calculator page for routing help and/or nesting estimates</h6>
+<p><br></p>
+<h4 id="blanksinventory">/blanks/inventory</h4>
+<h6 id="get-returns-page-with-all-blanks-from-database-and-also-form-to-add-new-blanks"><strong>GET</strong> -&gt; Returns page with all blanks from database and also form to add new blanks</h6>
+<h6 id="post-adds-new-blank-to-database"><strong>POST</strong> -&gt; Adds new blank to database</h6>
+<h6 id="delete-deletes-blank-from-database"><strong>DELETE</strong> -&gt; Deletes blank from database</h6>
+<p><br></p>
+<h4 id="eco">/eco</h4>
+<h6 id="get-returns-page-with-all-parts-from-database-with-filters-to-sortsearch-for-parts"><strong>GET</strong> -&gt; Returns page with all parts from database with filters to sort/search for parts</h6>
+<p><br></p>
+<h4 id="data_explorer">/data_explorer</h4>
+<h6 id="get-returns-page-with-nests-for-all-machines-from-database-with-filters-to-sortsearch-for-nests"><strong>GET</strong> -&gt; Returns page with nests for all machines from database with filters to sort/search for nests</h6>
+<p><br></p>
+<h4 id="amada">/amada/</h4>
+<h6 id="get-returns-page-with-links-to-other-amada-routes"><strong>GET</strong> -&gt; Returns page with links to other Amada routes</h6>
+<p><br> </p>
+<h4 id="amadablankcam">/amada/blankcam</h4>
+<h6 id="get-returns-page-with-sop-for-amada-3i-software-blankcam"><strong>GET</strong> -&gt; Returns page with SOP for Amada 3i software BlankCAM</h6>
+<p><br></p>
+<h4 id="amadadata_explorer_sop">/amada/data_explorer_sop</h4>
+<h6 id="get-returns-page-with-manual-for-amada-3i-software-dataexplorer"><strong>GET</strong> -&gt; Returns page with manual for Amada 3i software DataExplorer</h6>
+<p><br></p>
+<h4 id="amadamaterial_explorer_sop">/amada/material_explorer_sop</h4>
+<h6 id="get-returns-page-with-manual-for-amada-3i-software-materialexplorer"><strong>GET</strong> -&gt; Returns page with manual for Amada 3i software MaterialExplorer</h6>
+<p><br></p>
+<h4 id="amadaparameter_explorer_sop">/amada/parameter_explorer_sop</h4>
+<h6 id="get-returns-page-with-manual-for-amada-3i-software-parameterexplorer"><strong>GET</strong> -&gt; Returns page with manual for Amada 3i software ParameterExplorer</h6>
+<p><br></p>
+<h4 id="trumpf">/trumpf/</h4>
+<h6 id="get-returns-page-with-links-to-other-trumpf-routes"><strong>GET</strong> -&gt; Returns page with links to other Trumpf routes</h6>
+<p><br> </p>
+<h4 id="trumpftrutops">/trumpf/trutops</h4>
+<h6 id="get-returns-page-with-sop-for-trumpf-trutops-software"><strong>GET</strong> -&gt; Returns page with SOP for Trumpf TruTops software</h6>
+<p><br></p>
+<h4 id="trumpfoffline_loading">/trumpf/offline_loading</h4>
+<h6 id="get-returns-page-with-sop-for-trumpf-offline-loading-of-programs"><strong>GET</strong> -&gt; Returns page with SOP for Trumpf Offline Loading of programs</h6>
+<p><br></p>
+<h4 id="punch">/punch/</h4>
+<h6 id="get-returns-page-with-links-to-other-punch-routes"><strong>GET</strong> -&gt; Returns page with links to other Punch routes</h6>
+<p><br> </p>
+<h4 id="punchsop">/punch/sop</h4>
+<h6 id="get-returns-page-with-sop-for-punch-press-software"><strong>GET</strong> -&gt; Returns page with SOP for Punch Press software</h6>
+<p><br></p>
+<h4 id="forming">/forming/</h4>
+<h6 id="get-returns-page-with-links-to-other-forming-routes"><strong>GET</strong> -&gt; Returns page with links to other Forming routes</h6>
+<p><br> </p>
+<h4 id="formingsalvagnini_guide">/forming/salvagnini_guide</h4>
+<h6 id="get-returns-page-with-manual-for-salvagnini-software"><strong>GET</strong> -&gt; Returns page with manual for Salvagnini software</h6>
+<p><br></p>
+<h4 id="formingbend_operation">/forming/bend_operation</h4>
+<h6 id="get-returns-page-with-manual-for-bend-operation-on-amada-machine"><strong>GET</strong> -&gt; Returns page with manual for Bend Operation on Amada machine</h6>
+<p><br></p>
+<h4 id="formingbend_parameters">/forming/bend_parameters</h4>
+<h6 id="get-returns-page-with-manual-for-bend-parameters-on-amada-machine"><strong>GET</strong> -&gt; Returns page with manual for Bend Parameters on Amada machine</h6>
+<p><br> </p>
+<h4 id="formingusers_guide">/forming/users_guide</h4>
+<h6 id="get-returns-page-with-manual-for-users-guide-on-amada-machine"><strong>GET</strong> -&gt; Returns page with manual for Users Guide on Amada machine</h6>
+<p><br></p>
+<h4 id="formingdata_explorer_sop">/forming/data_explorer_sop</h4>
+<h6 id="get-returns-page-with-manual-for-amada-3i-software-dataexplorer_1"><strong>GET</strong> -&gt; Returns page with manual for Amada 3i software DataExplorer</h6>
+<p><br></p>
+<h4 id="formingmaterial_explorer_sop">/forming/material_explorer_sop</h4>
+<h6 id="get-returns-page-with-manual-for-amada-3i-software-materialexplorer_1"><strong>GET</strong> -&gt; Returns page with manual for Amada 3i software MaterialExplorer</h6>
+<p><br></p>
+<h4 id="formingparameter_explorer_sop">/forming/parameter_explorer_sop</h4>
+<h6 id="get-returns-page-with-manual-for-amada-3i-software-parameterexplorer_1"><strong>GET</strong> -&gt; Returns page with manual for Amada 3i software ParameterExplorer</h6>
+<p><br></p>
+<h4 id="errors">/errors/</h4>
+<h6 id="get-returns-page-with-error-log"><strong>GET</strong> -&gt; Returns page with error log</h6>
+<p><br></p>
+<h4 id="errorsadd">/errors/add</h4>
+<h6 id="get-returns-page-with-form-to-add-new-error"><strong>GET</strong> -&gt; Returns page with form to add new error</h6>
+<h6 id="post-adds-new-error-to-database"><strong>POST</strong> -&gt; Adds new error to database</h6>
+<p><br></p>
+<h4 id="errorsid">/errors/:id</h4>
+<h6 id="get-returns-page-with-error-details"><strong>GET</strong> -&gt; Returns page with error details</h6>
+<p><br></p>
+<h4 id="errorseditid">/errors/edit/:id</h4>
+<h6 id="get-returns-page-with-form-to-edit-error"><strong>GET</strong> -&gt; Returns page with form to edit error</h6>
+<h6 id="post-edits-error-in-database"><strong>POST</strong> -&gt; Edits error in database</h6>
+<p><br></p>
+<h4 id="errorsidadd">/errors/:id/add</h4>
+<h6 id="get-returns-page-with-form-to-add-images-to-error"><strong>GET</strong> -&gt; Returns page with form to add images to error</h6>
+<h6 id="post-adds-images-to-error-in-database-and-sends-file-to-aws-s3-bucket"><strong>POST</strong> -&gt; Adds images to error in database and sends file to AWS S3 Bucket</h6>
+<p><br></p>
+<h4 id="requests">/requests/</h4>
+<h6 id="get-returns-page-with-all-requests-from-database"><strong>GET</strong> -&gt; Returns page with all requests from database</h6>
+<h6 id="post-adds-new-request-to-database"><strong>POST</strong> -&gt; Adds new request to database</h6>
+<h6 id="delete-signals-deletion-countdown-of-request-actually-removed-in-get-route-once-5-days-have-passed-authorization-needed"><strong>DELETE</strong> -&gt; Signals deletion countdown of request. Actually removed in GET route once 5 days have passed. Authorization needed</h6>
+<p><br></p>
+<h4 id="userssignup">/users/signup</h4>
+<h6 id="get-returns-page-with-form-to-create-new-user"><strong>GET</strong> -&gt; Returns page with form to create new user</h6>
+<h6 id="post-creates-new-user-in-database-with-temporary-password-and-sends-email-to-user-with-link-to-reset-password"><strong>POST</strong> -&gt; Creates new user in database with temporary password and sends email to user with link to reset password</h6>
+<p><br></p>
+<h4 id="usersverification">/users/verification</h4>
+<h6 id="get-returns-page-with-form-to-verify-user"><strong>GET</strong> -&gt; Returns page with form to verify user</h6>
+<h6 id="post-verifies-user-in-database-redirects-to-change-password"><strong>POST</strong> -&gt; Verifies user in database. Redirects to change password</h6>
+<p><br></p>
+<h4 id="userslogin">/users/login</h4>
+<h6 id="get-returns-page-with-form-to-login-user"><strong>GET</strong> -&gt; Returns page with form to login user</h6>
+<h6 id="post-verifies-user-in-database-logs-in-and-redirects-to-dashboard"><strong>POST</strong> -&gt; Verifies user in database. Logs in and redirects to dashboard</h6>
+<p><br></p>
+<h4 id="userslogout">/users/logout</h4>
+<h6 id="get-logs-out-user-and-redirects-to-login-page"><strong>GET</strong> -&gt; Logs out user and redirects to login page</h6>
+<p><br></p>
+<h4 id="userschange-password">/users/change-password</h4>
+<h6 id="get-returns-page-with-form-to-change-password"><strong>GET</strong> -&gt; Returns page with form to change password</h6>
+<h6 id="post-changes-password-in-database"><strong>POST</strong> -&gt; Changes password in database</h6>
+<p><br></p>
+<h4 id="proto">/proto/</h4>
+<h6 id="get-returns-dashboard-that-is-being-used-as-homepage"><strong>GET</strong> -&gt; Returns dashboard that is being used as homepage</h6>
+<p><br></p>
+<h4 id="protoall_projects">/proto/all_projects</h4>
+<h6 id="get-returns-page-with-all-projects-listed"><strong>GET</strong> -&gt; Returns page with all projects listed</h6>
+<p><br></p>
+<h4 id="protocreateproject">/proto/createProject</h4>
+<h6 id="get-returns-page-with-form-to-create-new-project"><strong>GET</strong> -&gt; Returns page with form to create new project</h6>
+<h6 id="post-creates-new-project-in-database"><strong>POST</strong> -&gt; Creates new project in database</h6>
+<p><br></p>
+<h4 id="protoproject_name">/proto/:project_name</h4>
+<h6 id="get-returns-page-with-project-details"><strong>GET</strong> -&gt; Returns page with project details</h6>
+<p><br></p>
+<h4 id="protoproject_nameedit">/proto/:project_name/edit</h4>
+<h6 id="get-returns-page-with-form-to-edit-project-details"><strong>GET</strong> -&gt; Returns page with form to edit project details</h6>
+<h6 id="post-edits-project-details-in-database"><strong>POST</strong> -&gt; Edits project details in database</h6>
+<p><br></p>
+<h4 id="protoproject_namecreate_part">/proto/:project_name/create_part</h4>
+<h6 id="get-returns-page-with-form-to-create-new-part"><strong>GET</strong> -&gt; Returns page with form to create new part</h6>
+<h6 id="post-creates-new-part-in-database"><strong>POST</strong> -&gt; Creates new part in database</h6>
+<p><br></p>
+<h4 id="protoproject_namepart_number">/proto/:project_name/:part_number</h4>
+<h6 id="get-returns-page-with-part-details"><strong>GET</strong> -&gt; Returns page with part details</h6>
+<p><br></p>
+<h4 id="protoproject_namepart_numberedit">/proto/:project_name/:part_number/edit</h4>
+<h6 id="get-returns-page-with-form-to-edit-part-details"><strong>GET</strong> -&gt; Returns page with form to edit part details</h6>
+<h6 id="post-edits-part-details-in-database"><strong>POST</strong> -&gt; Edits part details in database</h6>
+<p><br></p>
+<h4 id="protoproject_namepart_numberadd_file">/proto/:project_name/:part_number/add_file</h4>
+<h6 id="get-returns-page-with-form-to-add-file-to-part"><strong>GET</strong> -&gt; Returns page with form to add file to part</h6>
+<h6 id="post-uploads-file-to-aws-s3-bucket-and-adds-file-info-to-database"><strong>POST</strong> -&gt; Uploads file to AWS S3 Bucket and adds file info to database</h6>
+<p><br></p>
+<h4 id="protoproject_namepart_numberfile_nameversions">/proto/:project_name/:part_number/:file_name/versions</h4>
+<h6 id="get-returns-page-with-all-versions-of-a-file-for-download"><strong>GET</strong> -&gt; Returns page with all versions of a file for download</h6>
+<p><br></p>
+<h4 id="protomy_projects">/proto/my_projects</h4>
+<h6 id="get-returns-page-with-my-projects"><strong>GET</strong> -&gt; Returns page with my projects</h6>
+<p><br></p>
+<h4 id="protoupdate_process">/proto/update_process</h4>
+<h6 id="post-updates-process-of-part-in-database-with-truefalse"><strong>POST</strong> -&gt; Updates process of part in database with True/False</h6>
+<p><br></p>
+<h4 id="blanksdata">/blanks/data</h4>
+<h6 id="get-returns-all-blanks-in-the-database-sorted-by-material_id-in-json-format"><strong>GET</strong> -&gt; Returns all blanks in the database sorted by material_id in JSON format</h6>
+<p><br> </p>
+<h4 id="materialsdata">/materials/data</h4>
+<h6 id="get-returns-all-materials-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all materials in the database in JSON format</h6>
+<p><br></p>
+<h4 id="ecodata">/eco/data</h4>
+<h6 id="get-returns-all-parts-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all parts in the database in JSON format</h6>
+<p><br></p>
+<h4 id="ecodataobsolete">/eco/data/obsolete</h4>
+<h6 id="get-returns-all-obsolete-parts-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all obsolete parts in the database in JSON format</h6>
+<p><br></p>
+<h4 id="amadadata">/amada/data</h4>
+<h6 id="get-returns-all-parts-nested-on-amada-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all parts nested on Amada in the database in JSON format</h6>
+<p><br></p>
+<h4 id="trumpfdata">/trumpf/data</h4>
+<h6 id="get-returns-all-parts-nested-on-trumpf-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all parts nested on Trumpf in the database in JSON format</h6>
+<p><br></p>
+<h4 id="punchdata">/punch/data</h4>
+<h6 id="get-returns-all-parts-nested-on-punch-press-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all parts nested on Punch Press in the database in JSON format</h6>
+<p><br></p>
+<h4 id="formingdata">/forming/data</h4>
+<h6 id="get-returns-all-parts-nested-on-forming-machines-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all parts nested on Forming Machines in the database in JSON format</h6>
+<p><br></p>
+<h4 id="errorsdata">/errors/data</h4>
+<h6 id="get-returns-all-errors-in-the-database-in-json-format"><strong>GET</strong> -&gt; Returns all errors in the database in JSON format</h6>
+<p><br></p>
+<h4 id="get_all_projects_incomplete">/get_all_projects_incomplete</h4>
+<h6 id="get-returns-all-projects-in-the-database-that-are-incomplete-as-orm-objects"><strong>GET</strong> -&gt; Returns all projects in the database that are incomplete as ORM objects</h6>
+<p><br></p>
+<h4 id="get_all_projects_complete">/get_all_projects_complete</h4>
+<h6 id="get-returns-all-projects-in-the-database-that-are-complete-as-orm-objects"><strong>GET</strong> -&gt; Returns all projects in the database that are complete as ORM objects</h6>
+<p><br></p>
+<h4 id="get_my_projects_incomplete">/get_my_projects_incomplete</h4>
+<h6 id="get-returns-my-projects-in-the-database-that-are-incomplete-as-orm-objects"><strong>GET</strong> -&gt; Returns my projects in the database that are incomplete as ORM objects</h6>
+<p><br></p>
+<h4 id="get_my_projects_complete">/get_my_projects_complete</h4>
+<h6 id="get-returns-my-projects-in-the-database-that-are-complete-as-orm-objects"><strong>GET</strong> -&gt; Returns my projects in the database that are complete as ORM objects</h6>
+<p><br></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="{{url_for('docs.models')}}" class="btn btn-neutral float-left" title="Models"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="{{url_for('docs.models')}}" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script>var base_url = '/static/documentation/';</script>
+    <script src="/static/documentation/js/theme_extra.js" defer></script>
+    <script src="/static/documentation/js/theme.js" defer></script>
+      <script src="/static/documentation/search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

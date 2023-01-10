@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://bluestar-prod-docs.com/home/" />
+      <link rel="shortcut icon" href="/static/documentation/img/favicon.ico" />
+    <title>Home - Prizer-Bluestar Production Hub</title>
+    <link rel="stylesheet" href="/static/documentation/css/theme.css" />
+    <link rel="stylesheet" href="/static/documentation/css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "Home";
+        var mkdocs_page_input_path = "home.md";
+        var mkdocs_page_url = "/home/";
+      </script>
+    
+    <script src="/static/documentation/js/jquery-3.6.0.min.js" defer></script>
+    <!--[if lt IE 9]>
+      <script src="/static/documentation/js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href="{{url_for('proto.home')}}" class="icon icon-home"> Prizer-Bluestar Production Hub
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="{{url_for('docs.search')}}" method="get">
+      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="{{url_for('docs.home')}}">Home</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#technology-stack">Technology Stack</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#frontend">Frontend</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#backend">Backend</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#host">Host</a>
+        
+    <li class="toctree-l3"><a class="reference internal" href="#project-tree">Project Tree</a>
+    </li>
+     
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="{{url_for('docs.models')}}">Models</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="{{url_for('docs.routes')}}">Routes</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="{{url_for('proto.home')}}">Prizer-Bluestar Production Hub</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="{{url_for('docs.home')}}" class="icon icon-home" alt="Docs"></a> &raquo;</li>
+      <li>Home</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="bluestar-app-docs">Bluestar App Docs</h1>
+<hr>
+<h2 id="technology-stack">Technology Stack</h2>
+<h3 id="frontend">Frontend</h3>
+<p><strong>Languages:</strong>
+  <ul>
+    <li>HTML</li>
+    <li>CSS</li>
+    <li>Javascript</li>
+  </ul>
+<p><strong>Frameworks:</strong> 
+  <ul>
+    <li>Bootstrap 5.2.1</li>
+    <li>jQuery 3.6.1 (CDN)</li>
+    <li>Axios 1.2.2 (CDN)</li>
+    <li>Popper 2.11.6 (CDN)</li>
+  </ul>
+<p><strong>Miscellaneous</strong>
+  <ul>
+    <li>Font Awesome</li>
+  </ul>
+<p><br></p>
+<h3 id="backend">Backend</h3>
+<p><strong>Languages:</strong>
+  <ul>
+    <li>Python 3.8 (As of 1/6/23 - Railway uses Nixpacks which defaults to 3.8)</li>
+  </ul>
+<p><strong>Frameworks:</strong> 
+  <ul>
+    <li>Flask 2.2.2 
+      <ul>
+        <li>Flask-SQLAlchemy 2.5.1</li>
+        <li>Flask-Bcrypt 1.0.1</li>
+        <li>Flask-WTF 1.0.1</li>
+      </ul>
+    </li>
+  </ul>
+<p><strong>Database:</strong> 
+  <ul>
+    <li>PostgreSQL 13 (As of 1/6/23 - Railway uses PSQL 13 Docker image</li>
+  </ul>
+<p><strong>API:</strong>
+  <ul>
+    <li>SendGrid (Email Service)</li>
+  </ul>
+<p><strong>Storage</strong>
+      <ul>
+        <li>AWS S3 (File Storage)</li>
+      </ul>
+<p><br></p>
+<h3 id="host">Host</h3>
+<ul>
+<li>Railway</li>
+</ul>
+
+<br>
+
+<h4 id="project-tree">Project Tree</h4>
+<pre><code>Prizer-BS-Site/
+├─app.py
+├─config.py
+├─db.py
+├─models/
+│ ├─error.py
+│ ├─file.py
+│ ├─forms.py
+│ ├─materials.py
+│ ├─nest.py
+│ ├─part.py
+│ ├─project.py
+│ ├─requests.py
+│ └─user.py
+├─requirements.txt
+├─routes/
+│ ├─amada.py
+│ ├─documentation.py
+│ ├─errors.py
+│ ├─forming.py
+│ ├─general.py
+│ ├─prototypes.py
+│ ├─punch.py
+│ ├─requests.py
+│ ├─seed.py
+│ ├─trumpf.py
+│ └─user.py
+├─static/
+│ ├─app.js
+│ ├─bootstrap/
+│ │ ├─bootstrap.bundle.js
+│ │ ├─bootstrap.bundle.js.map
+│ │ ├─bootstrap.min.css
+│ │ └─bootstrap.min.css.map
+│ ├─data_explorers/
+│ │ ├─eco.js
+│ │ └─explorer.js
+│ ├─guides/
+│ │ ├─DataExplorer Users Guide.pdf
+│ │ ├─MaterialExplorer Users Guide.pdf
+│ │ ├─ParameterExplorer Users Guide.pdf
+│ │ ├─ProductionDesigner Users Guide.pdf
+│ │ ├─salvagnini-user-guide.pdf
+│ │ ├─VPSS3i BEND Operation Guide.pdf
+│ │ ├─VPSS3i BEND Parameter Guide.pdf
+│ │ ├─VPSS3i BEND Users Guide.pdf
+│ │ └─VPSS3i BLANK Users Guide.pdf
+│ ├─hubs/
+│ │ ├─dataexplorer.js
+│ │ ├─home.js
+│ │ ├─production.js
+│ │ └─sop.js
+│ ├─images/
+│ │ ├─banner.jpg
+│ │ ├─blankcam/
+│ │ │ └─images
+│ │ ├─icon.ico
+│ │ ├─logo.jpg
+│ │ └─trutops/
+│ │   └─images
+│ ├─nesting_calculator/
+│ │ ├─nesting-main.js
+│ │ ├─nesting-parts.js
+│ │ ├─nestingCalculator.js
+│ │ └─routingCalculator.js
+│ ├─production/
+│ │ ├─blanks.js
+│ │ ├─error-log.js
+│ │ ├─request.js
+│ │ └─sort.js
+│ ├─prototypes/
+│ │ ├─my-projects.js
+│ │ ├─part.js
+│ │ └─projects.js
+│ ├─styles.css
+│ └─user/
+│   ├─change_password.js
+│   └─verification.js
+├─templates/
+│ ├─base.html
+│ ├─error_log/
+│ │ ├─add-error.html
+│ │ ├─add-file.html
+│ │ ├─edit-error.html
+│ │ ├─error-log.html
+│ │ └─error.html
+│ ├─home.html
+│ ├─hubs/
+│ │ ├─amada.html
+│ │ ├─forming.html
+│ │ ├─punch.html
+│ │ └─trumpf.html
+│ ├─misc/
+│ │ ├─blanks.html
+│ │ ├─eco.html
+│ │ ├─explorer.html
+│ │ ├─nesting-calculator.html
+│ │ ├─requests.html
+│ │ └─todo.html
+│ ├─prototypes/
+│ │ ├─add-file.html
+│ │ ├─bug-request.html
+│ │ ├─create_part.html
+│ │ ├─create_project.html
+│ │ ├─edit_part.html
+│ │ ├─edit_project.html
+│ │ ├─file-versions.html
+│ │ ├─my-projects.html
+│ │ ├─part.html
+│ │ ├─project.html
+│ │ └─projects.html
+│ ├─sops/
+│ │ ├─bend_operation.html
+│ │ ├─bend_parameters.html
+│ │ ├─bend_users.html
+│ │ ├─blankcam.html
+│ │ ├─data_explorer.html
+│ │ ├─material_explorer.html
+│ │ ├─offline_loading.html
+│ │ ├─parameter_explorer.html
+│ │ ├─punch_sop.html
+│ │ ├─salvagnini_guide.html
+│ │ └─trutops.html
+│ └─user/
+│   ├─change_password.html
+│   ├─login.html
+│   ├─profile.html
+│   ├─sign_up.html
+│   └─verification.html
+└─utilities.py
+</code></pre>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="{{url_for('docs.models')}}" class="btn btn-neutral float-right" title="Models">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+      <span><a href="{{url_for('docs.models')}}" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script>var base_url = '/static/documentation/';</script>
+    <script src="/static/documentation/js/theme_extra.js" defer></script>
+    <script src="/static/documentation/js/theme.js" defer></script>
+      <script src="/static/documentation/search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
+
+</body>
+</html>

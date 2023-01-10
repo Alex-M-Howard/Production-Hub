@@ -1,0 +1,118 @@
+{% extends 'base.html' %} {% block title %}Trumpf Offline-Loading SOP{% endblock
+%} {% block content %}
+<h1 class="text-center">
+  <img src="/static/images/logo.jpg" class="logo" />
+  Offline Program Loading
+  <img src="/static/images/logo.jpg" class="logo" />
+</h1>
+<img
+  class="rounded mx-auto d-block my-5"
+  src="https://www.trumpf.com/filestorage/TRUMPF_US/_processed_/7/1/csm_TruLaser_2030_fiber_machine_732fa9f6ba.jpg"
+  alt="Trumpf Laser"
+/>
+<div class="row g-3" style="width: 100vw">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <p class="text-center">
+      <a
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        href="#multiCollapseExample1"
+        role="button"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample1"
+        >Purpose</a
+      >
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample2"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample2"
+      >
+        Scope
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample3"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample3"
+      >
+        Responsibility
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample4"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample4"
+      >
+        Procedure
+      </button>
+    </p>
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        <i><b>Purpose: </b></i>Load Trumpf laser programs to the machine without
+        a network connection
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+        <i><b>Scope: </b></i>Applies to the Trumpf fiber laser
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample3">
+      <div class="card card-body">
+        <i><b>Responsibility: </b></i>
+        Manufacturing Engineering: Utilize this strategy when a network issue
+        arises to continue laser production
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample4">
+      <div class="card card-body">
+        <i><b>Procedure: </b></i>
+        <br />
+        <i><b>Change Transfer Directory</b></i>
+        1. Change the transfer directory to an offline directory in the Machine
+        Tab in TruTops
+        <span class="mx-auto"
+          ><img id="instr-pic" src="/static/images/trutops/changeDirectory.png"
+        /></span>
+        <br />
+        2. Choose program you wish to load in the nesting tab, click the
+        unrelease button, and then click it again to re-release the program in
+        the new transfer directory
+        <span class="mx-auto"
+          ><img
+            id="instr-pic2"
+            src="/static/images/trutops/unreleaseProgram.png"
+        /></span>
+        <br />
+        3. Copy the programs from the transfer directory to a flash drive to
+        load to the machine controller
+        <br />
+        4. Document which programs were released in the new transfer directory
+        <br />
+        5. Once the network error has been fixed:
+        <span style="text-indent: 50px"
+          >5.1. Change the Transfer Directory back to the original
+          (\\PRIZ-MERRYMECH\TruLaser2030)</span
+        >
+        <span style="text-indent: 50px"
+          >5.2. Repeat step 5.2 for all documented programs from step 4</span
+        >
+        <span style="text-indent: 50px"
+          >5.3. Delete all programs from flash drive to prevent issues with rev
+          changes in the future</span
+        >
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/hubs/sop.js"></script>
+
+{% endblock %}

@@ -1,0 +1,528 @@
+{% extends 'base.html' %}
+{% block title %}Tru-Tops SOP{% endblock %}
+{% block content %}
+  <h1 class="text-center">
+    <img src="/static/images/logo.jpg" class="logo">
+      Tru-Tops
+    <img src="/static/images/logo.jpg" class="logo">
+  </h1>
+  <img class="rounded mx-auto d-block my-5" src="https://www.trumpf.com/filestorage/TRUMPF_US/_processed_/7/1/csm_TruLaser_2030_fiber_machine_732fa9f6ba.jpg" alt="Trumpf Laser">
+  <div class="row g-3" style="width:100vw;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <p class="text-center">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Purpose</a>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Scope</button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Responsibility</button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Procedure</button>
+      </p>
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+          <i><b>Purpose: </b></i>Document the steps needed to program a part using Trumpf's Tru-Tops software
+        </div>
+      </div>
+      <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+          <i><b>Scope: </b></i>Applies to new AND revised parts to be run on the Trumpf fiber laser
+        </div>
+      </div>
+      <div class="collapse multi-collapse" id="multiCollapseExample3">
+        <div class="card card-body">
+          <i><b>Responsibility: </b></i>
+          Engineering: Notify programming/fabrictation of the new or revised part and include a PDF drawing and DXF file in the appropriate folders
+          <br>
+          <br>
+          Programmer: Revise/release the part for fabrictation to run on the Trumpf fiber laser
+        </div>
+      </div>
+      <div class="collapse multi-collapse" id="multiCollapseExample4">
+        <div class="card card-body">
+          <i><b>Procedure: </b></i>
+          <br>
+          <p class="text-center">
+            <div class="container text-center">
+              <div class="row">
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure5" aria-expanded="false" aria-controls="collapse-procedure5">Import Part</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure6" aria-expanded="false" aria-controls="collapse-procedure6">Add Part Info</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure7" aria-expanded="false" aria-controls="collapse-procedure7">Select Raw Material</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure8" aria-expanded="false" aria-controls="collapse-procedure8">Boost and Open Part</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure9" aria-expanded="false" aria-controls="collapse-procedure9">Check Flattened DXF</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure10" aria-expanded="false" aria-controls="collapse-procedure10">Create Cutting Program</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure11" aria-expanded="false" aria-controls="collapse-procedure11">Select Technology Table</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure12" aria-expanded="false" aria-controls="collapse-procedure12">Single Part - Process All</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure13" aria-expanded="false" aria-controls="collapse-procedure13">Single Part - Add Joints</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure14" aria-expanded="false" aria-controls="collapse-procedure14">Single Part - Adjust Sequencing</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure15" aria-expanded="false" aria-controls="collapse-procedure15">Single Part - Save and Exit</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure16" aria-expanded="false" aria-controls="collapse-procedure16">Create New Nest</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure17" aria-expanded="false" aria-controls="collapse-procedure17">Add Parts to Nest</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure18" aria-expanded="false" aria-controls="collapse-procedure18">Fill in Nest Notes</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure19" aria-expanded="false" aria-controls="collapse-procedure19">Open Nest</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure21" aria-expanded="false" aria-controls="collapse-procedure21">Add Sheet/s</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure22" aria-expanded="false" aria-controls="collapse-procedure22">Nesting (Nesting Tab) - Drag Parts to Nest</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure23" aria-expanded="false" aria-controls="collapse-procedure23">Nesting (Nesting Tab) - Align Parts</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure20" aria-expanded="false" aria-controls="collapse-procedure20">Choose Technology Table</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure24" aria-expanded="false" aria-controls="collapse-procedure24">Nesting (Optimization Tab) - Adjust Sequencing</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure25" aria-expanded="false" aria-controls="collapse-procedure25">Nesting (Technology Tab) - Add Joints</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure26" aria-expanded="false" aria-controls="collapse-procedure26">Nesting (Technology Tab) - Create Sheet Cuts</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure27" aria-expanded="false" aria-controls="collapse-procedure27">Nesting (Nesting Tab) - Set Auto Loader Suction</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure28" aria-expanded="false" aria-controls="collapse-procedure28">Nesting (Start Tab) - Verify NC Parameters</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure29" aria-expanded="false" aria-controls="collapse-procedure29">Nesting (Start Tab) - Create NC and Save</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure30" aria-expanded="false" aria-controls="collapse-procedure30">Release Program</button>
+                </div>
+                <div class="col-md-2 d-grid d-block trumpf-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse2" aria-expanded="false" aria-controls="collapse-procedure5 collapse-procedure6 collapse-procedure7 collapse-procedure8 collapse-procedure9 collapse-procedure10 collapse-procedure11 collapse-procedure12 collapse-procedure13 collapse-procedure14 collapse-procedure15 collapse-procedure16 collapse-procedure17 collapse-procedure18 collapse-procedure19 collapse-procedure20">Show all</button>
+                </div>
+              </div>
+            </div>
+          </p>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure5">
+            <div class="card card-body">
+              <i><b>Import Part: </b></i>
+                  <br>
+                  <br>    
+                  <span>1. In the <i>Parts</i> tab, Click the <img style="width: 15%;" src="/static/images/trutops/IMPORT.jpg" alt="import button"> button to open the file explorer dialog box.</span>
+                  <img class="mx-auto lazy" src="/static/images/trutops/parts-tab.jpg" style="width: 80%;">
+                  <br>
+                  <span>2. Navigate to folder with DXF file, and click open</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure6">
+            <div class="card card-body">
+              <i><b>Add Part Info: </b></i>
+                  <br>
+                  <br>           
+                  <span id="colors">
+                  1. In the part screen, enter <span style="background-color: rgb(91,155,213)">&nbsp;Name&nbsp;</span>, <span style="background-color: rgb(238, 134, 64)">&nbsp;Drawing Number&nbsp;</span>, <span style="background-color: rgb(255,192,0)">&nbsp;ID&nbsp;</span>, <span style="background-color: rgb(112,173,71)">&nbsp;External Name&nbsp;</span>, and <span style="background-color: rgb(68,114,196)">&nbsp;Note&nbsp;</span>
+                  </span>
+                  <img class="mx-auto lazy" id="parts-screen" src="/static/images/trutops/tru-tops-parts-screen.png" alt="">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure7">
+            <div class="card card-body">
+              <i><b>Select Raw Material: </b></i>
+              <br>
+              <br>           
+              <span>1. Click the <img src="/static/images/trutops/mouse pointer.jpg" id="mouse-pointer" style="width: 5%;"> button to the right of the <i>Raw Material</i> section</span>
+              <br>
+              <span>2. Find the correct material in the raw material window and press "OK"</span>
+            </div>
+          </div> 
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure8">
+            <div class="card card-body">
+              <i><b>Boost and Open Part: </b></i>
+              <br>           
+              <span>1. Click the <img src="/static/images/trutops/boost-button.png" style="width: 5%;"> button, then the <img src="/static/images/trutops/open-button.jpg" style="width: 5%;"> button</span>
+              <br>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/PART SCREEN.jpg" style="width:80%;" >
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure9">
+            <div class="card card-body">
+              <i><b>Check flattened DXF: </b></i>
+              <br>           
+              <span>1. Inside of the tasks window at the bottom left, clearn any errors by hittin the "x" next to them, if available</span>
+              <br>
+              <span>2. Click the <img src="/static/images/trutops/save-button-floppy.jpg" style="width: 5%;"> button in the top left of the screen, then exit this screen</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/GEO SCREEN.jpg"  style="width:80%;">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure10">
+            <div class="card card-body">
+              <i><b>Create Cutting Program: </b></i>
+              <br>           
+              <span>1. On the right hand side of the "Cutting Programs" section, click <img src="/static/images/trutops/new-button.jpg" style="width: 5%"> and then underneath, the <img src="/static/images/trutops/open-button.jpg" style="width: 5%;"> button </span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/open-cutting-program.jpg" style="width:80%;">
+              <br>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure11">
+            <div class="card card-body">
+              <i><b>Select Technology Table: </b></i>
+              <br>           
+              <span>1. When opening the cutting program, it opens a dialog box asking to choose the Tech Table. There should only be one table in the list, so double click it and press "OK" </span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/TECH TABLE .jpg" style="width:80%;">
+              <br>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure12">
+            <div class="card card-body">
+              <i><b>Process all on single part: </b></i>
+              <br>           
+              <span>1. With the part editor open, click the technology tab </span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/no-proc-click-tech-tab.jpg" style="width:80%;">           
+              <br>
+              <span>2. Click the <img src="/static/images/trutops/process-all-button.jpg" style="width: 5%;"> button </span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/tech-tab-click-process-all.jpg" style="width:80%;">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure13">
+              <div class="card card-body">
+                <i><b>Add joints to single part: </b></i>
+                <br>           
+                <span>1. Click the <img src="/static/images/trutops/microjoint-button.jpg" style="width:5%"> button</span>
+                <br>
+                <span>2. Click the <img src="/static/images/trutops/microjoint box.jpg" style="width: 5%;"> button that pops up to the left of the part</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/trutops/click-microjoint-side.jpg" style="width:80%;">
+                <br>
+                <span>3. In the microjoint box, select the "At contour end" option, verify the length of the joint, and click "OK"</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/trutops/set microjoint.jpg">
+                <br>
+                <span>4. Click on the outer contour of the part and any inner contours to create the first joint. <i>Note: You can only do this on the most recent joint created</i></span>
+                <br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;4.1. If you need to move the joint that was created, click the <img src="/static/images/trutops/approaching-button.jpg" style="width:5%;"> button</span>
+                <br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;4.2. Click the approaching button that pops up to the left of the part</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/trutops/approaching.jpg" style="width:80%;" >
+                <br>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;4.3 Select the new location on the part to move the previously created microjoint</span>
+                <br>
+                <span>5. Now that the first joint is created, repeat steps 1, 2, and 3, but instead of "At contour end", choose the option "Random" and click "OK" </span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/trutops/set microjoint.jpg">
+                <br>
+                <span>6. Click on the part where you want the reminaing joints</span>
+              </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure14">
+            <div class="card card-body">
+              <i><b>Adjust single part sequencing</b></i>
+              <br>
+              <span>1. Click the Optimization tab</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/click-optimization-tab.jpg"  style="width:80%;">
+              <br>
+              <span>2. Click <img src="/static/images/trutops/beginning-button.jpg" style="width:12%;">, and then <img src="/static/images/trutops/contour button.jpg" style="width:12%;"></span>
+              <br><img class="mx-auto lazy" src="/static/images/trutops/click-beginning.jpg" style="width:80%;">
+              <br>
+              <span>3. Click the contour that you want cut first.</span>
+              <br>
+              <span>4. Click <img src="/static/images/trutops/after-button.jpg" style="width:12%;">, and then <img src="/static/images/trutops/contour button.jpg" style="width:12%;"></span>
+              <br>
+              <span>5. Click the first contour you chose to be the beginning, and then click other contours in the order you want them to cut </span>
+              <br>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure15">
+            <div class="card card-body">
+              <i><b>Save Single Part - Exit</b></i>
+              <br>
+              <span>2. Click the <img src="/static/images/trutops/save-button-floppy.jpg" style="width: 5%;"> button in the top left of the screen, then exit this screen</span>
+              <br>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure16">
+            <div class="card card-body">
+              <i><b>Create New Nest</b></i>
+              <br>
+              <span>1. Make sure the "NESTING" tab is selected and click <img src="/static/images/trutops/new-nest-button.jpg" style="width:11%;"> button in the top left of the screen </span> 
+              <img src="/static/images/trutops/new-nesting.jpg" style="width: 80%;" class="mx-auto lazy">
+              <br>
+              <span>2. Fill in nest ID. Nest ID will just be the part number with an N in front. <i>ex. N101507</i> You can ignore the raw material</span>
+              <br>
+              <img src="/static/images/trutops/nesting-fill-info.jpg" style="width:80%;" class="mx-auto lazy">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure17">
+            <div class="card card-body">
+              <i><b>Add Parts to Nest</b></i>
+              <br>
+              <span>1. Click <img src="/static/images/trutops/add-part-button.jpg" style="width:10%;"></span> 
+              <br>
+              <img src="/static/images/trutops/add-part-to-nest.jpg" class="mx-auto lazy" style="width:80%;">
+              <br>
+              <br>
+              <span>2. Find the part you created earlier, click to select it, and press "OK"</span>
+              <br>
+              <br>
+              <img src="/static/images/trutops/nesting-import-part.jpg" style="width:60%;" class="mx-auto lazy">
+              <br>
+              <br>
+              <span>3. After you add the parts you want to the nest, click out of the nest onto another one, and then click your new nest again. This will update the raw material automatically, matching what you selected for your single part</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure18">
+            <div class="card card-body">
+              <i><b>Fill in Nest Notes</b></i>
+              <br>
+              <span>1. In the "Note" section, put in: Your initials, Tab Size, Automation (If not automation, leave out)</span>
+              <br>
+              <img src="/static/images/trutops/nesting-fill-in-notes.jpg" style="width:80%;" class="mx-auto lazy"> 
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure19">
+            <div class="card card-body">
+              <i><b>Open Nest</b></i>
+              <br>
+              <span>1. Click <img src="/static/images/trutops/open-button.jpg" style="width: 6%;"> </span>
+              <br>
+              <img src="/static/images/trutops/nesting-open-nest.jpg" style="width:80%;" class="mx-auto lazy"> 
+              
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure21">
+            <div class="card card-body">
+              <i><b>Choose Sheet: </b></i>
+              <br>           
+              <span>1. You can select the blank sheet size available, or click "Further Sheets" to select a different size</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/Nesting Add Sheet.jpg" style="width:80%;">
+              <br>
+              <br>
+              <span>2. If you have any extra sheets, you can click it to select, and press the "Delete" key on the keyboard to remove</span>
+              <br>
+              <span>3. When you have the sheet/s you want, double-click the sheet</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure22">
+            <div class="card card-body">
+              <i><b>Nesting (Nesting Tab) - Drag Parts to Nest:</b></i>
+              <br>           
+              <span>1. Click the dropdown arrow on each of the parts listed above, and drag the processed parts onto the nest</span>
+              <br>
+              <img src="/static/images/trutops/drag part.jpg" style="width: 80%;" class="mx-auto lazy">
+              <br>
+              <br>
+              <span>2. Populate the rest of the nest with parts </span>
+              <br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.1 Highlight your part (or parts) </span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.2 A pink sqaure will show up on the bottom right hand side of the parts selected </span>
+              <img src="/static/images/trutops/clone-tool.jpg" style="width: 80%;" class="mx-auto lazy">
+              <br>
+              <br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2.3 Click and hold, and drag to create copies of your parts quickly </span>
+              <br>
+              <img src="/static/images/trutops/dragging-clones.jpg" style="width: 80%;" class="mx-auto lazy">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure23">
+            <div class="card card-body">
+              <i><b>Nesting (Nesting Tab) - Align Parts:</b></i>
+              <br>
+              <span>1. Click off of any of the parts nested so that nothing is selected</span>
+              <br>           
+              <span>2. Click <img src="/static/images/trutops/align-button.jpg" style="width: 10%"> and then "Distribution"</span>
+              <br>
+              <span class="mx-auto" width="100%;""><img src="/static/images/trutops/before-alignment.jpg"> --> <img src="/static/images/trutops/after-alignment.jpg"></span>
+              <span>3. Alternatively, if you have parts that are odd sizes, you can highlight sections of parts and click distrubte (veritcally, horizontally, or normal) to try aligning</span>
+              <br>
+              <img src="/static/images/trutops/alignment-options.jpg" style="width: 25%;" class="mx-auto lazy">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure20">
+            <div class="card card-body">
+              <i><b>Select Technology Table: </b></i>
+              <br>           
+              <span>1. Click the diagonal arrow under the "Loading" label on the control pane </span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/click-tech-table.jpg" style="width:80%;">
+              <br>
+              <br>
+              <span>2. Click the available option and click "OK"</span>
+              <br>
+              <img src="/static/images/trutops/nesting-tech-table.jpg" style="width: 80%;" class="mx-auto lazy">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure24">
+            <div class="card card-body">
+              <i><b>Nesting (Optimization Tab) - Adjust Sequencing:</b></i>
+              <br>
+              <span>1. Click <img src="/static/images/trutops/beginning-button.jpg" style="width: 10%;"> and then "Part"
+              <br>
+              <span class="mx-auto"><img src="/static/images/trutops/beginning.jpg" style="width: 55%;"> --> <img src="/static/images/trutops/beginning-part.jpg" style="width: 25%;"></span>
+              <br>
+              <br>
+              <span>2. Click on the part you want to cut first</span>
+              <br>
+              <span>3. Repeat the first step, only pressing the <img src="/static/images/trutops/after-button.jpg" style="width: 10%"> button instead</span>
+              <br>
+              <span>4. Click on the first part you chose previously, and then select the other parts on the nest in the order you want them cut</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure25">
+            <div class="card card-body">
+              <i><b>Nesting (Technology Tab) - Add Joints:</b></i>
+              <br>
+              <span><b>*If joints were added during single part creation, skip this step*</b></span>
+              <br>
+              <span>1. Click the <img src="/static/images/trutops/microjoint-button.jpg" style="width:5%"> button</span>
+              <br>
+              <span>2. Click the <img src="/static/images/trutops/microjoint box.jpg" style="width: 5%;"> button that pops up to the left of the part</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/click-microjoint-side.jpg" style="width:80%;">
+              <br>
+              <span>3. In the microjoint box, select the "At contour end" option, verify the length of the joint, and click "OK"</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/set microjoint.jpg">
+              <br>
+              <span>4. Click on the outer contour of the part and any inner contours to create the first joint. <i>Note: You can only do this on the most recent joint created</i></span>
+              <br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;4.1. If you need to move the joint that was created, click the <img src="/static/images/trutops/approaching-button.jpg" style="width:5%;"> button</span>
+              <br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;4.2. Click the approaching button that pops up to the left of the part</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/approaching.jpg" style="width:80%;" >
+              <br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;4.3 Select the new location on the part to move the previously created microjoint</span>
+              <br>
+              <span>5. Now that the first joint is created, repeat steps 1, 2, and 3, but instead of "At contour end", choose the option "Random" and click "OK" </span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/trutops/set microjoint.jpg">
+              <br>
+              <span>6. Click on the part where you want the reminaing joints</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure26">
+            <div class="card card-body">
+              <i><b>Nesting (Technology Tab) - Create Sheet Cuts:</b></i>
+              <br>
+              <span>1. Click the scrap cut button. <b><i>Not the button that says "Scrap", but the one next to it on the top</i></b></span>
+              <br>
+              <img src="/static/images/trutops/click-scrap-cut-button.jpg" style="width: 80%" class="mx-auto lazy">
+              <br><br>
+              <span>2. Click on vertical sheet cut button</span>
+              <br><br>
+              <img src="/static/images/trutops/click-vertical-sheet-cut.jpg" style="width: 80%;" class="mx-auto lazy">
+              <br><br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<b><i>If the vertical sheet button is greyed out:</i></b></span>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Click out of nest, and then double click nest to go back in. Repeat steps 1 and 2</span>
+              <img src="/static/images/trutops/exit-nest-sheet-cut.jpg" style="width: 80%;" class="mx-auto lazy">
+              <br><br>
+              <span>3. On the pop-up box, click "OK"</span>
+              <br>
+              <img src="/static/images/trutops/sheet-cut-box.jpg" style="width: 45%;" class="mx-auto lazy">
+              <br>
+              <br>
+              <span>4. In the input box that pops up, type in the X-coordinates you want the sheet cut. For a sheet 120" in X, a sheet cut at 40 and 80 would be best, but might need adjusted slightly to make sure sheet cut isn't too close to vertical edges of the parts.</span>
+              <br>
+              <br>
+              <span class="mx-auto"><img src="/static/images/trutops/input-sheetcut.jpg" style="width:45%;"">--> <img src="/static/images/trutops/sheet cuts were added.jpg" style="width: 45%"></span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure27">
+            <div class="card card-body">
+              <i><b>Nesting (Nesting Tab) - Set Auto Loader Suction:</b></i>
+              <br>
+              <span>1. Click <img src="/static/images/trutops/set-suction-button.jpg" style="width: 7%;"></span>
+              <br><br>
+              <img src="/static/images/trutops/click-set-suction.jpg" style="width: 80%;" class="mx-auto lazy">
+              <br>
+              <br>
+              <span>2. Select all of the circles that are half or more on the nest to ensure proper automation loading. The cirlces will turn from blue to pink when they are selected</span>
+              <br>
+              <br>
+              <span>3. Confirm your selection by pressing the checkmark button on the left</span>
+              <br>
+              <br>
+              <img src="/static/images/trutops/confirm-suction.jpg" style="width:80%;" class="mx-auto lazy">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure28">
+            <div class="card card-body">
+              <i><b>Nesting (Start Tab) - Verify NC Parameters:</b></i>
+              <br>
+              <span>1. Click on the dropdown arrow under "Create NC" <img src="/static/images/trutops/create-nc-button.jpg" style="width: 5%"></span>
+              <br>
+              <br>
+              <img src="/static/images/trutops/click-nc-params.jpg" style="width: 80%;" class="mx-auto lazy">
+              <br>
+              <br>
+              <span>2. In the NC Parameters box, click on the Sequence tab and make sure that "Vaporize all" is selected for Stainless Steel, or "No vaporizing" for other material </span>
+              <br>
+              <br>
+              <img src="/static/images/trutops/nc-params-sequence.jpg" style="width: 60%;" class="mx-auto lazy">
+              <br>
+              <br>
+              <span>3. In the NC Parameters box, click on the "Sheet Position" tab and make sure that "With height regulation" is selected. If running in automation, verify that "Pallet Change before MP" is selected, otherwise "Manual" </span>
+              <br>
+              <br>
+              <img src="/static/images/trutops/create nc sheet position.jpg" style="width: 60%;" class="mx-auto lazy">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure29">
+            <div class="card card-body">
+              <i><b>Nesting (Start Tab) - Create NC and Save:</b></i>
+              <br>
+              <span>1. Click on <img src="/static/images/trutops/create-nc-button.jpg" style="width: 5%;">  <b><i>*Not the dropdown arrow*</i></b></span>
+              <br>
+              <br>
+              <span>2. After the NC is generated, click the <img src="/static/images/trutops/save-button-floppy.jpg" style="width: 5%;"> button in the top left of the screen, then exit this screen by clicking the "x" in the top right of the window</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure30">
+            <div class="card card-body">
+              <i><b>Release Program:</b></i>
+              <br>
+              <span>1. Click <img src="/static/images/trutops/release-butotn.png" style="width: 5%;"></span>
+              <br>
+              <br>
+              <img src="/static/images/trutops/click-release.jpg" class="mx-auto lazy" style="width: 80%;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <script src="/static/hubs/sop.js"></script>
+
+{% endblock %}

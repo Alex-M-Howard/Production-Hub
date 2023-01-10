@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+{% block title %} Error Log {% endblock %}
+{% block content %}
+<h1 class="text-center my-4">Error Log</h1>
+<div class="container my-5">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <nav class="nav nav-pills nav-fill">
+                <a class="nav-link mat-butts mat-butts-active mx-1" href="#">LASERS</a>
+                <a class="nav-link mat-butts mx-1" href="#">FORMING</a>
+                <a class="nav-link mat-butts mx-1" href="#">OTHER</a>
+            </nav>
+        </div>
+        <div class="col-1"></div>
+    </div>
+</div>
+
+
+<div class="container">
+  <div class="row my-5">
+    <div class="col-12">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table my-3 table-hover">
+              <thead>
+                <tr>
+                  <th scope="col" class="text-center"></th>
+                  <th scope="col" class="text-center">Nest/Part Number</th>
+                  <th scope="col" class="text-center">Machine</th>
+                  <th scope="col" class="text-center">Description</th>
+                  <th scope="col" class="text-center">Root Cause</th>
+                  <th scope="col" class="text-center">Notes</th>
+                  <th scope="col" class="text-center">Logged By</th>
+                  <th scope="col" class="text-center">Date</th>
+                  <th scope="col" class="text-center"> <a href="{{url_for('errors.add_to_errors')}}"><i class="fa-solid fa-square-plus"></i></a></th>
+                </tr>
+              </thead>
+              <tbody id="results">
+                {% if errors %}
+                    {% for error in errors %}
+                        {% if 'Laser' in error.machine %}
+                            <tr>
+                                <td class="text-center align-middle"><a href="{{url_for('errors.edit_error', error_id=error.id)}}"><i class="fa-solid fa-pencil"></i></a></td>
+                                <td class="text-center align-middle">{{ error.part_number}}</td>
+                                <td class="text-center align-middle">{{ error.machine}}</td>
+                                <td class="text-center align-middle">{{ error.description}}</td>
+                                <td class="text-center align-middle">{{ error.root_cause}}</td>
+                                <td class="text-center align-middle">{{ error.notes}}</td>
+                                <td class="text-center align-middle">{{ error.name}}</td>
+                                <td class="text-center align-middle">{{ error.date}}</td>
+                                <td class="text-center align-middle"><a href="{{url_for('errors.show_error', id=error.id)}}"><i class="fa-solid fa-circle-info"></i></a></td>
+                            </tr>
+                        {% endif %}
+                    {% endfor %}
+                {% endif %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="/static/production/error-log.js"></script>
+    <script src="/static/hubs/production.js"></script>
+
+{% endblock %}

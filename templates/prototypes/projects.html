@@ -1,0 +1,105 @@
+{% extends 'base.html' %}
+{% block title %}Projects{% endblock %}
+
+{% block content %}
+<div class="container my-4" id="alerts">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class='flashes'>
+          {% for category, message in messages %}
+            <div class="alert alert-{{category}} " id="flashed">
+              {{ message }}
+            </div>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+<div class="container mb-5">
+<div class="row">
+  <div class="col-4"></div>
+  <div class="col-4">
+        
+  </div>
+  <div class="col-4">
+    <a href="{{ url_for('proto.create_project') }}"><button class="btn btn-primary mx-5">Create New Project</button></a>
+  </div>
+</div>
+</div>
+
+
+<div class="container my-3">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <nav class="nav nav-pills nav-fill">
+                    <a class="nav-link mat-butts mat-butts-active mx-1" href="#">Incomplete</a>
+                    <a class="nav-link mat-butts mx-1" href="#">Completed</a>
+                </nav>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+  {% if projects %}
+  <div class="table-responsive-lg" style="height: 50vh;">
+  <table class="table mx-2 my-5 table-hover">
+          <thead>
+            <tr>
+            <th scope="col" class="text-center">Project Name</th>
+            <th scope="col" class="text-center">Created</th>
+            <th scope="col" class="text-center">Last Updated</th>
+            <th scope="col" class="text-center">By</th>
+            <th scope="col" class="text-center">Owner</th>
+            <th scope="col" class="text-center">Type</th>
+            <th scope="col" class="text-center">Product Line</th>
+            <th scope="col" class="text-center">ECO</th>
+            <th scope="col" class="text-center">Projected Date</th>
+            <th scope="col" class="text-center">Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+    {% for project in projects %}
+          {% if project.status == 'Incomplete' %}
+            <tr>
+              <th scope="row" class="text-center"><a href="{{url_for('proto.show_project', project_name=project.project_name)}}">{{ project.project_name}}</a></td>
+              {% if project.created %}
+                  <td class="text-center">{{ project.created.strftime('%m-%d-%Y')}}</td>    
+              {% else %}
+                  <td class="text-center">{{ project.created}}</td>    
+              {% endif %}
+              {% if project.updated %}
+                  <td class="text-center">{{ project.updated.strftime('%m-%d-%Y')}}</td>    
+              {% else %}
+                  <td class="text-center">{{ project.updated}}</td>    
+              {% endif %}
+              <td class="text-center">{{ project.updated_by}}</td>
+              <td class="text-center">{{ project.user_name}}</td>
+              <td class="text-center">{{ project.project_type}}</td>
+              <td class="text-center">{{ project.product_line}}</td>
+              <td class="text-center">{{ project.eco}}</td>
+              {% if project.date_requested %}
+                  <td class="text-center">{{ project.date_requested.strftime('%m-%d-%Y')}}</td>    
+              {% else %}
+                  <td class="text-center">{{ project.date_requested}}</td>    
+              {% endif %}
+              <td class="text-center">{{ project.notes}}</td>
+            </tr>
+          {% endif %}
+    {% endfor %}
+          </tbody>
+        </table>
+        </div>
+  {% endif %}
+
+
+      
+    <script src="/static/prototypes/projects.js"></script>
+{% endblock %}

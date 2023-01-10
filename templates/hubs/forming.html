@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+{% block title %} Forming Hub {% endblock %}
+{% block content %}
+  <img src="https://www.salvagnini.com/uploads/slide_P2L_2019.png" class="mx-auto d-block my-2" style="height: 150px;">
+
+<div class="container">
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                User Guide
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Amada Bend Operation</h5>
+                <p class="card-text">Information for creating forming program for Amada Bend programming software</p>
+                <a href="{{url_for('forming.forming_bend_operation')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+    
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                User Guide
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Amada Bend Parameters</h5>
+                <p class="card-text">Guide to parameters for Amada forming machine</p>
+                <a href="{{url_for('forming.forming_bend_params')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+    
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                User Guide
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Amada Bend User's Guide</h5>
+                <p class="card-text">Amada forming guide for the operator</p>
+                <a href="{{url_for('forming.forming_bend_users')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+  
+
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                User Guide
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Data Explorer</h5>
+                <p class="card-text">Amada's database for part and programming data</p>
+                <a href="{{url_for('forming.data_explorer')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                User Guide
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Material Explorer</h5>
+                <p class="card-text">Amada's database for adding and managing materials</p>
+                <a href="{{url_for('forming.material_explorer')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                User Guide
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Parameter Explorer</h5>
+                <p class="card-text">Amada's database for all parameters related to the 3i software programming suite</p>
+                <a href="{{url_for('forming.parameter_explorer')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                User Guide
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Salvagnini User's Guide</h5>
+                <p class="card-text">Technical operation and user's manual</p>
+                <a href="{{url_for('forming.forming_salvagnini_guide')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+    
+
+</div>
+  <script src="/static/hubs/sop.js"></script>
+ 
+{% endblock %}

@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block title %} Trumpf Laser Hub {% endblock %}
+{% block content %}
+  <img class="mx-auto d-block my-2" style="height: 150px;" src="https://www.trumpf.com/filestorage/TRUMPF_US/_processed_/7/1/csm_TruLaser_2030_fiber_machine_732fa9f6ba.jpg" alt="Trumpf Laser">
+
+<div class="container">
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                SOP
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Tru-Tops</h5>
+                <p class="card-text">Information for creating nesting program for Trumpf Laser</p>
+                <a href="{{url_for('trumpf.trumpf_trutops')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                SOP
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Offline Program Loading</h5>
+                <p class="card-text">Information for loading Trumpf Laser without the network</p>
+                <a href="{{url_for('trumpf.trumpf_offline_loading')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+    <div class="row my-3">
+        <div class="col-xl-1"></div>
+        <div class="col-xl-10">
+            <div class="card">
+            <div class="card-header">
+                Data Explorer
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Data Explorer</h5>
+                <p class="card-text">Recreation of Amada's database for viewing parts and programs for the Trumpf nests</p>
+                <a href="{{url_for('general.data_explorer')}}" class="btn btn-primary">Go</a>
+            </div>
+            </div>
+        </div>
+        <div class="col-xl-1"></div>
+    </div>
+
+
+
+
+</div>
+  <script src="/static/hubs/sop.js"></script>
+ 
+{% endblock %}

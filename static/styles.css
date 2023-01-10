@@ -1,0 +1,503 @@
+.active{
+    font-weight: 600;
+    color: goldenrod !important
+}
+
+.hidden{
+    display: none;
+}
+
+.box{
+    box-shadow: 1px 1px #000;
+}
+
+.navbar{
+    background-color: #002856;
+}
+
+.nav-link {
+    
+    color: #FFF;
+}
+.nav-link:hover {
+    
+    color: goldenrod;
+}
+
+.navbar-nav .nav-link.active{
+    color: #FFF;
+}
+
+#bluestar-logo {
+    height: 60px;
+    width: auto !important;
+    bottom: 0px;
+}
+
+#dropdown{
+    color: #FFF;
+}
+
+#nav-drop{
+    color: #000;
+}
+
+
+.dropdown-menu li {
+position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+display: none;
+position: absolute;
+left: 100%;
+top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+right: 100%;
+left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+display: block;
+}
+.dropdown-item:hover{
+    background-color: #1c79e2;
+    
+}
+
+#dropdown:hover{
+    color: goldenrod;
+}
+#ECO-excel{
+    background-color: #002856;
+    color: white;
+    font-family: "Trade-Gothic", "Open Sans", Helvetica, Arial, sans-serif;
+    width: 100%;
+    text-align: center;
+    display: block;
+    margin: 7px auto 0 auto;
+    padding: 15px 0;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+
+
+
+#submit-request{
+    background-color: #002856;
+    color: white;
+    width: 20%;
+}
+
+#eco-sheet{
+    background-color: #002856;
+    color: white;
+}
+
+.mat-butts{
+    color: #000 !important;
+    border: 1px solid #002856 !important;
+
+    
+}
+
+.mat-butts:active{
+    color: #FFF !important;
+    background-color: #002856 !important;
+}
+
+.mat-butts-active{
+    color: #FFF !important;
+    background-color: #002856 !important;
+}
+
+.btn-primary{
+    background-color: #002856 !important;
+    color: #FFF !important;
+}
+
+#hamburger{
+   color: #FFF !important;
+}
+
+#hamburger:active{
+  color: goldenrod !important;
+}
+
+#hamburger:hover{
+  color: goldenrod !important;
+}
+
+.badge{
+    background-color: rgb(238, 246, 122) !important;
+    color: #000;
+}
+
+.pending{
+    background-color: rgb(238, 246, 122) !important;
+}
+
+.obsolete{
+    background-color:rgb(247, 120, 120) !important;
+    color:#000 !important;
+}
+
+
+
+
+
+/* FROM PROG-STYLES */
+
+
+img{
+  width: 30vw;
+}
+
+.logo{
+  width: 2vw;
+}
+
+
+#instr-pic{
+  width: 45vw;
+}
+
+#instr-pic2{
+  width: 35vh;
+}
+
+#import{
+  width:8vw;
+}
+
+#colors{
+  display: flex;
+  flex-direction: row;
+}
+
+#parts-screen, #geo-screen{
+  width: 50vw;
+}
+
+#cutting-programs{
+  width:60vw;
+}
+
+#process-all{
+  width: 5vw;
+}
+
+#approaching{
+  width: 20vw;
+}
+
+#microjoint{
+  width: 30vw;
+}
+
+#three-i-logo{
+  width: 50px;
+}
+#open-blank-cam{
+  width: 50%;
+}
+
+#open-part{
+padding: 10px;
+}
+#step-1{
+  display: inline;
+}
+
+#open-programs-pane{
+  width: 20%;
+}
+
+#mat-name-icon{
+  width: 20%;
+}
+
+#open-button{
+  width:8%;
+}
+
+#delete-part{
+  width:70%;
+}
+
+#mat-icon{
+  width: 30%;
+}
+
+#scrap-cut{
+  width:13%;
+}
+
+#delete-scrap{
+  width: 70%;
+}
+
+#re-auto-assign-button{
+  width: 7%;
+}
+
+#sheet-edit-button{
+  width:5%;
+}
+
+#control-key-copy{
+  width:70%;
+}
+
+#nest-populated{
+  width:70%;
+}
+
+#part-editor-screen{
+  width: 70%;
+}
+
+#auto-assign-done{
+  width: 70%;
+}
+
+#part-plane{
+  width: 70%;
+}
+
+#click-material{
+  width: 70%;
+}
+
+#part-dragged{
+  width: 70%;
+}
+
+#click-layout-condition{
+  width: 70%;
+}
+
+#process-setup-click{
+  width: 70%;
+}
+
+#wider-spacing-button{
+  width: 7%;
+}
+
+#grey-spacing{
+  width: 70%;
+}
+
+#click-scrap-cuts{
+  width: 70%;
+}
+
+#add-tabs{
+  width: 70%;
+}
+
+#scrap-cut-screen{
+  width: 70%;
+}
+
+#scrap-cut-apply{
+  width: 70%;
+}
+
+#edit-sequence{
+  width: 7%;
+}
+
+#sequence-screen{
+  width: 70%;
+}
+
+#consecutive-instruction{
+  width: 70%;
+}
+
+#nc-create{
+  width: 7%;
+}
+
+#nc-create-dialog{
+  width: 25%;
+}
+
+#error{
+  width: 35%;
+}
+
+#save-nest{
+  width: 70%;
+}
+
+#save-pdf{
+  width: 50%;
+}
+
+#process-setup-button{
+  width: 5%;
+}
+#layout-button{
+  width: 5%;
+}
+
+.guide{
+    height:100vh;
+    width:100%;
+    }
+    
+.btn.btn-primary{
+  background-color: #002856;
+  color: white;
+
+}
+
+
+/* FROM NESTING-STYLES */
+#logo{
+    height: 200px;
+}
+
+.form-control{
+    border: 1px black solid;
+}
+
+#nestexplorer{
+    width: auto;
+    height: 250px;
+}
+
+.btn.btn-primary{
+  background-color: #002856;
+  color: white;
+
+}
+
+.request-success{
+    background-color: #48c188;
+  }
+
+.request-danger{
+    background-color: #f46e7b;
+}
+
+
+
+body{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+#sticky-footer{
+  display: flex;
+  background-color: #002856;
+  color: white;
+  height: auto;
+  margin-top: auto;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+}
+
+.explorer-buttons
+{
+    color: #000 !important;
+    border: 1px solid #002856 !important;
+
+    
+}
+
+.explorer-buttons
+:active{
+    color: #FFF !important;
+    background-color: #002856 !important;
+}
+
+.explorer-buttons-active{
+    color: #FFF !important;
+    background-color: #002856 !important;
+}
+
+
+#user-menu{
+  color: goldenrod;
+}
+
+#hamburger-button:focus{
+  color: #002856;
+}
+
+th{
+  font-weight: 500;
+}
+
+#trumpf-size_x-filter{
+  min-width: 60px;
+}
+
+#trumpf-size_y-filter{
+  min-width: 60px;
+}
+
+#trumpf-gauge-filter{
+  min-width: 60px;
+}
+
+#trumpf-material-filter{
+  min-width: 60px;
+}
+
+#amada-size_x-filter{
+  min-width: 60px;
+}
+
+#amada-size_y-filter{
+  min-width: 60px;
+}
+
+#amada-gauge-filter{
+  min-width: 60px;
+}
+
+#amada-material-filter{
+  min-width: 60px;
+}
+
+#punch-size_x-filter{
+  min-width: 60px;
+}
+
+#punch-size_y-filter{
+  min-width: 60px;
+}
+
+#punch-gauge-filter{
+  min-width: 60px;
+}
+
+#punch-material-filter{
+  min-width: 60px;
+}
+
+
+#processes {
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#product_line{
+  text-decoration: none;
+  list-style-type: none;
+}
+
+#process-checkmark{
+  font-size: 1.5rem;
+  color: #0ac26c;
+}
+
+.process-complete{
+  background-color: #82ecbb;
+}

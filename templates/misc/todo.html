@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% block title %}TODOs{% endblock %}
+{% block content %}
+    <h1 class="text-center my-5">Still To-Do</h1>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <ul>
+                    <li style="text-decoration:line-through">Transfer Work done on Amada table to Trumpf</li>
+                    <li style="text-decoration:line-through">Transfer Work done on Amada table to Punch</li>
+                    <li style="text-decoration:line-through">Style to be more appealing than a geocities site</li>
+                    <li style="text-decoration:line-through">Create home landing page so that people don't sit through loading of page they won't use</li>
+                    <li style="text-decoration:line-through">Add Amada SOPs</li>
+                    <li style="text-decoration:line-through">Add Trumpf SOPs</li>
+                    <li style="text-decoration:line-through">Add Punch SOPs</li>
+                    <li style="text-decoration:line-through">Add Forming SOPs</li>
+                    <li style="text-decoration:line-through">Add Nesting Calculator</li>
+                    <li style="text-decoration:line-through">Reduce Python API Data-Explorer Data call time  ~1.2 seconds -> ~.005 seconds</li>
+                    <li style="text-decoration:line-through">Reduce Python API ECO Data call time  ~1.4 seconds -> ~.03 seconds</li>
+                    <li style="text-decoration:line-through">Reduce JavaScript API ECO Data call time  ~1.2 seconds -> ~.13 (Because of Python gains)</li>
+                    <li style="text-decoration:line-through">Reduce JavaScript createTableFunction  ~.8 seconds -> ~.2 (Total time for page load ~.5seconds)</li>
+                    <li style="text-decoration:line-through">Combine JS filtering in smaller function</li>
+                    <li style="text-decoration:line-through">Add viewable ECO database</li>
+                    <li style="text-decoration:line-through">Add part program status to home page</li>
+                    <li style="text-decoration:line-through">Add parts explorer</li>
+                    <li style="text-decoration:line-through">Add blanks inventory</li>
+                    <li style="text-decoration:line-through">Create watchdog for any changes to ECO data in programming folder</li>
+                    <li style="text-decoration:line-through">Add something to visualize obsolete parts in ECO viewer</li>
+                    <li style="text-decoration:line-through">Jaron -> Add identifier for pending eco parts in incomplete programs view</li>
+                    <li style="text-decoration:line-through">Add hamburger menu when website sized down</li>
+                    <li style="text-decoration:line-through">Add Bluestar logo as brand instead of absolute image</li>
+                    <li style="text-decoration:line-through">Added preliminary prototype log</li>
+                </ul>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    <h1 class="text-center my-5">User Requests</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <form action="/todo" method="post">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-2">
+                                <input class="form-control" type="text" placeholder="Name" name="name">
+                            </div>
+                            <div class="col-10">
+                                <input class="form-control" type="text" placeholder="Bug? Suggestion? Let me know!" name="request">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary my-3" id="submit-request">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+    <div class="container my-3">
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <ul>
+                    {% if requests%}
+                        {% for request in requests %}
+                            <li>{{ request.user }} : {{ request.request }}</li>
+                        {% endfor %}
+                    {% endif %}
+                </ul>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </div>
+{% endblock %}

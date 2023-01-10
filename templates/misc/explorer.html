@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+{% block title %}Data Explorer{% endblock %}
+{% block content %}
+
+<div class="container my-3">
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <nav class="nav nav-pills nav-fill" id="explorer-buttons"></nav>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+
+<div class="trumpf hidden">
+  <table class="table table-responsive table-striped table-bordered table-hover table-sm my-4 trumpf hidden">
+    <thead class="table-light">
+      <tr>
+        <th scope="col" class="text-center align-middle">Nest</th>
+        <th scope="col" class="text-center align-middle">Nested With</th>
+        <th scope="col" class="text-center align-middle">Gauge</th>
+        <th scope="col" class="text-center align-middle">Material</th>
+        <th scope="col" class="text-center align-middle">Size X</th>
+        <th scope="col" class="text-center align-middle">Size Y</th>
+        <th scope="col" class="text-center align-middle">Scrap</th>
+        <th scope="col" class="text-center align-middle">Time (Min)</th>
+        <th scope="col" class="text-center align-middle">Date</th>
+      </tr>
+      <tr>
+        <td><input type="text" class="box form-control trumpf-filter" id="trumpf-nest-filter"></td>
+        <td><input type="text" class="box form-control trumpf-filter" id="trumpf-nested_with-filter"></td>
+        <td><input type="text" class="box form-control trumpf-filter" id="trumpf-gauge-filter"></td>
+        <td><input type="text" class="box form-control trumpf-filter" id="trumpf-material-filter"></td>
+        <td><input type="text" class="box form-control trumpf-filter" id="trumpf-size_x-filter"></td>
+        <td><input type="text" class="box form-control trumpf-filter" id="trumpf-size_y-filter"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody class="results" id="trumpf-results"></tbody>
+  </table>
+
+</div>
+
+<div class="amada hidden">
+  <table class="table table-responsive table-striped table-bordered table-hover table-sm my-4 amada hidden">
+    <thead class="table-light"> 
+      <tr>
+        <th scope="col" class="text-center align-middle">Nest</th>
+        <th scope="col" class="text-center align-middle">Nested With</th>
+        <th scope="col" class="text-center align-middle">Gauge</th>
+        <th scope="col" class="text-center align-middle">Material</th>
+        <th scope="col" class="text-center align-middle">Size X</th>
+        <th scope="col" class="text-center align-middle">Size Y</th>
+        <th scope="col" class="text-center align-middle">Scrap</th>
+        <th scope="col" class="text-center align-middle">Time (Min)</th>
+        <th scope="col" class="text-center align-middle">Date</th>
+      </tr>
+      <tr>
+        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control amada-filter" id="amada-nest-filter"></td>
+        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control amada-filter" id="amada-nested_with-filter"></td>
+        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control amada-filter" id="amada-gauge-filter"></td>
+        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control amada-filter" id="amada-material-filter"></td>
+        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control amada-filter" id="amada-size_x-filter"></td>
+        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control amada-filter" id="amada-size_y-filter"></td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </thead>
+    <tbody class="results" id="amada-results"></tbody>
+  </table>
+</div>
+
+<div class="punch hidden">
+  <table class="table table-responsive table-striped table-bordered table-hover table-sm my-4 punch hidden">
+    <thead class="table-light">
+    <tr>
+      <th scope="col" class="text-center align-middle">Nest</th>
+      <th scope="col" class="text-center align-middle">Nested With</th>
+      <th scope="col" class="text-center align-middle">Gauge</th>
+      <th scope="col" class="text-center align-middle">Material</th>
+      <th scope="col" class="text-center align-middle">Size X</th>
+      <th scope="col" class="text-center align-middle">Size Y</th>
+      <th scope="col" class="text-center align-middle">Forming?</th>
+      <th scope="col" class="text-center align-middle">Workholding Change?</th>
+      <th scope="col" class="text-center align-middle">Date</th>
+    </tr>
+    <tr>
+      <td><input type="text" class="box form-control punch-filter" id="punch-nest-filter"></td>
+      <td><input type="text" class="box form-control punch-filter" id="punch-nested_with-filter"></td>
+      <td><input type="text" class="box form-control punch-filter" id="punch-gauge-filter"></td>
+      <td><input type="text" class="box form-control punch-filter" id="punch-material-filter"></td>
+      <td><input type="text" class="box form-control punch-filter" id="punch-size_x-filter"></td>
+      <td><input type="text" class="box form-control punch-filter" id="punch-size_y-filter"></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    </thead>
+    <tbody class="results" id="punch-results">
+    </tbody>
+  </table>
+</div>
+
+<div class="forming hidden">
+  <h2 class="text-center">TO BE COMPLETED</h2>
+</div>
+
+
+<h1 class="text-center my-auto" id="loading">
+  Loading Data... <br> <br>
+  <i class="fa-solid fa-spinner fa-pulse"></i>
+</h1>
+  <script src="/static/production/sort.js"></script>
+  <script src="/static/data_explorers/explorer.js"></script>
+  <script src="/static/hubs/dataexplorer.js"></script>
+{% endblock %}

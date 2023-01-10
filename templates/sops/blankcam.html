@@ -1,0 +1,347 @@
+{% extends 'base.html' %}
+{% block title %}BlankCAM SOP{% endblock %}
+{% block content %}
+  <h1 class="text-center">
+    <img src="/static/images/logo.jpg" class="logo">
+    Blank CAM
+    <img src="/static/images/logo.jpg" class="logo">
+  </h1> 
+  <img  class="rounded mx-auto d-block my-5" src="https://www.amada.com/america/PRODUCTS%20IMAGES/ensisseries-hires.jpg" alt="Amada Laser">
+  <div class="row g-3" style="width:100vw;">
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <p class="text-center">
+        <a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Purpose</a>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Scope</button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Responsibility</button>
+        <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Procedure</button>
+      </p>
+      <div class="collapse multi-collapse" id="multiCollapseExample1">
+        <div class="card card-body">
+          <i><b>Purpose: </b></i>Document the steps needed to program a part using Amada's Bend CAM software
+        </div>
+      </div>
+      <div class="collapse multi-collapse" id="multiCollapseExample2">
+        <div class="card card-body">
+          <i><b>Scope: </b></i>Applies to new AND revised parts to be run on the Amada laser
+        </div>
+      </div>
+      <div class="collapse multi-collapse" id="multiCollapseExample3">
+        <div class="card card-body">
+          <i><b>Responsibility: </b></i>
+          Engineering: Notify programming/fabrictation of the new or revised part and include a PDF drawing and DXF file in the appropriate folders
+          <br>
+          <br>
+          Programmer: Revise/release the part for fabrictation to run on the Amada laser
+        </div>
+      </div>
+      <div class="collapse multi-collapse" id="multiCollapseExample4">
+        <div class="card card-body">
+          <i><b>Procedure: </b></i>
+          <br>
+          <p class="text-center">
+            <div class="container text-center">
+                <div class="row">
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure5" aria-expanded="false" aria-controls="collapse-procedure5">Open Blank CAM</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure7" aria-expanded="false" aria-controls="collapse-procedure7">Open Previous Nest</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                  <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure8" aria-expanded="false" aria-controls="collapse-procedure8">Delete Parts on Previous Nest</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure9" aria-expanded="false" aria-controls="collapse-procedure9">Delete Previous Scrap Cuts</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure10" aria-expanded="false" aria-controls="collapse-procedure10">Update Process Setup</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure11" aria-expanded="false" aria-controls="collapse-procedure11">Verify Margins and Spacing</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure12" aria-expanded="false" aria-controls="collapse-procedure12">Import Part DXF</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure13" aria-expanded="false" aria-controls="collapse-procedure13">Drag Part to Nest</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1 align-middle">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure14" aria-expanded="false" aria-controls="collapse-procedure14">Process Part</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure15" aria-expanded="false" aria-controls="collapse-procedure15">Populate Nest</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure16" aria-expanded="false" aria-controls="collapse-procedure16">Auto-Space Parts</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure17" aria-expanded="false" aria-controls="collapse-procedure17">Add Scrap Cuts</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure18" aria-expanded="false" aria-controls="collapse-procedure18">Apply Nest Sequencing</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure19" aria-expanded="false" aria-controls="collapse-procedure19">Create NC</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-procedure20" aria-expanded="false" aria-controls="collapse-procedure10">Save Setup Sheet</button>
+                  </div>
+                  <div class="col-md-2 d-grid d-block amada-buttons mx-1 my-1">
+                    <button class="btn btn-primary btn-lg" type="button" data-bs-toggle="collapse" data-bs-target=".multi-collapse2" aria-expanded="false" aria-controls="collapse-procedure5 collapse-procedure6 collapse-procedure7 collapse-procedure8 collapse-procedure9 collapse-procedure10 collapse-procedure11 collapse-procedure12 collapse-procedure13 collapse-procedure14 collapse-procedure15 collapse-procedure16 collapse-procedure17 collapse-procedure18 collapse-procedure19 collapse-procedure20">Show all</button>
+                  </div>
+                </div>  
+            </div>
+          </p>
+          <div class="collapse multi-collapse2 mx-2 my-2" id="collapse-procedure5">
+            <div class="card card-body" id="step-1">
+              <i><b>Open Blank CAM: </b></i>
+              <br>
+              <br>    
+              <span>1. Click the <img class="mx-auto lazy" src="/static/images/blankcam/3i logo.jpg" id="three-i-logo""> button in the top left of the screen, and click open</span>
+              <br>
+              <br>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Blank cam open.png" id="open-blank-cam">
+              <img class="mx-auto lazy" src="/static/images/blankcam/open part.png" id="open-part">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2  mx-2 my-2" id="collapse-procedure7">
+            <div class="card card-body" id="step-2">
+              <i><b>Open Previous Nest: </b></i>
+              <br>
+              <br>
+              <span>1. Verify you have the "Programs" directory selected in the left navigation pane</span>
+              <br>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/OpenProgramsPane.png" id="open-programs-pane">
+              <br>
+              <br>
+              <span>2. With the material your program needs in mind, look to the MaterialName column and find the material that matches your part
+              <br>
+              <span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>NOTE</i>: You can filter by gauge and material by hovering over the "MaterialName" column and clicking on the filter arrow</span>
+              </span>
+              <br>
+              <span class="mx-auto" id="step-2">
+                
+                <img class="mx-auto lazy" src="/static/images/blankcam/material-name-filter.png" id="mat-name-filter">
+                <img class="mx-auto lazy" src="/static/images/blankcam/material-name-filter-icon.png" id="mat-name-icon">
+                <img class="mx-auto lazy" src="/static/images/blankcam/Find the material you're looking for .png" id="mat-icon">
+              </span>
+              <br>
+              <span>3. Click on any program you find that has the correct material and guage you need, and click &nbsp;<img class="mx-auto lazy"  id="open-button" src="/static/images/blankcam/open-button.png"></span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2  mx-2 my-2" id="collapse-procedure8">
+            <div class="card card-body">
+              <i><b>Delete Parts on Previous Nest: </b></i>
+              <br>
+              <br> 
+              <span>1. With your mouse out of bounds, click and drag across the screen, highlighting all of the parts</span>
+              <br>
+              <span>2. With the parts highlighted, right-click your mouse and select "Delete Part"</span>    
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Highlight parts and click delete part.png" id="delete-part">
+            </div>
+          </div>
+          <div class="collapse multi-collapse2  mx-2 my-2" id="collapse-procedure9">
+            <div class="card card-body">
+              <i><b>Delete Previous Scrap Cuts: </b></i>    
+                <span>1. Click on the "Scrap Cuts" button</span> 
+                <span>2. Click the "Delete All" button</span> 
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/Delete all scrap cuts.png" id="delete-scrap">
+                <br>
+                <span>3. Click the "Finish" button</span> 
+            </div>
+          </div>
+          <div class="collapse multi-collapse2  mx-2 my-2" id="collapse-procedure10">
+            <div class="card card-body">
+              <i><b>Update Process Setup: </b></i>    
+                <span>1. Click on the <img class="mx-auto lazy" src="/static/images/blankcam/process-setup-button.png" id="process-setup-button"> button on the left of the control pane</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/process-setup-click.png" id="process-setup-click">
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/Process Info.png" id="process-info" >
+                <br>
+                <span>2. Change the sheet name to "N[PART #]". <i>ex. N101507</i></span>
+                <span>3. In the comment input, enter the tab size and your initials</span>
+                <span>4. Change the quantity of sheets, if needed</span>
+                <span>5. Change the sheet size, if needed</span>
+                <span>&nbsp;&nbsp;&nbsp;&nbsp;To change sheet size, click the "..." button next to the size box</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/change-sheet-size.png" id="change-sheet-size" >
+                <span>6. Click "OK"</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2  mx-2 my-2" id="collapse-procedure11">
+            <div class="card card-body">
+              <i><b>Verify Margins and Spacing: </b></i>    
+              <span>1. Click on the <img class="mx-auto lazy" src="/static/images/blankcam/layout-condition-button.png" id="layout-button"> button on the control pane</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/layout-condition.png" id="click-layout-condition" >
+              <br>
+              <span>2. Using best practices, change the spacing and margins (Left, right, top, bottom)</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Process Info.png" id="process-info" >
+              <br>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure12">
+          <div class="card card-body">
+            <i><b>Import Part DXF: </b></i>    
+            <span>1. Click the <img class="mx-auto lazy" src="/static/images/blankcam/3i logo.jpg" id="three-i-logo""> button in the top left of the screen, and click "Import DXF/DWG Part"</span>
+            <br>
+            <img class="mx-auto lazy" src="/static/images/blankcam/import-dxf.png" id="import-dxf" >
+            <br>
+            <span>2. Navigate to directory with DXF</span>
+            <span>3. With DXF file selected, click "Open"</span>
+            <span>4. When the DXF/DWG Import Settings dialog box pops up, click "OK"</span>
+            <br>
+            <img class="mx-auto lazy" src="/static/images/blankcam/Import settings.png" id="import-settings-dialog" >
+            <br>
+          </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure13">
+            <div class="card card-body">
+              <i><b>Drag part to nest: </b></i>    
+                <span>1. When the part is imported it should show up in the part list on the right side of the screen.</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/part shows up in right pane.png" id="part-plane" >
+                <br>
+                <br>
+                <p class="text-center"><b><i>If the part isn't showing up, click on the material and gauge label</i></b></p>
+                <img class="mx-auto lazy" src="/static/images/blankcam/Make sure clicked on material name in right pane.png" id="click-material" >
+                <br>
+                <br>
+                <span>2. Click and hold the part number, and drag it over to the nest</span>
+                <br><br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/part is dragged out.png" id="part-dragged" >
+            </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure14">
+            <div class="card card-body">
+              <i><b>Process Part: </b></i>    
+              <span>1. Double-click on part to enter the part editor</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Part editor screen.png" id="part-editor-screen" >
+              <br><br>
+              <span>2. In the control pane, click <img class="mx-auto lazy" src="/static/images/blankcam/reauto-assign.png" id="re-auto-assign-button"> in the control pane</span>
+              <br>
+              <span>3. Using best practices, verify that joints are in the correct locations and holes are correctly processed</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Auto Assign performed.png" id="auto-assign-done" >
+              <br>
+              <span>4. When finished, click <img class="mx-auto lazy" src="/static/images/blankcam/sheet-edit-button.png" id="sheet-edit-button"> in the control pane</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure15">
+              <div class="card card-body">
+                <i><b>Populate nest: </b></i>    
+                <span>1. Click, hold, and drag processed part into lower left corner</span>
+                <span>2. While holding the CTRL key, click and drag the part again to create a copy. <i>You can hightlight multiple parts to make multiple copies</i></span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/Hold control key, click and drag part to create a copy.png" id="control-key-copy" >
+                <br>
+                <span>3. With the spacing and margins already set, you can drag copies to the edge of the sheet and against other parts to get as many as possible</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/Nest populated.png" id="nest-populated" >
+                <br>
+              </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure16">
+            <div class="card card-body">
+              <i><b>Auto-space parts: </b></i>
+              <span>1. With parts nested against each other in the corner, click the <img class="mx-auto lazy" src="/static/images/blankcam/wider-spacing-button.png" id="wider-spacing-button"> button</span>    
+              <br>
+              <span class="text-center"><b><i>If the </i></b><img class="mx-auto lazy" src="/static/images/blankcam/wider-spacing-button.png" id="wider-spacing-button"><b><i> button is greyed out, it is due to a part being selected. Click anywhere on the nest that isn't a part </i></b></span>
+              <img class="mx-auto lazy" src="/static/images/blankcam/grey-spacing.png" id="grey-spacing" >
+              <br><br>
+              <span>2. If the auto spacing didn't evenly spread out all parts, you can manually drag parts around the nest to space them out</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure17">
+            <div class="card card-body">
+              <i><b>Add Scrap Cuts: </b></i>    
+                <span>1. Click on the "Scrap Cut" button in the control pane</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/auto spacing performed.png" id="click-scrap-cuts" >
+                <br>
+                <span>2. Click on the "Add" tab</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/add-tab.png" id="add-tabs" >
+                <br>
+                <span>3. WIth "Batch Instruction" clicked, the division number should be 3</span>
+                <br>
+                <span class="text-center"><b><i>If some of the scrap cuts are too directly on a part edge, change the "Batch Instruction" from "Division No." to "Pitch" and change the "X" value until the scrap cuts aren't directly on the edge of any parts</i></b></span>
+                <img class="mx-auto lazy" src="/static/images/blankcam/Scrap Cut screen 2.png" id="scrap-cut-screen">
+                <br>
+                <br>
+                <span>4. With the scrap cuts applied, click "Apply" and then "Finish"</span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/Scrap cut screen 1.png" id="scrap-cut-apply">
+                </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure18">
+            <div class="card card-body">
+              <i><b>Apply Nest Sequencing: </b></i>    
+                <span>1. Click on the <img class="mx-auto lazy" src="/static/images/blankcam/edit-sequence-button.png" id="edit-sequence"> button in the control pane</span>
+                <br>
+                <span>2. Using the dropdown under "Edit Mode", use either the "Grid" or "Consecutive Instruction" options. </span>
+                <br>
+                <img class="mx-auto lazy" src="/static/images/blankcam/sequence screen.png" id="sequence-screen" >
+                <br><br>
+                <span class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;<b>Consecutive Instruction: </b> click each part in the order you want</span>
+                <img class="mx-auto lazy" src="/static/images/blankcam/sequence consecutive instruction.png" id="consecutive-instruction" >
+                <br>
+                <span class="text-center">&nbsp;&nbsp;&nbsp;&nbsp;<b>Grid: </b> Using either the X or Y axis, you can select how many rows/columns and the order will be automatically set</span>
+                <img class="mx-auto lazy" src="/static/images/blankcam/sequence grid x.png" id="consecutive-instruction" >
+                <br>
+                <span>3. When the sequencing is done, click "Apply"</span>
+            </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure19">
+            <div class="card card-body">
+              <i><b>Create NC: </b></i>    
+              <span>1. Click the <img class="mx-auto lazy" src="/static/images/blankcam/nc create button.png" id="nc-create"> button in the control pane</span>
+              <br>
+              <span>2. In the "NC Create" dialog box, verify that "Save" is checked and press "OK"</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/NC Create.png" id="nc-create-dialog" >
+              <br><br>
+              <span>3. THere will be another dialog box with an alert of a sheet with a warning or error. This is due to a scrap cut interference on the bottom of the sheet that is unavoidable. Click "Yes"</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Error warning.png" id="error" >
+              <br>
+              <br>
+              <span>4. When the "Save Schedule/Sheet" dialog box appears, click "Save"</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Save Nest.png" id="save-nest" >
+            </div>
+          </div>
+          <div class="collapse multi-collapse2" id="collapse-procedure20">
+            <div class="card card-body">
+              <i><b>Save Setup Sheet: </b></i>    
+              <span>1. Click the "Print" button on the print preview that appears</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/save PDF.png" id="save-pdf" >
+              <br>
+              <span>2. Verify the printer name is set to "Microsoft Print to PDF" and click "OK"</span>
+              <br>
+              <img class="mx-auto lazy" src="/static/images/blankcam/Print dialog.png" id="print-dialog" >
+              <br>
+              <span>3. When the save dialog box opens, save in the Amada Setups directory <b>\\PRIZ-MERRYMECH\Amada\SETUPS</b> and name your file the nest name and add the word "SETUP". <i>ex. N101507 SETUP</i></span>
+              <br>
+              <span>4. Click "Save"</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample3">    
+    </div>
+    <div class="col-md-1"></div>
+  </div>
+  <script src="/static/hubs/sop.js"></script>
+
+{% endblock %}

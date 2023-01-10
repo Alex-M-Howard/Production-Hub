@@ -1,0 +1,160 @@
+{% extends 'base.html' %}
+
+{% block title%}Create New Project{% endblock %}
+
+{% block content %}
+
+
+
+<div class="container my-4" id="alerts">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class='flashes'>
+          {% for category, message in messages %}
+            <div class="alert alert-{{category}} " id="flashed">
+              {{ message }}
+            </div>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1 class="text-center">Create Part</h1>
+      <form action="{{ url_for('proto.create_part', project_name=project_name) }}" method="POST">
+        <div class="container">
+
+                <div class="field">
+                  <label class="form-label" for="part_number">Part Number</label>
+                  <div class="control">
+                  <input class="form-control" id="part_number" maxlength="60" minlength="2" name="part_number" required type="text">
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="description">Description</label>
+                  <div class="control">
+                  <input class="form-control" id="description" name="description" type="text">
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="material">Material</label>
+                  <div class="control">
+                    <select class="form-select" name="material" id="material">
+                      {% for material in materials %}
+                        <option value="{{material}}">{{material}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="processes">Processes Required. Check all that apply</label>
+                  <div class="control">
+                  <ul class="form-control" id="processes">
+                    <li>
+                      <input id="punch" name="punch" type="checkbox"> 
+                      <label for="punch">Punch</label>
+                    </li>
+                      <li>
+                        <input id="form" name="form" type="checkbox"> 
+                        <label for="form">Form</label>
+                      </li>
+                      <li>
+                        <input id="weld" name="weld" type="checkbox"> 
+                        <label for="weld">Weld</label>
+                      </li>
+                      <li>
+                        <input id="polish" name="polish" type="checkbox"> 
+                        <label for="polish">Polish</label>
+                      </li>
+                      <li>
+                        <input id="paint" name="paint" type="checkbox"> 
+                        <label for="paint">Paint</label>
+                      </li>
+                      <li>
+                        <input id="assembly" name="assembly" type="checkbox"> 
+                        <label for="assembly">Assembly</label>
+                      </li>
+                      <li>
+                        <input id="enamel" name="enamel" type="checkbox"> 
+                        <label for="enamel">Enamel</label>
+                      </li>
+                      <li>
+                        <input id="fav" name="fav" type="checkbox"> 
+                        <label for="fav">FAV</label>
+                      </li>
+                      <li>
+                        <input id="other" name="other" type="checkbox"> 
+                        <label for="other">Other</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+               
+
+
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="bin_location">Bin Location</label>
+                  <div class="control">
+                  <input class="form-control" id="bin_location" name="bin_location" type="text">
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="status">Status</label>
+                  <div class="control">
+                  <input class="form-control" id="status" name="status" type="text">
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="notes">Notes</label>
+                  <div class="control">
+                  <input class="form-control" id="notes" name="notes" type="text">
+                  </div>
+                </div>
+                
+              </p>
+
+          
+
+          <div class="row">
+            <div class="col-6">
+              <button class="btn btn-primary" type="submit" style="width:100%;">Create Part</button>
+            </div>
+            <div class="col-6">
+              <a href="{{url_for('proto.show_project', project_name=project_name)}}"><button class="btn btn-danger" type="button"  style="width:100%;">Cancel</button></a>
+            </div>
+          </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>  
+{% endblock %}

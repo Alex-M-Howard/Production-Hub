@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% block title %} Edit {{part.part_number}} {%endblock%}
+
+{% block content %}
+
+<div class="container my-4" id="alerts">
+  <div class="row">
+    <div class="col-3"></div>
+    <div class="col-6">
+      {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul class='flashes'>
+          {% for category, message in messages %}
+            <div class="alert alert-{{category}} " id="flashed">
+              {{ message }}
+            </div>
+          {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+    </div>
+    <div class="col-3"></div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <h1 class="text-center">Edit Part</h1>
+      <form action="{{ url_for('proto.edit_part', project_name=project_name, part_number=part.part_number) }}" method="POST">
+        <div class="container">
+
+                <div class="field">
+                  <label class="form-label" for="part_number">Part Number</label>
+                  <div class="control">
+                  <input class="form-control" id="part_number" maxlength="60" minlength="2" name="part_number" required type="text"
+                  {% if part.part_number %}
+                  value="{{part.part_number}}"
+                  {% endif %}
+                  >
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="description">Description</label>
+                  <div class="control">
+                  <input class="form-control" id="description" name="description" type="text"
+                  {% if part.description %}
+                  value="{{part.description}}"
+                  {% endif %}
+                  >
+                  </div>
+                </div>
+                
+              </p>
+
+              <div class="field">
+                  <label class="form-label" for="material">Material</label>
+                  <div class="control">
+                    <select class="form-select" name="material" id="material" value="part.material">
+                      {% for material in materials %}
+                        <option value="{{material}}">{{material}}</option>
+                      {% endfor %}
+                    </select>
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="processes">Processes Required. Check all that apply</label>
+                  <div class="control">
+                  <ul class="form-control" id="processes">
+                    <li>
+                      <input id="punch" name="punch" type="checkbox" 
+                      {% if part.punch %}
+                      checked
+                      {% endif %}
+                      > 
+                      <label for="punch">Punch</label>
+                    </li>
+                      <li>
+                        <input id="form" name="form" type="checkbox" 
+                        {% if part.form %}
+                        checked
+                        {% endif %}
+                        > 
+                        <label for="form">Form</label>
+                      </li>
+                      <li>
+                        <input id="weld" name="weld" type="checkbox" 
+                        {% if part.weld %}
+                        checked
+                        {% endif %}>
+                        <label for="weld">Weld</label>
+                      </li>
+                      <li>
+                        <input id="polish" name="polish" type="checkbox" 
+                        {% if part.polish %}
+                        checked
+                        {% endif %}
+                        > 
+                        <label for="polish">Polish</label>
+                      </li>
+                      <li>
+                        <input id="paint" name="paint" type="checkbox" 
+                        {% if part.paint %}
+                        checked
+                        {% endif %}
+                        > 
+                        <label for="paint">Paint</label>
+                      </li>
+                      <li>
+                        <input id="assembly" name="assembly" type="checkbox" 
+                        {% if part.assembly %}
+                        checked
+                        {% endif %}
+                        > 
+                        <label for="assembly">Assembly</label>
+                      </li>
+                      <li>
+                        <input id="enamel" name="enamel" type="checkbox" 
+                        {% if part.enamel %}
+                        checked
+                        {% endif %}
+                        > 
+                        <label for="enamel">Enamel</label>
+                      </li>
+                      <li>
+                        <input id="fav" name="fav" type="checkbox" 
+                        {% if part.fav %}
+                        checked
+                        {% endif %}
+                        > 
+                        <label for="fav">FAV</label>
+                      </li>
+                      <li>
+                        <input id="other" name="other" type="checkbox" 
+                        {% if part.other %}
+                        checked
+                        {% endif %}
+                        > 
+                        <label for="other">Other</label>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                
+               
+
+
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="bin_location">Bin Location</label>
+                  <div class="control">
+                  <input class="form-control" id="bin_location" name="bin_location" type="text"
+                  {% if part.bin_location %}
+                  value="{{part.bin_location}}"
+                  {% endif %}
+                  >
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="status">Status</label>
+                  <div class="control">
+                  <input class="form-control" id="status" name="status" type="text"
+                  {% if part.status %}
+                  value="{{part.status}}"
+                  {% endif %}
+                  >
+                  </div>
+                </div>
+                
+              </p>
+
+                <div class="field">
+                  <label class="form-label" for="notes">Notes</label>
+                  <div class="control">
+                  <input class="form-control" id="notes" name="notes" type="text"
+                  {% if part.notes %}
+                  value="{{part.notes}}"
+                  {% endif %}
+                  >
+                  </div>
+                </div>
+                
+              </p>
+
+          
+
+          <div class="row">
+            <div class="col-6">
+              <button class="btn btn-primary" type="submit" style="width:100%;">Edit</button>
+            </div>
+            <div class="col-6">
+              <a href="{{url_for('proto.show_part', project_name=project_name, part_number=part.part_number)}}"><button class="btn btn-danger" type="button"  style="width:100%;">Cancel</button></a>
+            </div>
+          </div>
+        </div>
+        </form>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>  
+
+{% endblock %}

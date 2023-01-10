@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %}</title>
+    <script src="https://kit.fontawesome.com/22a73e52cb.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/static/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" type="image/x-icon" href="/static/images/icon.ico">
+    {% block style %}{% endblock %}
+</head>
+<body class="hidden">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a class="nav-link" href="/">
+        <img src="/static/images/banner.jpg" alt="Bootstrap" class="navbar-brand" id="bluestar-logo">
+      </a>
+      <button id='hamburger-button' class="navbar-toggler mx-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fa-solid fa-bars me-5" id="hamburger"></i>
+      </button>
+
+      <div class="collapse navbar-collapse " id="navbarSupportedContent">
+        {% if g.user %}
+        <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
+          <li class="nav-item mx-3"><a class="nav-link" href="/" id="Home-nav">Home</a></li>
+          <div class="navbar-item dropdown">
+            <button class="btn dropdown-toggle" id="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-color: #002856;">
+              SOPs
+            </button>
+            <ul class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" href="{{url_for('amada.amada_home')}}" id="nav-drop">Amada</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('amada.amada_blankcam')}}" id="nav-drop">Blank CAM SOP</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('amada.data_explorer')}}" id="nav-drop">Data Explorer Guide</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('amada.material_explorer')}}" id="nav-drop">Material Explorer Guide</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('amada.parameter_explorer')}}" id="nav-drop">Parameter Explorer Guide</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{url_for('trumpf.trumpf_home')}}" id="nav-drop">Trumpf</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('trumpf.trumpf_trutops')}}" id="nav-drop">Tru-Tops SOP</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('trumpf.trumpf_offline_loading')}}" id="nav-drop">Offline Program Loading SOP</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{url_for('punch.punch_home')}}" id="nav-drop">Punch</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('punch.punch_sop')}}" id="nav-drop">Punch SOP</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="http://mmisupport.com/HelpSys/smphelp/index.htm" id="nav-drop">SMP Master Index</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="dropdown-item" href="{{url_for('forming.forming_home')}}" id="nav-drop">Forming</a>
+                <ul class="dropdown-menu dropdown-submenu">
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('forming.forming_bend_operation')}}" id="nav-drop">Amada Bend Operation</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('forming.forming_bend_params')}}" id="nav-drop">Amada Bend Parameters</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('forming.forming_bend_users')}}" id="nav-drop">Amada Bend User Guide</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('forming.data_explorer')}}" id="nav-drop">Data Explorer Guide</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('forming.material_explorer')}}" id="nav-drop">Material Explorer Guide</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('forming.parameter_explorer')}}" id="nav-drop">Parameter Explorer Guide</a></li>
+                  <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('forming.forming_salvagnini_guide')}}" id="nav-drop">Salvagnini Users Guide</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          
+          <div class="navbar-item dropdown">
+            <button class="btn dropdown-toggle" id="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-color: #002856;">
+              Production
+            </button>
+            <ul class="dropdown-menu">
+              <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('general.blanks_inventory')}}" id="nav-drop">Blanks Inventory</a></li>
+              <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('requests.requesting')}}" id="nav-drop">Programming Requests</a></li>
+              <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('errors.error_log')}}" id="nav-drop">Error Log</a></li>
+            </ul>
+          </div>
+          
+          <div class="navbar-item dropdown">
+            <button class="btn dropdown-toggle" id="dropdown" type="button" data-bs-toggle="dropdown" aria-expanded="false" style="border-color: #002856;">
+              Prototypes
+            </button>
+            <ul class="dropdown-menu">
+              <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('proto.show_my_projects')}}" id="nav-drop">My Projects</a></li>
+              <li class="nav-item mx-3"><a class="dropdown-item" href="{{url_for('proto.show_projects')}}" id="nav-drop">All Projects</a></li>
+            </ul>
+          </div>
+          
+          <li class="nav-item mx-3"><a class="nav-link" href="{{url_for('general.data_explorer')}}" id="explorer-nav">Nest Explorer</a></li>
+          <li class="nav-item mx-3"><a class="nav-link" href="{{url_for('general.eco_viewer')}}" id="eco-nav">ECO Viewer</a></li>
+          <li class="nav-item mx-3"><a class="nav-link" href="{{url_for('general.nesting_calculator')}}" id="nestCalc-nav">Nesting Calculator</a></li>
+        </ul>
+        {% endif %}
+      </div>
+
+      <div class="d-flex align-items-center ms-3">
+        {% if g.user %}
+        <div class="dropdown" id="user-menu">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">{{ g.user.first_name }}</a>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="{{ url_for('proto.show_my_projects')}}">My Projects</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('user.change_password')}}">Change Password</a></li>
+            <li><a class="dropdown-item" href="{{ url_for('user.logout_user') }}">Logout</a></li>
+          </ul>
+
+          
+        </div>
+        {% else %}
+          <a href="{{ url_for('user.login_page') }}" class="nav-link">Login</a>
+        {% endif %}
+      </div>
+
+
+
+    </div>
+  </nav>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+  <script src="/static/bootstrap/bootstrap.bundle.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  {% block content %}{% endblock %}
+
+  <footer id="sticky-footer">
+    {% if g.user %}
+    <div class="container">
+          <a href="{{ url_for('docs.home') }}" style="color:white; text-decoration:none;">Documentation</a>
+    </div>
+    <div class="container">
+    </div>
+    <div class="container text-center">
+          For bugs, issues, or requests: <a href="{{url_for('general.issues')}}" style="color:white;">Issues</a> 
+    </div>
+    {% endif %}
+  </footer>
+  <script src="/static/app.js"></script>
+</body>
+</html>

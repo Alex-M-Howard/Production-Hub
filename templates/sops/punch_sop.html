@@ -1,0 +1,375 @@
+{% extends 'base.html' %} {% block title %} Punch SOP{% endblock %} {% block
+content %}
+<h1 class="text-center">
+  <img src="/static/images/logo.jpg" class="logo" />
+  Punch
+  <img src="/static/images/logo.jpg" class="logo" />
+</h1>
+<img
+  class="rounded mx-auto d-block my-5"
+  src="https://ww1.prweb.com/prfiles/2013/08/30/11079999/M3048TG.jpg"
+  alt="Punch Press"
+/>
+<div class="row g-3" style="width: 100vw">
+  <div class="col-md-1"></div>
+  <div class="col-md-10">
+    <p class="text-center">
+      <a
+        class="btn btn-primary"
+        data-bs-toggle="collapse"
+        href="#multiCollapseExample1"
+        role="button"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample1"
+        >Purpose</a
+      >
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample2"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample2"
+      >
+        Scope
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample3"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample3"
+      >
+        Responsibility
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#multiCollapseExample4"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample4"
+      >
+        Procedure
+      </button>
+      <button
+        class="btn btn-primary"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target=".multi-collapse"
+        aria-expanded="false"
+        aria-controls="multiCollapseExample1 multiCollapseExample2"
+      >
+        Show all
+      </button>
+    </p>
+    <div class="collapse multi-collapse" id="multiCollapseExample1">
+      <div class="card card-body">
+        <i><b>Purpose: </b></i>Document the steps needed to program a part using
+        MerryMech SMP software
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample2">
+      <div class="card card-body">
+        <i><b>Scope: </b></i>Applies to new AND revised parts to be run on the
+        turret punch press
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample3">
+      <div class="card card-body">
+        <i><b>Responsibility: </b></i>
+        Engineering: Notify programming/fabrictation of the new or revised part
+        and include a PDF drawing and DXF file in the appropriate folders
+        <br />
+        <br />
+        Programmer: Revise/release the part for fabrictation to run on the
+        turret punch press
+      </div>
+    </div>
+    <div class="collapse multi-collapse" id="multiCollapseExample4">
+      <div class="card card-body">
+        <i><b>Procedure: </b></i>
+        <br />
+        <p class="text-center">
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-procedure5"
+            aria-expanded="false"
+            aria-controls="collapse-procedure5"
+          >
+            Create Single Part
+          </button>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#collapse-procedure6"
+            aria-expanded="false"
+            aria-controls="collapse-procedure6"
+          >
+            Create Nest
+          </button>
+          <button
+            class="btn btn-primary"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target=".multi-collapse2"
+            aria-expanded="false"
+            aria-controls="collapse-procedure5 collapse-procedure6 collapse-procedure7 collapse-procedure8 collapse-procedure9"
+          >
+            Show all
+          </button>
+        </p>
+        <div class="collapse multi-collapse2" id="collapse-procedure5">
+          <div class="card card-body">
+            <i><b>Create Single Part (with parts directory open): </b></i>
+            1. Check DXF for programmability (should be engineering)
+            <br />
+            2. Find the appropriate folder for the part in merry mech (dual
+            fuel, 600 series, wall oven, etc.)
+            <br />
+            3. Click new
+            <span style="text-indent: 50px">3.1. Create new part selected</span>
+            <span style="text-indent: 50px"
+              >3.2. Override if exists checked</span
+            >
+            <span style="text-indent: 50px">3.3. Import from cad file</span>
+            <span style="text-indent: 50px">3.4. Search "..."</span>
+            <span style="text-indent: 50px"
+              >3.5. Find dxf file (pending, released, etc.), click enter</span
+            >
+            <span style="text-indent: 50px"
+              >3.6. Remove rev from part number, click ok</span
+            >
+            4. Part details box
+            <span style="text-indent: 50px">4.1. Enter rev level number</span>
+            <span style="text-indent: 50px">4.2. Enter part description</span>
+            <span style="text-indent: 50px">4.3. Enter your name and date</span>
+            <span style="text-indent: 50px">4.4. Select part grain</span>
+            <span style="text-indent: 100px">ng = no grain</span>
+            <span style="text-indent: 100px">gx = right left grain</span>
+            <span style="text-indent: 100px">gy = top to bottom grain</span>
+            <span style="text-indent: 50px"
+              >4.5. Optional note - enter ECO number, rev number, replaced by,
+              etc.</span
+            >
+            <span style="text-indent: 50px">4.6. Material tab</span>
+            <span style="text-indent: 100px"
+              >4.6.1. Select material, and generic 48x120 sheet size</span
+            >
+            <span style="text-indent: 50px">4.7. Method info tab</span>
+            <span style="text-indent: 100px">4.7.1. Select machine</span>
+            <span style="text-indent: 150px">6765 = Murata Punch</span>
+            <span style="text-indent: 150px">1798 = Finn</span>
+            <span style="text-indent: 150px"
+              >Reselect sheet size and material in this tab</span
+            >
+            <span style="text-indent: 50px">4.8. Click apply, and OK</span>
+            5. If internal edge not closed, box shows up
+            <span style="text-indent: 50px"
+              >5.1. To remove bend lines, click exit to geometry</span
+            >
+            <span style="text-indent: 100px"
+              >5.1.1. Modify, delete, single</span
+            >
+            <span style="text-indent: 100px"
+              >5.1.2. Click all, right click to confirm</span
+            >
+            <span style="text-indent: 100px"
+              >5.1.3. Left click to delete bend lines</span
+            >
+            <span style="text-indent: 50px"
+              >5.2. To leave the scribe geometry if it has scribe info, scribe
+              all after delete bend lines</span
+            >
+            6. Click NC
+            <br />
+            7. Tool load
+            <span style="text-indent: 50px"
+              >7.1. Graphic tool load manager</span
+            >
+            <span style="text-indent: 50px"
+              >7.2. Confirm all tools are loaded and in proper stations</span
+            >
+            8. Lay hits appropriately using proper programming practice
+            <span style="text-indent: 50px"
+              >8.1. Typical tabbing at 0.01" to 0.02"</span
+            >
+            <span style="text-indent: 50px">8.2. File exit, save</span>
+          </div>
+        </div>
+        <div class="collapse multi-collapse2" id="collapse-procedure6">
+          <div class="card card-body">
+            <i><b>Create nest (with directory open): </b></i>
+            &nbsp;&nbsp;1. Click new &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;2. Create new nest button selected &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;3. Create nest number (part number for single part
+            sheets with N in the front, hoods are the weld assembly number),
+            click OK &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;4. Fill out rev and description &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;5. Enter your name and date &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;6. Enter grain as GX unless it is a blank size
+            &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;7. Fill out optional note (if it will be put on the
+            laser enter "laser") leave blank if not on laser &nbsp;&nbsp;<br />
+            &nbsp;&nbsp;8. Material tab &nbsp;&nbsp;<br />
+            <span style="text-indent: 50px"
+              >8.1. Choose sheet size and material, this can be modified
+              later"</span
+            >
+            &nbsp;&nbsp;9. Method tab &nbsp;&nbsp;<br />
+            <span style="text-indent: 50px">9.1. Choose machine number"</span>
+            <span style="text-indent: 100px">6765 = Murata Punch</span>
+            <span style="text-indent: 100px">1798 = Finn</span>
+            10. Apply, OK
+            <br />
+            11. Add part or parts
+            <span style="text-indent: 50px"
+              >11.1. Find parts in part directory</span
+            >
+            <span style="text-indent: 50px"
+              >11.2. Click on part, right click on nest buffer for the proper
+              machine number</span
+            >
+            <span style="text-indent: 50px"
+              >11.3. Add to nest, drag and place appropriately</span
+            >
+            <span style="text-indent: 50px"
+              >11.4. Spacing from clamps at bottom of sheet</span
+            >
+            <span style="text-indent: 100px"
+              >11.4.1. Y-location min 3.645" for Murata (6765)</span
+            >
+            <span style="text-indent: 100px"
+              >11.4.2. Y-location min 3.0" for Finn (1798)</span
+            >
+            12. Exit and save do not process if only on laser
+            <br />
+            13. Exit save, process nest
+            <br />
+            14. Kit page
+            <span style="text-indent: 50px">14.1. Remove duplicates</span>
+            <span style="text-indent: 50px"
+              >14.2. Modify, remove duplicates</span
+            >
+            <span style="text-indent: 100px"
+              >14.2.1.
+              <b
+                ><i>NOTE</i> YOU MUST MANUALLY REMOVE DUPLICATES IF YOU HAVE
+                SCRIBE</b
+              ></span
+            >
+            <span style="text-indent: 100px"
+              >14.2.2. Modified, delete, delete to manually remove single
+              hits</span
+            >
+            <span style="text-indent: 50px">14.3. Concatenate, yes</span>
+            <span style="text-indent: 50px"
+              >14.4. Right click, keep existing tabs, yes</span
+            >
+            <span style="text-indent: 50px"
+              >14.5.
+              <b
+                >If bottom Y spacing is less than min listed above, you will
+                need to simplify hits on bottom row to clear clamps</b
+              ></span
+            >
+            <span style="text-indent: 100px"
+              >14.5.1. Modify, delete, simplify</span
+            >
+            <span style="text-indent: 50px"
+              >14.6. Process into multiples button</span
+            >
+            <span style="text-indent: 100px"
+              >14.6.1. Right click, right click, right click</span
+            >
+            15. Multiples page window
+            <span style="text-indent: 50px"
+              >15.1. Verify sheet size is correct</span
+            >
+            <span style="text-indent: 50px"
+              >15.2. Adjust trim spacing to min Y amount listed above</span
+            >
+            <span style="text-indent: 50px"
+              >15.3. Set appropriate borders, OK</span
+            >
+            16. Nest page
+            <span style="text-indent: 50px"
+              >16.1. Check repo to see what hits need to be held, add, repo,
+              delete repo, last repo</span
+            >
+            <span style="text-indent: 50px">16.2. Hold large hits</span>
+            <span style="text-indent: 100px"
+              >16.2.1. Modify, hold hits, single hits</span
+            >
+            <span style="text-indent: 100px"
+              >16.2.2. Right click to finish</span
+            >
+            <span style="text-indent: 50px"
+              >16.3. Left click sequencing button</span
+            >
+            <span style="text-indent: 100px"
+              >16.3.1. Reorder station appropriately smallest to largest,
+              scribe-rounds-hex-obrounds-radii-square-rec-form</span
+            >
+            <span style="text-indent: 100px"
+              >16.3.2. Sequence hits appropriately</span
+            >
+            <span style="text-indent: 50px">16.4. Exit, add, repo, shift</span>
+            <span style="text-indent: 100px">16.4.1. Repeat sequence step</span>
+            <span style="text-indent: 100px"
+              >16.4.2. Final sequence end at clamps to keep structure</span
+            >
+            <span style="text-indent: 50px"
+              >16.5. Clamp clear if necessary (less than min Y distance)</span
+            >
+            <span style="text-indent: 50px">16.6. Write code</span>
+            <span style="text-indent: 100px"
+              >16.6.1. Program number is last 4 of N number, if underscore x,
+              still use last 4 numerical digits</span
+            >
+            <span style="text-indent: 100px"
+              >16.6.2. Enter, add material codes see chart, enter</span
+            >
+            <span style="text-indent: 100px"
+              >16.6.3. "1" yes to add unload code, enter</span
+            >
+            17. Transfer code to machine file
+            <span style="text-indent: 50px"
+              >17.1. Files save locations by machine</span
+            >
+            <span style="text-indent: 100px"
+              >17.1.1. (6765) \\PRIZ-MERRYMECH\merrymech_files\6765</span
+            >
+            <span style="text-indent: 100px"
+              >17.1.2. (1798) \\PRIZ-MERRYMECH\merrymech_files\1798</span
+            >
+            <span style="text-indent: 50px">17.2. For machine 6765</span>
+            <span style="text-indent: 100px"
+              >17.2.1. Move .nc1 (code) files to "NCdata1 (prizer-campath)(V)"
+              for 6765, place in respective folder (electric walloven, hodds,
+              etc.)</span
+            >
+            <span style="text-indent: 100px"
+              >17.2.2. Move .op1 files from op folder in location above to
+              "NCdata1 (prizer-campath)(V)" "z folder"</span
+            >
+            <span style="text-indent: 50px">17.3. For machine 1798</span>
+            <span style="text-indent: 100px"
+              >17.3.1. Move files to "NCPROG" folder in \\prizerfinnpower
+              computer</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="collapse multi-collapse" id="multiCollapseExample3"></div>
+  <div class="col-md-1"></div>
+</div>
+<script src="/static/hubs/sop.js"></script>
+
+{% endblock %}

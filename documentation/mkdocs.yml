@@ -1,0 +1,7 @@
+site_name: Prizer-Bluestar Production Hub
+site_url: https://bluestar-prod-docs.com
+nav:
+  - Home: home.md
+  - Models: models.md
+  - Routes: routes.md
+theme: readthedocs
