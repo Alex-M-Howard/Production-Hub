@@ -68,7 +68,7 @@ def home():
     if "current_user_id" not in session:
         session['current_user_id'] = 1
         user = User.query.get(1)
-        g.user = user
+        g.user = user 
         return redirect(url_for('proto.home'))
     else:
         user = User.query.get(session["current_user_id"])
