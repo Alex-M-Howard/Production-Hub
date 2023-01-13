@@ -4,7 +4,7 @@ block content %}
 <div id="alerts"></div>
 
 <h1 class="text-center my-5">Programming Request</h1>
-<div class="container">
+<div class="container mb-5">
   <div class="row">
     <div class="col-lg-3 col-sm-0"></div>
     <div class="col-lg-6 col-sm-12">
@@ -51,7 +51,7 @@ block content %}
       </div>
     </div>
     
-    <div class="container">
+    <div class="container mb-5">
         <div class="row">
             <div class="col-lg-2 col-sm-0"></div>
             <div class="col-lg-8 col-sm-12">
@@ -92,16 +92,13 @@ block content %}
                               <td class="text-center">{{request.requested_by}}</td>
                               <td class="text-center">{{request.job_number}}</td>
                           {% endif %}
-                          {% if g.user %}
-                              {% if g.user.isadmin %}
-
+                          {% if not g.user.role == 'user' and not g.user.role == 'prod' %}
                             <td class="text-center">
                               <input type="text" name="job_number" id="job_number">
                             </td>
                             <td class="text-center">
                               <button class="btn btn-primary complete-btn" type="submit" style="width:100%;">Complete</button>
-                            </td>
-                            {% endif %}
+                            </td>                  
                           {% endif %}
                           </tr>
                         {% endfor %}

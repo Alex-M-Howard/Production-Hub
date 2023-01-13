@@ -1,4 +1,5 @@
 from db import db
+from datetime import datetime
 
 class Project(db.Model):
     """ 
@@ -9,8 +10,8 @@ class Project(db.Model):
     __tablename__ = 'projects'
 
     id = db.Column(db.Integer, primary_key=True)
-    created = db.Column(db.Date)
-    updated = db.Column(db.Date)
+    created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
+    updated = db.Column(db.DateTime, onupdate=datetime.utcnow())
     updated_by = db.Column(db.String)
     completed = db.Column(db.Date)
     user_name = db.Column(db.String, nullable=False)
@@ -82,24 +83,10 @@ class ProtoFile(db.Model):
     file_name = db.Column(db.String, nullable=False)
     version = db.Column(db.String, nullable=False)
     description = db.Column(db.String)
-    updated = db.Column(db.Date)
+    created = db.Column(db.DateTime, nullable=False, default=datetime.utcnow())
     updated_by = db.Column(db.String)
     project_id = db.Column(db.Integer, db.ForeignKey('projects.id'))
     part_id = db.Column(db.Integer, db.ForeignKey('proto_parts.id'))
     notes = db.Column(db.String)
-    
-
-class Bug(db.Model):
-    """
-    Bug MODEL
-
-    """
-
-    __tablename__ = 'bugs'
-    
-    id = db.Column(db.Integer, primary_key=True)
-    request_type = db.Column(db.String, nullable=False)
-    description = db.Column(db.String, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.id'))    
-    
+    rev = db.Column(db.Integer, default=0)
     

@@ -23,6 +23,7 @@ class User(db.Model):
     email = db.Column(db.String, nullable=False, unique=True)
     password = db.Column(db.String, nullable=False)
     isadmin = db.Column(db.Boolean, nullable=False, default=False)
+    role = db.Column(db.String, nullable=False, default='user')
 
     def __repr__(
         self): return f"<User #{self.id}: {self.first_name} {self.last_name}, {self.email}>"

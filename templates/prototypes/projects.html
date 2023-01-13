@@ -24,15 +24,23 @@
 
 <div class="container mb-5">
 <div class="row">
-  <div class="col-4"></div>
-  <div class="col-4">
-        
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <a href="{{ url_for('proto.create_project') }}"><button class="btn btn-primary" style="width: 100%;">Create New Project</button></a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-4">
-    <a href="{{ url_for('proto.create_project') }}"><button class="btn btn-primary mx-5">Create New Project</button></a>
+  <div class="col-1">
   </div>
 </div>
 </div>
+
+<h1 class="my-2 text-center">All Projects</h1>
 
 
 <div class="container my-3">
@@ -50,7 +58,7 @@
 
   {% if projects %}
   <div class="table-responsive-lg" style="height: 50vh;">
-  <table class="table mx-2 my-5 table-hover">
+  <table class="table mx-2 my-2 table-hover">
           <thead>
             <tr>
             <th scope="col" class="text-center">Project Name</th>

@@ -84,12 +84,15 @@ def signup_page():
 @user.route('/login', methods=["GET", "POST"])
 def login_page():
     """ Show login form """
+    if current_user_id in session:
+        return redirect(url_for('home'))
+
     if request.method == "GET":
         return render_template('/user/login.html')
-    
+
     if request.method == "POST":
         email = request.form.get('email').lower() + "@bluestarcooking.com"
-        
+
         user = User.authenticate(
             email=email,
             password=request.form.get('password')
@@ -99,7 +102,7 @@ def login_page():
             do_login(user)
             session['email'] = email
             flash(f"Hello, {user.first_name}!", "success")
-            
+
             return redirect(url_for('home'))
         else:
             flash("Invalid Credentials.", "danger")
@@ -141,7 +144,7 @@ def do_login(user):
     """ Log in user """
 
     session[current_user_id] = user.id
-    
+
 
 def do_logout():
     """ Log out current user """
@@ -153,12 +156,12 @@ def do_logout():
 
 
 @user.route('/change-password', methods=["GET", "POST"])
-def change_password():   
+def change_password():
     if request.method == "GET":
         return render_template('/user/change_password.html')
 
     if request.method == "POST":
-        
+
         user = User.new_password(
             session["email"], request.form.get('password'))
 

@@ -7,11 +7,10 @@ $(".mat-butts").on("click", async (event) => {
 
   let status = $(event.target).text();
 
-  $("thead").empty()
-  $("tbody").empty()
+  $("thead").empty();
+  $("tbody").empty();
 
   if (status === "Incomplete") {
-
     $("thead").append(`
       <tr>
         <th scope="col" class="text-center">Project Name</th>
@@ -22,7 +21,7 @@ $(".mat-butts").on("click", async (event) => {
         <th scope="col" class="text-center">Type</th>
         <th scope="col" class="text-center">Product Line</th>
         <th scope="col" class="text-center">ECO #</th>
-        <th scope="col" class="text-center">Requested Completion Date</th>
+        <th scope="col" class="text-center">Projected Date</th>
         <th scope="col" class="text-center">Notes</th>
       </tr>
     `);
@@ -47,7 +46,6 @@ $(".mat-butts").on("click", async (event) => {
       }
     });
   } else {
-
     $("thead").append(`
       <tr>
         <th scope="col" class="text-center">Project Name</th>
@@ -58,11 +56,10 @@ $(".mat-butts").on("click", async (event) => {
         <th scope="col" class="text-center">Type</th>
         <th scope="col" class="text-center">Product Line</th>
         <th scope="col" class="text-center">ECO #</th>
-        <th scope="col" class="text-center">Requested Completion Date</th>
+        <th scope="col" class="text-center">Projected Date</th>
         <th scope="col" class="text-center">Notes</th>
       </tr>
     `);
-  
 
     axios.get(`/proto/get_all_projects_complete`).then((response) => {
       console.log(response.data);

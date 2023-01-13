@@ -21,36 +21,41 @@
     <div class="col-3"></div>
   </div>
 </div>
-<div class="container mb-2">
+<div class="container mb-5">
 <div class="row">
-  <div class="col-4"></div>
-  <div class="col-4">
-        
+  <div class="col-1"></div>
+  <div class="col-10">
+    <div class="container">
+      <div class="row">
+        <div class="col-6"></div>
+        <div class="col-6">
+          <a href="{{ url_for('proto.create_project') }}"><button class="btn btn-primary" style="width:100%;">Create New Project</button></a>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-4">
-        <a href="{{ url_for('proto.create_project') }}"><button class="btn btn-primary mx-5 my-3">Create New Project</button></a>
-</div>
+  <div class="col-1"></div>
 </div>
 </div>
 
-<h1 class="my-5 text-center">My Projects</h1>
+<h1 class="my-2 text-center">My Projects</h1>
 
 <div class="container my-3">
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <nav class="nav nav-pills nav-fill">
-                    <a class="nav-link mat-butts mat-butts-active mx-1" href="#">Incomplete</a>
-                    <a class="nav-link mat-butts mx-1" href="#">Completed</a>
-                </nav>
-            </div>
-            <div class="col-1"></div>
-        </div>
-    </div>
+  <div class="row">
+      <div class="col-1"></div>
+      <div class="col-10">
+          <nav class="nav nav-pills nav-fill">
+              <a class="nav-link mat-butts mat-butts-active mx-1" href="#">Incomplete</a>
+              <a class="nav-link mat-butts mx-1" href="#">Completed</a>
+          </nav>
+      </div>
+      <div class="col-1"></div>
+  </div>
+</div>
 
   {% if projects %}
   <div class="table-responsive-lg" style="height: 50vh;">
-  <table class="table mx-2 my-5 table-hover">
+  <table class="table mx-2 my-2 table-hover">
           <thead>
             <tr>
             <th scope="col" class="text-center">Project Name</th>

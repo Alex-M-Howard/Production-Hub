@@ -51,18 +51,20 @@
   <thead>
     <tr>
       <th class="text-center" style="width:20%;">Download</th>
-      <th class="text-center" style="width:40%;">Notes</th>
-      <th class="text-center" style="width:20%;">Uploaded</th>
-      <th class="text-center" style="width:20%;">By</th>
+      <th class="text-center" style="width:20%;">Uploaded By</th>
+      <th class="text-center" style="width:20%;">Notes</th>
+      <th class="text-center" style="width:20%;">REV</th>
+      <th class="text-center" style="width:20%;">Upload Date</th>
     </tr>
   </thead>
   <tbody>
     {% for file in files %}
     <tr>
       <td class="text-center"><a href="{{file.presigned_url}}"><i class="fa-solid fa-file-arrow-down"></i></a></td>
-      <td class="text-center">{{file.notes}}</td>
-      <td class="text-center">{{file.updated}}</td>
       <td class="text-center">{{file.updated_by}}</td>
+      <td class="text-center">{{file.notes}}</td>
+      <td class="text-center">{{file.rev}}</td>
+      <td class="text-center">{{file.created}}</td>
     </tr>
     {% endfor %}
   </tbody> 

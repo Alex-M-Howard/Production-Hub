@@ -8,6 +8,7 @@ from github import Github
 EMAILS = ['alex-m-howard@pm.me']
 BUCKET_NAME = 'prod-site-example'
 REGION_NAME = 'us-east-1'
+REPO_NAME = 'Production-Hub'
 
 def upload_file(file, filename):
     """Upload a file to an S3 bucket
@@ -49,7 +50,7 @@ def list_all_objects_version(prefix_name):
                              region_name=REGION_NAME)
     
     try:
-        result = s3_client.list_object_versions(Bucket='pps-bluestarcooking', Prefix=prefix_name)
+        result = s3_client.list_object_versions(Bucket=BUCKET_NAME, Prefix=prefix_name)
     
     except ClientError as e:
         raise Exception("boto3 client error in list_all_objects_version function: " + e.__str__())
@@ -174,16 +175,105 @@ def send_temp_email(email, code):
 def get_issues():
     g = Github(os.environ.get('GITHUB_TOKEN'))
     
-    repo = g.get_user().get_repo("Production-Hub")
+    repo = g.get_user().get_repo(REPO_NAME)
     issues = repo.get_issues(state='all')
     
     return issues
     
     
-    
 def post_issue(data):    
     g = Github(os.environ.get('GITHUB_TOKEN'))
     
-    repo = g.get_user().get_repo("Production-Hub")
+    repo = g.get_user().get_repo(REPO_NAME)
     return repo.create_issue(title=data["title"], body=data["body"])
-    
+
+
+def upload_file(file, filename, project_id, part_id, uploaded_by, notes=None):
+    """Upload a file to an S3 bucket
+
+    :param file_name: File to upload
+    :param bucket: Bucket to upload to
+    :param object_name: S3 object name. If not specified then file_name is used
+    :return: True if file was uploaded, else False
+    """
+    try:
+        s3_client = boto3.client(
+            's3',
+            aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+            aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
+            region_name=REGION_NAME)
+
+        s3_client.put_object(
+            Body=file,
+            Bucket=BUCKET_NAME,
+            Key=filename
+        )
+
+    except ClientError as e:
+        logging.error(e)
+        return False
+    return True
+
+
+def get_s3_data():
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+        aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
+        region_name=REGION_NAME)
+
+    paginator = s3_client.get_paginator('list_objects_v2')
+    page_iterator = paginator.paginate(Bucket=BUCKET_NAME)
+
+    files = []
+
+    for bucket in page_iterator:
+        try:
+            for item in bucket['Contents']:
+
+                try:
+                    metadata = s3_client.head_object(
+                        Bucket=BUCKET_NAME, Key=item['Key'])
+
+                    metadata['key'] = item['Key']
+                    files.append(metadata)
+                except:
+                    print("Failed {}".format(item['Key']))
+        except Exception as e:
+            print(e)
+    return files
+
+
+def get_s3_object(filename, version_id):
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+        aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
+        region_name=REGION_NAME)
+    obj = s3_client.get_object(
+        Bucket=BUCKET_NAME, Key=filename, VersionId=version_id)
+
+    return obj
+
+
+def delete_s3_object(filename, version_id):
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+        aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
+        region_name=REGION_NAME)
+    response = s3_client.delete_object(
+        Bucket=BUCKET_NAME, Key=filename, VersionId=version_id)
+
+    return response
+
+
+def get_obj(filename):
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=os.environ.get('AWS_ACCESS_KEY'),
+        aws_secret_access_key=os.environ.get('AWS_SECRET_KEY'),
+        region_name=REGION_NAME)
+
+    obj = s3_client.get_object(Bucket=BUCKET_NAME, Key=filename)
+    return obj

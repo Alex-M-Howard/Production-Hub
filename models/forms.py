@@ -1,6 +1,6 @@
 from flask_wtf import FlaskForm
 
-from wtforms import StringField, PasswordField, SelectField, TextAreaField, DateField, IntegerField, FileField, SelectMultipleField, widgets
+from wtforms import StringField, PasswordField, SelectField, TextAreaField, DateField, IntegerField, MultipleFileField, SelectMultipleField, widgets
 from wtforms.validators import Email, InputRequired, Length, NumberRange
 
 from models.materials import Materials
@@ -127,10 +127,9 @@ class EditPartForm(FlaskForm):
 class AddFileForm(FlaskForm):
     """Form for adding file"""
 
-    file = FileField()
-    description = StringField("Description")
+    file = MultipleFileField()
     notes = StringField("Notes")
-
+    
 
 class CreateIssueForm(FlaskForm):
     """Form for adding bug or request"""

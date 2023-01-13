@@ -1,55 +1,20 @@
 {% extends 'base.html' %}
 {% block title %}ECO Explorer{% endblock %}
+{% block style %}
+<link
+      href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+      rel="stylesheet"
+    />
+{% endblock %}
 {% block content %}
-  <table class="table table-responsive table-striped table-bordered table-hover table-sm my-5 hidden">
-    <thead class="table-light"> 
-      <tr>
-      <th scope="col" class="text-center align-middle">ECO</th>
-      <th scope="col" class="text-center align-middle">Part</th>
-      <th scope="col" class="text-center align-middle">Description</th>
-      <th scope="col" class="text-center align-middle">Rev</th>
-      <th scope="col" class="text-center align-middle">Unit</th>
-      <th scope="col" class="text-center align-middle">Type</th>
-      <th scope="col" class="text-center align-middle">Material Code</th>
-      <th scope="col" class="text-center align-middle">Replaces</th>
-      <th scope="col" class="text-center align-middle">Material Disposition</th>
-      <th scope="col" class="text-center align-middle">Effectivity Date</th>
-      <th scope="col" class="text-center align-middle">Continue to Buy</th>
-      <th scope="col" class="text-center align-middle">Comments</th>
-      <th scope="col" class="text-center align-middle">Punch</th>
-      <th scope="col" class="text-center align-middle">Amada</th>
-      <th scope="col" class="text-center align-middle">Trumpf</th>
-      <th scope="col" class="text-center align-middle">Forming</th>
-      <th scope="col" class="text-center align-middle">Added</th>
-      <th scope="col" class="text-center align-middle">Status</th>
-      </tr>
-      <tr>
-        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control filter" id="eco-filter"></td>
-        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control filter" id="part-filter"></td>
-        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control filter" id="description-filter"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control filter" id="replaces-filter"></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td></td>
-        <td style="box-shadow:1px 1px #1c79e2"><input type="text" class="box form-control filter" id="status-filter"></td>
-      </tr>
-    </thead>
-    <tbody id="results"></tbody>
-  </table>
-  <h1 class="text-center my-auto" id="loading">
-    Loading Data... <br> <br>
-  <i class="fa-solid fa-spinner fa-pulse"></i>
-  </h1>
+  
+<div>
+  <div id="wrapper"></div>
+</div>
+  
+
+
+  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
   <script src="/static/production/sort.js"></script>
   <script src="/static/data_explorers/eco.js"></script>
 {% endblock %}
