@@ -1,103 +1,123 @@
-{% extends 'base.html' %}
-{% block title %}Blanks Management{% endblock %}
-{% block content %}
-    <div class="mb-3" id="alerts"></div>
-    <h3 class="text-center my-3">Add Blank</h3>
-    <div class="container my-3">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <div class="container">
-                    <form class="row g-3">
-                        <div class="col-md-4">
-                            <label for="gauge" class="form-label">Gauge</label>
-                            <input type="text" class="form-control" id="gauge" required>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="material" class="form-label">Material</label>
-                            <select id="material" class="form-select" required>
-                                <option selected>Choose...</option>
-                                {% for material in material_names %}
-                                    <option>{{ material }}</option>
-                                {% endfor %}
-                            </select>
-                        </div>
-                        <div class="col-md-4">
-                            <label for="quantity" class="form-label">Qty.</label>
-                            <input type="text" class="form-control" id="quantity">
-                        </div>
-                        <div class="col-6">
-                            <label for="length" class="form-label">Length</label>
-                            <input type="text" class="form-control" id="length" required>
-                        </div>
-                        <div class="col-6">
-                            <label for="width" class="form-label">Width</label>
-                            <input type="text" class="form-control" id="width" required>
-                        </div>
-                        <div class="col-12">
-                            <button type="submit" class="btn btn-primary"  id="add-blank">Add Blank</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col-2"></div>
-        </div>
+{% extends 'production-base.html' %} {% block title %}Blanks Management{%
+endblock %} {% block content %}
+<div class="mb-3" id="alerts"></div>
+<h3 class="text-center my-3">Add Blank</h3>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <div class="container">
+        <form class="row g-3">
+          <div class="col-md-4">
+            <label for="gauge" class="form-label">Gauge</label>
+            <input type="text" class="form-control" id="gauge" required />
+          </div>
+          <div class="col-md-4">
+            <label for="material" class="form-label">Material</label>
+            <select id="material" class="form-select" required>
+              <option selected>Choose...</option>
+              {% for material in material_names %}
+              <option>{{ material }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-4">
+            <label for="quantity" class="form-label">Qty.</label>
+            <input type="text" class="form-control" id="quantity" />
+          </div>
+          <div class="col-6">
+            <label for="length" class="form-label">Length</label>
+            <input type="text" class="form-control" id="length" required />
+          </div>
+          <div class="col-6">
+            <label for="width" class="form-label">Width</label>
+            <input type="text" class="form-control" id="width" required />
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary" id="add-blank">
+              Add Blank
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
-    <hr>
-    <h3 class="text-center my-3">Available Blanks</h3>
-    <div class="container my-3">
-        <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10">
-                <nav class="nav nav-pills nav-fill">
-                    {% for material in blank_material_names %}
-                        <a class="nav-link mat-butts mx-1 my-1" href="#" style="width:30%;">{{ material }}</a>
-                    {% endfor %}
-                </nav>
-            </div>
-            <div class="col-1"></div>
-        </div>
+    <div class="col-2"></div>
+  </div>
+</div>
+<hr />
+<h3 class="text-center my-3">Available Blanks</h3>
+<div class="container my-3">
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col-10">
+      <nav class="nav nav-pills nav-fill">
+        {% for material in blank_material_names %}
+        <a class="nav-link mat-butts mx-1 my-1" href="#" style="width: 30%"
+          >{{ material }}</a
+        >
+        {% endfor %}
+      </nav>
     </div>
-    <div class="container">
-        <div class="row">
-            <div class="col-2"></div>
-            <div class="col-8">
-                <table class="table my-4 hidden" id="blanks-table">
-                    <thead class="thead"> 
-                        <tr>
-                            <th scope="col" class="text-center align-middle">
-                                Use Up
-                            </th>
-                            <th scope="col" class="text-center"  style="width:20%">
-                                <span>QTY  <br>
-                                    <a href="#" id="quantity-sort"><i class="fa-solid fa-arrow-down"></i></a>&nbsp;&nbsp;<a href="#" id="quantity-rev-sort"><i class="fa-solid fa-arrow-up"></i></a>
-                                </span>
-                            </th>
-                            <th scope="col" class="text-center" style="width:20%">
-                                <span>Gauge  <br>
-                                    <a href="#" id="gauge-sort"><i class="fa-solid fa-arrow-down"></i></a>&nbsp;&nbsp;<a href="#" id="gauge-rev-sort"><i class="fa-solid fa-arrow-up"></i></a>
-                                </span>
-                            </th>
-                            <th scope="col" class="text-center"  style="width:20%">
-                                <span>Length  <br>
-                                    <a href="#" id="length-sort"><i class="fa-solid fa-arrow-down"></i></a>&nbsp;&nbsp;<a href="#" id="length-rev-sort"><i class="fa-solid fa-arrow-up"></i></a>
-                                </span>
-                            </th>
-                            <th scope="col" class="text-center"  style="width:20%">
-                                <span>Width  <br>
-                                    <a href="#" id="width-sort"><i class="fa-solid fa-arrow-down"></i></a>&nbsp;&nbsp;<a href="#" id="width-rev-sort"><i class="fa-solid fa-arrow-up"></i></a>
-                                </span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="results">
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-2"></div>
-        </div>
+    <div class="col-1"></div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+      <table class="table my-4 hidden" id="blanks-table">
+        <thead class="thead">
+          <tr>
+            <th scope="col" class="text-center align-middle">Use Up</th>
+            <th scope="col" class="text-center" style="width: 20%">
+              <span
+                >QTY <br />
+                <a href="#" id="quantity-sort"
+                  ><i class="fa-solid fa-arrow-down"></i></a
+                >&nbsp;&nbsp;<a href="#" id="quantity-rev-sort"
+                  ><i class="fa-solid fa-arrow-up"></i
+                ></a>
+              </span>
+            </th>
+            <th scope="col" class="text-center" style="width: 20%">
+              <span
+                >Gauge <br />
+                <a href="#" id="gauge-sort"
+                  ><i class="fa-solid fa-arrow-down"></i></a
+                >&nbsp;&nbsp;<a href="#" id="gauge-rev-sort"
+                  ><i class="fa-solid fa-arrow-up"></i
+                ></a>
+              </span>
+            </th>
+            <th scope="col" class="text-center" style="width: 20%">
+              <span
+                >Length <br />
+                <a href="#" id="length-sort"
+                  ><i class="fa-solid fa-arrow-down"></i></a
+                >&nbsp;&nbsp;<a href="#" id="length-rev-sort"
+                  ><i class="fa-solid fa-arrow-up"></i
+                ></a>
+              </span>
+            </th>
+            <th scope="col" class="text-center" style="width: 20%">
+              <span
+                >Width <br />
+                <a href="#" id="width-sort"
+                  ><i class="fa-solid fa-arrow-down"></i></a
+                >&nbsp;&nbsp;<a href="#" id="width-rev-sort"
+                  ><i class="fa-solid fa-arrow-up"></i
+                ></a>
+              </span>
+            </th>
+          </tr>
+        </thead>
+        <tbody id="results"></tbody>
+      </table>
     </div>
-    <script src="/static/production/blanks.js"></script>
-    <script src="/static/production/sort.js"></script>
-    <script src="/static/hubs/production.js"></script>
+    <div class="col-2"></div>
+  </div>
+</div>
+<script src="/static/production/blanks.js"></script>
+<script src="/static/production/sort.js"></script>
+<script src="/static/hubs/production.js"></script>
 {% endblock %}

@@ -1,20 +1,16 @@
-{% extends 'base.html' %}
-{% block title %}ECO Explorer{% endblock %}
+{% extends 'production-base.html' %} {% block title %}ECO Explorer{% endblock %}
 {% block style %}
 <link
-      href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
-      rel="stylesheet"
-    />
-{% endblock %}
-{% block content %}
-  
+  href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+  rel="stylesheet"
+/>
+{% endblock %} {% block content %}
+
 <div>
   <div id="wrapper"></div>
 </div>
-  
 
-
-  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-  <script src="/static/production/sort.js"></script>
-  <script src="/static/data_explorers/eco.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script src="/static/production/sort.js"></script>
+<script src="/static/data_explorers/eco.js"></script>
 {% endblock %}

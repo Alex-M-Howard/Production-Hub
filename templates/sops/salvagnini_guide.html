@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
-{% block title %} Salvagnini User Guide {% endblock %}
-{% block content %}
-  <iframe
-    src="/static/guides/salvagnini-user-guide.pdf"
-    scrolling="auto"
-    class="guide">
-  </iframe>
-  <script src="/static/hubs/sop.js"></script>
+{% extends 'production-base.html' %} {% block title %} Salvagnini User Guide {%
+endblock %} {% block content %}
+<iframe
+  src="/static/guides/salvagnini-user-guide.pdf"
+  scrolling="auto"
+  class="guide"
+>
+</iframe>
+<script src="/static/hubs/sop.js"></script>
 
 {% endblock %}

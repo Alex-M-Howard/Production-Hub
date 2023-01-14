@@ -1,4 +1,4 @@
-{%extends 'base.html'%} {%block title%}{{error.id}}{%endblock%}
+{%extends 'production-base.html'%} {%block title%}{{error.id}}{%endblock%}
 {%block content%}
 
 <div class="container my-4" id="alerts">
@@ -21,11 +21,15 @@
 <div class="container">
   <div class="row">
     <div class="col-2">
-      <a href="{{url_for('errors.error_log')}}"><button class="btn btn-primary" style="width:100%">Back</button></a>
+      <a href="{{url_for('errors.error_log')}}"
+        ><button class="btn btn-primary" style="width: 100%">Back</button></a
+      >
     </div>
     <div class="col-8"></div>
     <div class="col-2">
-      <a href="{{url_for('errors.edit_error', error_id=error.id)}}"><button class="btn btn-primary" style="width:100%">Edit</button></a>
+      <a href="{{url_for('errors.edit_error', error_id=error.id)}}"
+        ><button class="btn btn-primary" style="width: 100%">Edit</button></a
+      >
     </div>
   </div>
 </div>
@@ -46,7 +50,6 @@
                   <th scope="col" class="text-center">Notes</th>
                   <th scope="col" class="text-center">Date</th>
                   <th scope="col" class="text-center">Logged By</th>
-                  
                 </tr>
               </thead>
               <tbody>
@@ -56,7 +59,7 @@
                   <td class="text-center">{{ error.machine}}</td>
                   <td class="text-center">{{ error.root_cause}}</td>
                   <td class="text-center">{{ error.notes}}</td>
-                  
+
                   <td class="text-center">
                     {{ error.date.strftime('%m-%d-%Y')}}
                   </td>
@@ -77,23 +80,25 @@
       <div class="card">
         <div class="card-body">
           <h5 class="card-title text-center">Pictures</h5>
-          <a href="{{url_for('errors.add_file', id=error.id)}}"><i class="fa-solid fa-square-plus"></i></a>
-          
-          {% if files %}
-            {% for file in files %}
-              <h6>{{file.file_name}}</h6>
-              
-              <a href="{{file.presigned_url}}"><img class="img-fluid" src="{{file.presigned_url}}" alt="{{file.file_name}}"></a>
-              <hr>
-            {% endfor %}
-          {% endif %}
-          
+          <a href="{{url_for('errors.add_file', id=error.id)}}"
+            ><i class="fa-solid fa-square-plus"></i
+          ></a>
 
+          {% if files %} {% for file in files %}
+          <h6>{{file.file_name}}</h6>
+
+          <a href="{{file.presigned_url}}"
+            ><img
+              class="img-fluid"
+              src="{{file.presigned_url}}"
+              alt="{{file.file_name}}"
+          /></a>
+          <hr />
+          {% endfor %} {% endif %}
         </div>
       </div>
     </div>
   </div>
 </div>
-
 
 {%endblock%}

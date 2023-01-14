@@ -1,6 +1,6 @@
 .active{
     font-weight: 600;
-    color: goldenrod !important
+    color: rgb(248, 126, 126) !important
 }
 
 .hidden{
@@ -12,7 +12,7 @@
 }
 
 .navbar{
-    background-color: #002856;
+    background-color: #000;
 }
 
 .nav-link {
@@ -21,14 +21,14 @@
 }
 .nav-link:hover {
     
-    color: goldenrod;
+    color: #82ecbaa8;
 }
 
 .navbar-nav .nav-link.active{
     color: #FFF;
 }
 
-#bluestar-logo {
+#alex-logo {
     height: 60px;
     width: auto !important;
     bottom: 0px;
@@ -36,6 +36,7 @@
 
 #dropdown{
     color: #FFF;
+    border: none;
 }
 
 #nav-drop{
@@ -63,24 +64,12 @@ left: auto;
 display: block;
 }
 .dropdown-item:hover{
-    background-color: #1c79e2;
+    background-color: #b0c0d1;
     
 }
 
 #dropdown:hover{
-    color: goldenrod;
-}
-#ECO-excel{
-    background-color: #002856;
-    color: white;
-    font-family: "Trade-Gothic", "Open Sans", Helvetica, Arial, sans-serif;
-    width: 100%;
-    text-align: center;
-    display: block;
-    margin: 7px auto 0 auto;
-    padding: 15px 0;
-    font-size: 1.7rem;
-    font-weight: 600;
+    color: #b0c0d1;
 }
 
 
@@ -91,43 +80,35 @@ display: block;
     width: 20%;
 }
 
-#eco-sheet{
-    background-color: #002856;
-    color: white;
-}
 
 .mat-butts{
     color: #000 !important;
-    border: 1px solid #002856 !important;
+    border: 1px solid red !important;
 
     
 }
 
 .mat-butts:active{
     color: #FFF !important;
-    background-color: #002856 !important;
+    background-color: rgb(248, 126, 126) !important;
 }
 
 .mat-butts-active{
     color: #FFF !important;
-    background-color: #002856 !important;
+    background-color: rgb(248, 126, 126) !important;
 }
 
-.btn-primary{
-    background-color: #002856 !important;
-    color: #FFF !important;
-}
 
 #hamburger{
    color: #FFF !important;
 }
 
 #hamburger:active{
-  color: goldenrod !important;
+  color: rgb(248, 126, 126)!important;
 }
 
 #hamburger:hover{
-  color: goldenrod !important;
+  color: #82ecbaa8 !important;
 }
 
 .badge{
@@ -351,11 +332,6 @@ padding: 10px;
     width:100%;
     }
     
-.btn.btn-primary{
-  background-color: #002856;
-  color: white;
-
-}
 
 
 /* FROM NESTING-STYLES */
@@ -373,8 +349,10 @@ padding: 10px;
 }
 
 .btn.btn-primary{
-  background-color: #002856;
+  background-color: #35c176 !important;
   color: white;
+  font-weight: 600;
+  font-size: 1.15rem;
 
 }
 
@@ -396,7 +374,7 @@ body{
 
 #sticky-footer{
   display: flex;
-  background-color: #002856;
+  background-color: #000;
   color: white;
   height: auto;
   margin-top: auto;
@@ -408,7 +386,7 @@ body{
 .explorer-buttons
 {
     color: #000 !important;
-    border: 1px solid #002856 !important;
+    border: 1px solid #135600 !important;
 
     
 }
@@ -416,21 +394,21 @@ body{
 .explorer-buttons
 :active{
     color: #FFF !important;
-    background-color: #002856 !important;
+    background-color: rgb(248, 126, 126) !important;
 }
 
 .explorer-buttons-active{
     color: #FFF !important;
-    background-color: #002856 !important;
+    background-color: rgb(248, 126, 126) !important;
 }
 
 
 #user-menu{
-  color: goldenrod;
+  color: rgb(248, 126, 126);
 }
 
 #hamburger-button:focus{
-  color: #002856;
+  color: #000;
 }
 
 th{
@@ -518,4 +496,33 @@ th{
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.wrapper {
+  height: 20vh;
+  /*This part is important for centering*/
+  display: grid;
+  place-items: center;
+}
+
+.typing {
+  width: 17ch;
+  animation: typing 2s steps(17), blink .5s step-end infinite alternate;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 3px solid;
+  font-family: monospace;
+  font-size: 2em;
+}
+
+@keyframes typing {
+  from {
+    width: 0
+  }
+}
+    
+@keyframes blink {
+  50% {
+    border-color: transparent
+  }
 }

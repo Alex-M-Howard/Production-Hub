@@ -1,21 +1,31 @@
-{% extends "base.html" %}
-{% block title %}Error{% endblock %}
-{% block content %}
+{% extends "production-base.html" %} {% block title %}Error{% endblock %} {%
+block content %}
 
 <h1 class="text-center my-5">{{error.code}}</h1>
-<div class="d-flex align-items-center justify-content-center" style="height:50vh;">
-<div class="container">
+<div
+  class="d-flex align-items-center justify-content-center"
+  style="height: 50vh"
+>
+  <div class="container">
     <div class="row">
-        <div class="col-2"></div>
-        <div class="col-8">
-            <h2 class="text-center">Sorry, we've encountered an error:</h2>
-            <p class="text-center">{{error}}</p>
+      <div class="col-2"></div>
+      <div class="col-8">
+        {% if error.code == 404 %}
+        <h2 class="text-center">Where in the world did I put that?</h2>
+        <p class="text-center">
+          I can't seem to find what you were looking for! My deepest apologies.
+        </p>
 
-        </div>
-        <div class="col-2"></div>
+        {% elif error.code == 500%}
+        <h2 class="text-center">
+          Ack! That's the best Cathy impression you'll get outta me.
+        </h2>
+        <p class="text-center">{{error}}</p>
+        {% endif %}
+      </div>
+      <div class="col-2"></div>
     </div>
+  </div>
 </div>
-</div>
-
 
 {% endblock %}

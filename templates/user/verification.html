@@ -1,83 +1,128 @@
-{% extends 'base.html' %}
-
-{% block title %}OTP Verification{% endblock %}
-
-{% block content %}
+{% extends 'production-base.html' %} {% block title %}OTP Verification{%
+endblock %} {% block content %}
 <div class="container my-4">
   <div class="row">
     <div class="col-3"></div>
     <div class="col-6">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-          <ul class='flashes'>
-          {% for category, message in messages %}
-            <div class="alert alert-{{category}} " id="flashed">
-              {{ message }}
-            </div>
-          {% endfor %}
-          </ul>
-        {% endif %}
-      {% endwith %}
+      {% with messages = get_flashed_messages(with_categories=true) %} {% if
+      messages %}
+      <ul class="flashes">
+        {% for category, message in messages %}
+        <div class="alert alert-{{category}} " id="flashed">{{ message }}</div>
+        {% endfor %}
+      </ul>
+      {% endif %} {% endwith %}
     </div>
     <div class="col-3"></div>
   </div>
 </div>
+<h4 class="text-center">
+  Normally, you wouldn't have this here, but check out your code! {{code}}
+</h4>
 
-<div class="d-flex align-items-center justify-content-center" style="height:75vh;">
-<div class="h-screen bg-blue-500 py-20 px-3">
+<div
+  class="d-flex align-items-center justify-content-center"
+  style="height: 60vh"
+>
+  <div class="h-screen bg-blue-500 py-20 px-3">
     <div class="container mx-auto">
-        <div class="max-w-sm mx-auto md:max-w-lg">
-            <div class="w-full">
-                <div class="bg-white h-64 py-3 rounded text-center">
-                      <h1 class="text-2xl font-bold">OTP Verification</h1>
-                      <div class="flex flex-col mt-4">
-                          <span>Enter the OTP you received at {{email}}</span>
-                      </div>
-                      <form action="{{ url_for('user.check_code') }}" method="post">
-                      <div class="container my-3">
-                        <div class="row">
-                            
-                            <div class="col-xl-4 col-md-3 col-sm-2 col-0"></div>
-                            <div class="col-xl-4 col-md-6 col-sm-8 col-12">
-                                <div id="otp" class="row">
-                                    
-                                    <div class="col-2">
-                                        <input class="form-control border text-center mx-1  otp" name="1" type="text" id="first" maxlength="1" />
-                                        </div> 
-                                    <div class="col-2">
-                                        <input class="form-control border text-center mx-1  otp" name="2" type="text" id="second" maxlength="1" />
-                                        </div> 
-                                    <div class="col-2">
-                                        <input class="form-control border text-center mx-1  otp" name="3" type="text" id="third" maxlength="1" />
-                                        </div> 
-                                    <div class="col-2">
-                                        <input class="form-control border text-center mx-1  otp" name="4" type="text" id="fourth" maxlength="1" />
-                                        </div>
-                                    <div class="col-2">
-                                        <input class="form-control border text-center mx-1  otp" name="5" type="text" id="fifth" maxlength="1" />
-                                        </div> 
-                                    <div class="col-2">
-                                        <input class="form-control border text-center mx-1 otp" name="6" type="text" id="sixth" maxlength="1" />
-                                        </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-md-3 col-sm-2 col-0"></div>
-                        </div>
-                      </div>
-                      
-                      
-                      <div class="flex justify-center text-center mt-5">
-                        <button class="btn btn-primary otp" type="submit" id="verify" style="width:375px">Verify</button>
-                        <br>
-                        <br>
-                          <a class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"><span class="font-bold">Resend OTP</span><i class='bx bx-caret-right ml-1'></i></a>
-                      </div>
-                      </form>
-                </div>
+      <div class="max-w-sm mx-auto md:max-w-lg">
+        <div class="w-full">
+          <div class="bg-white h-64 py-3 rounded text-center">
+            <h1 class="text-2xl font-bold">OTP Verification</h1>
+            <div class="flex flex-col mt-4">
+              <span>Enter the OTP you received at {{email}}</span>
             </div>
+            <form action="{{ url_for('user.check_code') }}" method="post">
+              <div class="container my-3">
+                <div class="row">
+                  <div class="col-xl-4 col-md-3 col-sm-2 col-0"></div>
+                  <div class="col-xl-4 col-md-6 col-sm-8 col-12">
+                    <div id="otp" class="row">
+                      <div class="col-2">
+                        <input
+                          class="form-control border text-center mx-1 otp"
+                          name="1"
+                          type="text"
+                          id="first"
+                          maxlength="1"
+                        />
+                      </div>
+                      <div class="col-2">
+                        <input
+                          class="form-control border text-center mx-1 otp"
+                          name="2"
+                          type="text"
+                          id="second"
+                          maxlength="1"
+                        />
+                      </div>
+                      <div class="col-2">
+                        <input
+                          class="form-control border text-center mx-1 otp"
+                          name="3"
+                          type="text"
+                          id="third"
+                          maxlength="1"
+                        />
+                      </div>
+                      <div class="col-2">
+                        <input
+                          class="form-control border text-center mx-1 otp"
+                          name="4"
+                          type="text"
+                          id="fourth"
+                          maxlength="1"
+                        />
+                      </div>
+                      <div class="col-2">
+                        <input
+                          class="form-control border text-center mx-1 otp"
+                          name="5"
+                          type="text"
+                          id="fifth"
+                          maxlength="1"
+                        />
+                      </div>
+                      <div class="col-2">
+                        <input
+                          class="form-control border text-center mx-1 otp"
+                          name="6"
+                          type="text"
+                          id="sixth"
+                          maxlength="1"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-4 col-md-3 col-sm-2 col-0"></div>
+                </div>
+              </div>
+
+              <div class="flex justify-center text-center mt-5">
+                <button
+                  class="btn btn-primary otp"
+                  type="submit"
+                  id="verify"
+                  style="width: 375px"
+                >
+                  Verify
+                </button>
+                <br />
+                <br />
+                <a
+                  class="flex items-center text-blue-700 hover:text-blue-900 cursor-pointer"
+                  ><span class="font-bold">Resend OTP</span
+                  ><i class="bx bx-caret-right ml-1"></i
+                ></a>
+              </div>
+            </form>
+          </div>
         </div>
+      </div>
     </div>
+  </div>
 </div>
-</div>
+
 <script src="/static/user/verification.js"></script>
 {% endblock %}

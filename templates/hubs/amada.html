@@ -1,98 +1,112 @@
-{% extends 'base.html' %}
-{% block title %} Amada Laser Hub {% endblock %}
-{% block content %}
-  <img  class="rounded mx-auto d-block my-5" src="https://www.amada.com/america/PRODUCTS%20IMAGES/ensisseries-hires.jpg" alt="Amada Laser">
+{% extends 'production-base.html' %} {% block title %} Amada Laser Hub {%
+endblock %} {% block content %}
+<img
+  class="rounded mx-auto d-block my-5"
+  src="https://www.amada.com/america/PRODUCTS%20IMAGES/ensisseries-hires.jpg"
+  alt="Amada Laser"
+/>
 
 <div class="container">
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                SOP
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Blank CAM</h5>
-                <p class="card-text">Information for creating nesting program for Amada Laser</p>
-                <a href="{{url_for('amada.amada_blankcam')}}" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">SOP</div>
+        <div class="card-body">
+          <h5 class="card-title">Blank CAM</h5>
+          <p class="card-text">
+            Information for creating nesting program for Amada Laser
+          </p>
+          <a href="{{url_for('amada.amada_blankcam')}}" class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
+    <div class="col-xl-1"></div>
+  </div>
 
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                User Guide
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Data Explorer</h5>
-                <p class="card-text">Amada's database for part and programming data</p>
-                <a href="{{url_for('amada.data_explorer')}}" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">User Guide</div>
+        <div class="card-body">
+          <h5 class="card-title">Data Explorer</h5>
+          <p class="card-text">
+            Amada's database for part and programming data
+          </p>
+          <a href="{{url_for('amada.data_explorer')}}" class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
+    <div class="col-xl-1"></div>
+  </div>
 
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                User Guide
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Material Explorer</h5>
-                <p class="card-text">Amada's database for adding and managing materials</p>
-                <a href="{{url_for('amada.material_explorer')}}" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">User Guide</div>
+        <div class="card-body">
+          <h5 class="card-title">Material Explorer</h5>
+          <p class="card-text">
+            Amada's database for adding and managing materials
+          </p>
+          <a
+            href="{{url_for('amada.material_explorer')}}"
+            class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
+    <div class="col-xl-1"></div>
+  </div>
 
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                User Guide
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Parameter Explorer</h5>
-                <p class="card-text">Amada's database for all parameters related to the 3i software programming suite</p>
-                <a href="{{url_for('amada.parameter_explorer')}}" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">User Guide</div>
+        <div class="card-body">
+          <h5 class="card-title">Parameter Explorer</h5>
+          <p class="card-text">
+            Amada's database for all parameters related to the 3i software
+            programming suite
+          </p>
+          <a
+            href="{{url_for('amada.parameter_explorer')}}"
+            class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
+    <div class="col-xl-1"></div>
+  </div>
 
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                Data Explorer
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Data Explorer</h5>
-                <p class="card-text">Recreation of Amada's database for viewing parts and programs</p>
-                <a href="{{url_for('general.data_explorer')}}" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">Data Explorer</div>
+        <div class="card-body">
+          <h5 class="card-title">Data Explorer</h5>
+          <p class="card-text">
+            Recreation of Amada's database for viewing parts and programs
+          </p>
+          <a href="{{url_for('general.data_explorer')}}" class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
-
-
-
-
+    <div class="col-xl-1"></div>
+  </div>
 </div>
-  <script src="/static/hubs/sop.js"></script>
- 
+<script src="/static/hubs/sop.js"></script>
+
 {% endblock %}

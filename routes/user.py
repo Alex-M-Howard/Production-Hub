@@ -56,7 +56,7 @@ def signup_page():
                 first_name=form.first_name.data,
                 last_name=form.last_name.data,
                 password=temp_password,
-                email=form.email.data.lower() + "@bluestarcooking.com"
+                email=form.email.data.lower()
             )
 
             db.session.commit()
@@ -71,10 +71,10 @@ def signup_page():
             return render_template('/user/sign_up.html', form=form)
 
         flash('Please check your email for your temporary password', "success")
-        session['email'] = form.email.data.lower() + "@bluestarcooking.com"
+        session['email'] = form.email.data.lower()
         send_temp_email(session["email"], temp_password)
-        print(temp_password)
-
+        session["code"] = temp_password
+        
         return redirect(url_for('user.check_code'))
 
     if request.method == "GET":
@@ -85,13 +85,13 @@ def signup_page():
 def login_page():
     """ Show login form """
     if current_user_id in session:
-        return redirect(url_for('home'))
+        return redirect(url_for('dashboard'))
 
     if request.method == "GET":
         return render_template('/user/login.html')
 
     if request.method == "POST":
-        email = request.form.get('email').lower() + "@bluestarcooking.com"
+        email = request.form.get('email').lower()
 
         user = User.authenticate(
             email=email,
@@ -122,7 +122,7 @@ def logout_user():
 @user.route('/verification', methods=["GET", "POST"])
 def check_code():
     if request.method == "GET":
-        return render_template('/user/verification.html', email=session['email'])
+        return render_template('/user/verification.html', email=session['email'], code=session['code'])
 
     if request.method == "POST":
 

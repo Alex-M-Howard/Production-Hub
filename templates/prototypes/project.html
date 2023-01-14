@@ -1,5 +1,5 @@
-{%extends 'base.html'%} {%block title%}{{project.project_name}}{%endblock%}
-{%block content%}
+{%extends 'production-base.html'%} {%block
+title%}{{project.project_name}}{%endblock%} {%block content%}
 
 <div class="container my-4" id="alerts">
   <div class="row">
@@ -21,13 +21,19 @@
 <div class="container">
   <div class="row">
     <div class="col-4">
-    <a href="{{ url_for('proto.show_projects') }}"
-        ><button class="btn btn-primary" style="width:100%;">Back to Projects</button></a>
+      <a href="{{ url_for('proto.show_projects') }}"
+        ><button class="btn btn-primary" style="width: 100%">
+          Back to Projects
+        </button></a
+      >
     </div>
     <div class="col-4"></div>
     <div class="col-4">
-      <a href="{{url_for('proto.edit_project', project_name=project.project_name)}}"
-        ><button class="btn btn-primary" style="width:100%;">Edit Project Details</button></a
+      <a
+        href="{{url_for('proto.edit_project', project_name=project.project_name)}}"
+        ><button class="btn btn-primary" style="width: 100%">
+          Edit Project Details
+        </button></a
       >
     </div>
   </div>
@@ -126,7 +132,8 @@
                 {% for part in parts %}
                 <tr>
                   <td class="text-center">
-                    <a href="{{url_for('proto.show_part', project_name=project.project_name, part_number=part.part_number)}}"
+                    <a
+                      href="{{url_for('proto.show_part', project_name=project.project_name, part_number=part.part_number)}}"
                       >{{ part.part_number}}</a
                     >
                   </td>
@@ -134,7 +141,9 @@
                   <td class="text-center">{{ part.material}}</td>
                   <td class="text-center">{{ part.bin_location}}</td>
                   <td class="text-center">{{ part.status}}</td>
-                  <td class="text-center">{{ part.total_processes - part.total_processes_completed }}</td>
+                  <td class="text-center">
+                    {{ part.total_processes - part.total_processes_completed }}
+                  </td>
                   <td class="text-center">{{ part.notes}}</td>
                   <td class="text-center">{{ part.updated_by}}</td>
                 </tr>

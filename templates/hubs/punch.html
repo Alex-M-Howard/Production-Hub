@@ -1,64 +1,72 @@
-{% extends 'base.html' %}
-{% block title %} Punch Hub {% endblock %}
+{% extends 'production-base.html' %} {% block title %} Punch Hub {% endblock %}
 {% block content %}
-  <img class="mx-auto d-block my-2" src="https://ww1.prweb.com/prfiles/2013/08/30/11079999/M3048TG.jpg" style="height: 150px;">
+<img
+  class="mx-auto d-block my-2"
+  src="https://ww1.prweb.com/prfiles/2013/08/30/11079999/M3048TG.jpg"
+  style="height: 150px"
+/>
 
 <div class="container">
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                SOP
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Punch</h5>
-                <p class="card-text">Information for creating nesting program for Punches</p>
-                <a href="{{url_for('punch.punch_sop')}}" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">SOP</div>
+        <div class="card-body">
+          <h5 class="card-title">Punch</h5>
+          <p class="card-text">
+            Information for creating nesting program for Punches
+          </p>
+          <a href="{{url_for('punch.punch_sop')}}" class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
+    <div class="col-xl-1"></div>
+  </div>
 
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                Data Explorer
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">Data Explorer</h5>
-                <p class="card-text">Recreation of Amada's database for viewing parts and programs for the Punch nests</p>
-                <a href="{{url_for('general.data_explorer')}}" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">Data Explorer</div>
+        <div class="card-body">
+          <h5 class="card-title">Data Explorer</h5>
+          <p class="card-text">
+            Recreation of Amada's database for viewing parts and programs for
+            the Punch nests
+          </p>
+          <a href="{{url_for('general.data_explorer')}}" class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
+    <div class="col-xl-1"></div>
+  </div>
 
-    <div class="row my-3">
-        <div class="col-xl-1"></div>
-        <div class="col-xl-10">
-            <div class="card">
-            <div class="card-header">
-                SMP Master Index
-            </div>
-            <div class="card-body">
-                <h5 class="card-title">SMP Help</h5>
-                <p class="card-text">External link to master help file for SMP program</p>
-                <a href="http://mmisupport.com/HelpSys/smphelp/index.htm" class="btn btn-primary">Go</a>
-            </div>
-            </div>
+  <div class="row my-3">
+    <div class="col-xl-1"></div>
+    <div class="col-xl-10">
+      <div class="card">
+        <div class="card-header">SMP Master Index</div>
+        <div class="card-body">
+          <h5 class="card-title">SMP Help</h5>
+          <p class="card-text">
+            External link to master help file for SMP program
+          </p>
+          <a
+            href="http://mmisupport.com/HelpSys/smphelp/index.htm"
+            class="btn btn-primary"
+            >Go</a
+          >
         </div>
-        <div class="col-xl-1"></div>
+      </div>
     </div>
-
-
-
-
+    <div class="col-xl-1"></div>
+  </div>
 </div>
-  <script src="/static/hubs/sop.js"></script>
- 
+<script src="/static/hubs/sop.js"></script>
+
 {% endblock %}

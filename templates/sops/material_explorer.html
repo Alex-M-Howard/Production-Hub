@@ -1,11 +1,11 @@
-{% extends 'base.html' %}
-{% block title %} Amada Material Explorer Guide {% endblock %}
-{% block content %}
-  <iframe
-    src="/static/guides/MaterialExplorer Users Guide.pdf"
-    scrolling="auto"
-    class="guide">
-  </iframe>
-  <script src="/static/hubs/sop.js"></script>
+{% extends 'production-base.html' %} {% block title %} Amada Material Explorer
+Guide {% endblock %} {% block content %}
+<iframe
+  src="/static/guides/MaterialExplorer Users Guide.pdf"
+  scrolling="auto"
+  class="guide"
+>
+</iframe>
+<script src="/static/hubs/sop.js"></script>
 
 {% endblock %}

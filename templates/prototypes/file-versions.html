@@ -1,6 +1,5 @@
-{%extends 'base.html'%} {%block title%}{{file_name}}{%endblock%}
+{%extends 'production-base.html'%} {%block title%}{{file_name}}{%endblock%}
 {%block content%}
-
 
 <div class="container my-4" id="alerts">
   <div class="row">
@@ -19,62 +18,63 @@
   </div>
 </div>
 
- <div class="container">
-    <div class="row">
-      <div class="col-3">
-        <a href="{{url_for('proto.show_part', project_name=project_name, part_number=part_number)}}">
-          <h2 class="text-center">
-            <button class="btn btn-primary" style="width:100%">Back</button>
-          </h2>
-        </a>
-      </div>
-      <div class="col-9"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-3">
+      <a
+        href="{{url_for('proto.show_part', project_name=project_name, part_number=part_number)}}"
+      >
+        <h2 class="text-center">
+          <button class="btn btn-primary" style="width: 100%">Back</button>
+        </h2>
+      </a>
     </div>
+    <div class="col-9"></div>
   </div>
+</div>
 
 <h2 class="my-5 text-center">{{file_name}}</h2>
 
-
 <div class="container my-5">
   <div class="row">
-    <div class="col-3">
-    </div>
-    
+    <div class="col-3"></div>
+
     <div class="col-9"></div>
   </div>
 
   {% if files %}
 
   <div class="row">
-<div class="table-responsive">
-<table class="table my-3 table-hover">
-  <thead>
-    <tr>
-      <th class="text-center" style="width:20%;">Download</th>
-      <th class="text-center" style="width:20%;">Uploaded By</th>
-      <th class="text-center" style="width:20%;">Notes</th>
-      <th class="text-center" style="width:20%;">REV</th>
-      <th class="text-center" style="width:20%;">Upload Date</th>
-    </tr>
-  </thead>
-  <tbody>
-    {% for file in files %}
-    <tr>
-      <td class="text-center"><a href="{{file.presigned_url}}"><i class="fa-solid fa-file-arrow-down"></i></a></td>
-      <td class="text-center">{{file.updated_by}}</td>
-      <td class="text-center">{{file.notes}}</td>
-      <td class="text-center">{{file.rev}}</td>
-      <td class="text-center">{{file.created}}</td>
-    </tr>
-    {% endfor %}
-  </tbody> 
-</table>
-</div>
+    <div class="table-responsive">
+      <table class="table my-3 table-hover">
+        <thead>
+          <tr>
+            <th class="text-center" style="width: 20%">Download</th>
+            <th class="text-center" style="width: 20%">Uploaded By</th>
+            <th class="text-center" style="width: 20%">Notes</th>
+            <th class="text-center" style="width: 20%">REV</th>
+            <th class="text-center" style="width: 20%">Upload Date</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for file in files %}
+          <tr>
+            <td class="text-center">
+              <a href="{{file.presigned_url}}"
+                ><i class="fa-solid fa-file-arrow-down"></i
+              ></a>
+            </td>
+            <td class="text-center">{{file.updated_by}}</td>
+            <td class="text-center">{{file.notes}}</td>
+            <td class="text-center">{{file.rev}}</td>
+            <td class="text-center">{{file.created}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
   </div>
   {% endif %}
 </div>
 
 {%endblock%}
-
-
-          

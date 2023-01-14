@@ -1,55 +1,64 @@
 # Bluestar App Docs
+
 <hr>
 ## Technology Stack
 
-
 ### Frontend
 
-**Languages:** 
- - HTML 
- - CSS 
- - Javascript
-  
-**Frameworks:** 
- - Bootstrap 5.2.1
- - jQuery 3.6.1 (CDN)
- - axios 1.2.2 (CDN)
- - Popper 2.11.6 (CDN)
+**Languages:**
+
+- HTML
+- CSS
+- Javascript
+
+**Frameworks:**
+
+- Bootstrap 5.2.1
+- jQuery 3.6.1 (CDN)
+- axios 1.2.2 (CDN)
+- Popper 2.11.6 (CDN)
 
 **Miscellaneous**
- - FontAwesome Icons
+
+- FontAwesome Icons
 
 <br>
 
 ### Backend
 
-**Languages:**  
+**Languages:**
+
 - Python 3.8 (As of 1/6/23 - Railway uses Nixpacks which defaults to 3.8)
 
-**Frameworks:** 
+**Frameworks:**
+
 - Flask v2.2.2
   - Flask-SQLAlchemy v2.5.1
   - Flask-Bcrypt v1.0.1
   - Flask-WTF v1.0.1
 
-**Database:** 
+**Database:**
+
 - PostgreSQL 13(As of 1/6/23 - Railway uses PSQL 13 image from Docker)
 
 **API:**
+
 - SendGrid (Email Service)
 
 **Storage**
+
 - AWS S3 (File Storage)
 
 <br>
 
 ### Host
-- Railway
 
+- Railway
 
 <hr>
 
 #### Project Tree
+
 ```
 Prizer-BS-Site/
 ├─app.py
@@ -130,14 +139,14 @@ Prizer-BS-Site/
 │   ├─change_password.js
 │   └─verification.js
 ├─templates/
-│ ├─base.html
+│ ├─production-base.html
 │ ├─error_log/
 │ │ ├─add-error.html
 │ │ ├─add-file.html
 │ │ ├─edit-error.html
 │ │ ├─error-log.html
 │ │ └─error.html
-│ ├─home.html
+│ ├─dashboard.html
 │ ├─hubs/
 │ │ ├─amada.html
 │ │ ├─forming.html

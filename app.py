@@ -44,7 +44,9 @@ connect_to_db(app)
 @seed.before_request
 @docs.before_request
 @proto.before_request
+@user.before_request
 @admin.before_request
+@app.before_request
 def add_user_globally():
     """If user is logged in, add user_id to Flask global"""
 
@@ -141,14 +143,14 @@ app.register_blueprint(proto)
 app.register_blueprint(admin)
 
 
+
 @app.route("/")
 def home():
-    if "current_user_id" not in session:
-        return redirect(url_for("user.login_page"))
-    else:
-        user = User.query.get(session["current_user_id"])
-        g.user = user
-        return redirect(url_for('proto.home'))
+    return render_template('home.html')
+
+@app.route("/production-project")
+def dashboard():
+    return render_template('dashboard.html')
 
 
 if __name__ == "__main__":

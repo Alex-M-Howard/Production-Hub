@@ -1,217 +1,96 @@
 {% extends 'base.html' %}
-{% block title %}Projects{% endblock %}
-
+{% block title %} {% endblock %}
 {% block content %}
 
-<div class="container my-4" id="alerts">
-  <div class="row">
-    <div class="col-3"></div>
-    <div class="col-6">
-      {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-          <ul class='flashes'>
-          {% for category, message in messages %}
-            <div class="alert alert-{{category}} " id="flashed">
-              {{ message }}
-            </div>
-          {% endfor %}
-          </ul>
-        {% endif %}
-      {% endwith %}
+<div class="wrapper mt-5">
+    <div class="typing">
+      Hello World... :)
     </div>
-    <div class="col-3"></div>
+</div>
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <div class="card" style="background-color:rgb(216, 236, 236)">
+                <div class="card-body">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <img class="img-fluid" src="https://lh3.googleusercontent.com/IuU_DnT9rVFXPfu27BOqujvKs12pam9m-aFr5PcKeEEkaEa8job_Q_m3yhfI83h2j98cG4EzJlG35-KzzXLxR5ury7-j8Q0XdQRlNovrSdGJnQsSauCUFEDOdNlnBd7VIa2Z0IXRB5eHfztSbNdOTeDhWXrzHtUTpxky8fkWApvoAnc-0kzgMHE0Ho_TgdFv5r7b9BbLNANd1D84uhpUKRWAtve6PwJXg2h43jg4X3hRjdP7TZCaUQ8YqOBb1JbXO1B3oBL7oNWYm5_YbwYWhSvOQ4RosMhj0yTIkupViXO0zuyyh8HEk2VevBlCWRdyVY78cQqTdrL6ZOSGlPg7v-ArPDPwvj5yVTcbiWE9X7NhskcE3yX0E24GuoDRRJASa5GsQS04auMFqJk3dds5ZQtcijUl25jaq5nhE5LX_Bu1kkCbFQrIkF5SxGJKPbQR5ov12pf7C6lvQCDCn3eCYV4926ngceRi6eYFqu1qFymDmonhRrTJSXuxhAurQe-JSTEaHf6fn76xec4vtECNx6sF80qh_IvM6wvL07v058s733ZRDhuo7Vo6PNJH9N5gXUrfmfEE4ElM60BrQ4YjYo4ARfR4WWGlNnVmWlcGtF0OYnDa88cbBU0q-OA9RD31brFR6E6nZUxakSeO424NU0SQvYJ_62Aaftszxh80VID3uweg4Tqz3MW6vd46Lkws6yDwpcXZcQ_no8pKyZeObRLtqBMl2k9Yjg2LyNBoEDzvncQpQiIkMUaLT9h79gh1AKmVpfm35SNVAqNJmdkhnVW9-WT50AoWZfAjiNKF0prsrDHQgG_FbCT59mzyqvIZQZciGdq6RR74swfnVZo-K1yQ16-EekeiHk9ynMYzYJemHN-caNKtkx4m0LHAtNFa8mfHxjJnoK-Hz5VcvFixXRMy-gI4-G-BTtYbf4Ed=w668-h890-no?authuser=0" alt="Alex Howard">
+                            </div>
+                            <div class="col-8">
+                                <h3 class="card-title ">Alex Howard</h3>
+                                <hr>
+                                <p class="card-text">
+                                    Aspiring software engineer with 8+ years experience in manufacturing, CNC machining, 
+                                    and 4+ years experience with continuous improvement, manufacturing engineering, and CAM programming. 
+                                    When I tell people I'm living the dream, it's because I'm working for you. <br> <br> <br>
+
+                                    
+                                    <blockquote class="blockquote mb-0">
+                                    <p>Engineers believe that if it ain't broke, it doesn't have enough features yet.</p>
+                                    <footer class="blockquote-footer">Scott Adams</footer>
+                                </blockquote>
+                                    
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+</div>
+
+
+<hr>
+
+
+<div class="container" id="projects">
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col">
+    <div class="card">
+      <img src="..." class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      </div>
+    </div>
   </div>
 </div>
 
- <h3 class="text-center my-3 mt-5">Current Programming Requests</h3>
-    
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-3"></div>
-        <div class="col-lg-2 col-3 request-success mx-1 text-center">Complete</div>
-        <div class="col-lg-2 col-3 request-danger mx-1 text-center">Incomplete</div>
-        <div class="col-lg-4 col-3"></div>
-      </div>
-    </div>
-    
-    {% if requests %}
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-2 col-sm-0"></div>
-            <div class="col-lg-8 col-sm-12">
-                <table class="table my-4 table-responsive" id="requests-table">
-                    <thead class="thead"> 
-                        <tr>
-                            <th scope="col" class="text-center"  style="width:20%">
-                                <span>Type</span>
-                            </th>
-                            <th scope="col" class="text-center"  style="width:20%">
-                                <span>Part/Program</span>
-                            </th>
-                            <th scope="col" class="text-center" style="width:45%">
-                                <span>Description</span>
-                            </th>
-                            <th scope="col" class="text-center"  style="width:15%">
-                                <span>Requested By</span>
-                            </th>
-                            <th scope="col" class="text-center"  style="width:15%">
-                                <span>Job Number</span>
-                            </th>
-                        </tr>
-                    </thead>
-                    <tbody id="results">
-                        {% for request in requests %}
-                          {% if not request.date_completed %}
-                            <tr class="request-danger">
-                              <td class="text-center" data-request_id={{request.id}}>{{request.request_type}}</td>
-                              <td class="text-center">{{request.to_change}}</td>
-                              <td class="text-center">{{request.description}}</td>
-                              <td class="text-center">{{request.requested_by}}</td>
-                              <td class="text-center">{{request.job_number}}</td>
-                          {% else %}
-                          <tr class="request-success">
-                              <td class="text-center">{{request.request_type}}</td>
-                              <td class="text-center">{{request.to_change}}</td>
-                              <td class="text-center">{{request.description}}</td>
-                              <td class="text-center">{{request.requested_by}}</td>
-                              <td class="text-center">{{request.job_number}}</td>
 
-                            
-                          {% endif %}
-                          
-                          </tr>
-                        {% endfor %}
-                    </tbody>
-                </table>
-            </div>
-            <div class="col-lg-2 col-sm-0"></div>
-        </div>
-    </div>
-    {% else %} 
-      <h4 class="text-center my-5">No Requests</h4>
-    {% endif %}
-
-  
-
-<hr class="my-5" >
-
-<h3 class="text-center my-3">Prototype Dashboard</h3>
-{% if projects %}
-<div class="container">
-    <div class="row my-2">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <div class="card" >
-                <div class="card-body">
-                    <h5 class="card-title text-center">On Time</h5>
-                    <div class="table-responsive">
-                        <table class="table my-3 table-hover">
-                            <thead>
-                                <tr>
-                                <th scope="col" class="text-center">Project Name</th>
-                                <th scope="col" class="text-center">Last Updated</th>
-                                <th scope="col" class="text-center">By</th>
-                                <th scope="col" class="text-center">Progress</th>
-                                <th scope="col" class="text-center">Projected Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for project in projects %}
-                                    {% if project.status == 'Incomplete' %}
-                                        {% if not project.late %}
-                                            <tr>
-                                                <th scope="row" class="text-center"><a href="{{ url_for('proto.show_project', project_name=project.project_name) }}">{{ project.project_name}}</a></td>
-                                                {% if project.updated %}
-                                                    <td class="text-center">{{ project.updated.strftime('%m-%d-%Y')}}</td>    
-                                                {% else %}
-                                                    <td class="text-center">{{ project.updated}}</td>    
-                                                {% endif %}
-                                                    <td class="text-center">{{ project.updated_by }}</td>
-                                                    <td class="text-center">
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-primary" role="progressbar" style="width: {{project.progress}}%" aria-valuenow="{{ project.progress }}" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </td>
-                                                {% if project.date_requested %}
-                                                    <td class="text-center">{{ project.date_requested.strftime('%m-%d-%Y')}}</td>    
-                                                {% else %}
-                                                    <td class="text-center">{{ project.date_requested}}</td>    
-                                                {% endif %}
-                                            </tr>
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="col-1"></div>
-    </div>
 </div>
 
-<div class="container">
-    <div class="row my-5">
-        <div class="col-1"></div>
-        <div class="col-10">
-            <div class="card" >
-                <div class="card-body">
-                    <h5 class="card-title text-center">Past Due</h5>
-                    <div class="table-responsive">
-                        <table class="table my-3 table-hover">
-                            <thead>
-                                <tr>
-                                <th scope="col" class="text-center">Project Name</th>
-                                <th scope="col" class="text-center">Last Updated</th>
-                                <th scope="col" class="text-center">By</th>
-                                <th scope="col" class="text-center">Progress</th>
-                                <th scope="col" class="text-center">Projected Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for project in projects %}
-                                    {% if project.status == 'Incomplete' %}
-                                        {% if project.late %}
-                                            <tr>
-                                                <th scope="row" class="text-center"><a href="{{ url_for('proto.show_project', project_name=project.project_name) }}">{{ project.project_name}}</a></td>
-                                                {% if project.updated %}
-                                                    <td class="text-center">{{ project.updated.strftime('%m-%d-%Y')}}</td>    
-                                                {% else %}
-                                                    <td class="text-center">{{ project.updated}}</td>    
-                                                {% endif %}
-                                                <td class="text-center">{{ project.updated_by }}</td>
-                                                <td class="text-center">
-                                                    <div class="progress">
-                                                        <div class="progress-bar bg-danger" style="width: {{project.progress}}%" role="progressbar" aria-valuenow="{{project.progress}}" aria-valuemin="0" aria-valuemax="100"></div>
-                                                    </div>
-                                                </td>
-                                                {% if project.date_requested %}
-                                                    <td class="text-center">{{ project.date_requested.strftime('%m-%d-%Y')}}</td>    
-                                                {% else %}
-                                                    <td class="text-center">{{ project.date_requested}}</td>    
-                                                {% endif %}
-                                            </tr>
-                                        {% endif %}
-                                    {% endif %}
-                                {% endfor %}
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            
-        </div>
-        <div class="col-1"></div>
-    </div>
-</div>
-{% else %}
-    <h3 class="text-center my-5">No projects to show</h3>
-{% endif %}
 
-
-
-<script src="/static/production/request.js"></script>
-<script src="/static/hubs/home.js"></script>
 {% endblock %}

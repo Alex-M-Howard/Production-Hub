@@ -1,22 +1,38 @@
-{% extends 'base.html' %}
-{% block title %}Data Explorer{% endblock %}
-{% block style %}
+{% extends 'production-base.html' %} {% block title %}Data Explorer{% endblock
+%} {% block style %}
 <link
-      href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
-      rel="stylesheet"
-    />
-{% endblock %}
-{% block content %}
+  href="https://unpkg.com/gridjs/dist/theme/mermaid.min.css"
+  rel="stylesheet"
+/>
+{% endblock %} {% block content %}
 
 <div class="container my-3">
   <div class="row">
     <div class="col-1"></div>
     <div class="col-10">
-          <nav class="nav nav-pills nav-fill" id="explorer-buttons">
-            <a class="nav-link explorer-buttons mx-1 my-1" href="#" id="amada-button" style="width:2rem">Amada Laser</a>
-            <a class="nav-link explorer-buttons mx-1 my-1" href="#" id="trumpf-button" style="width:2rem">Trumpf Laser</a>
-            <a class="nav-link explorer-buttons mx-1 my-1" href="#" id="punch-button" style="width:2rem">Punch</a>
-          </nav>
+      <nav class="nav nav-pills nav-fill" id="explorer-buttons">
+        <a
+          class="nav-link explorer-buttons mx-1 my-1"
+          href="#"
+          id="amada-button"
+          style="width: 2rem"
+          >Amada Laser</a
+        >
+        <a
+          class="nav-link explorer-buttons mx-1 my-1"
+          href="#"
+          id="trumpf-button"
+          style="width: 2rem"
+          >Trumpf Laser</a
+        >
+        <a
+          class="nav-link explorer-buttons mx-1 my-1"
+          href="#"
+          id="punch-button"
+          style="width: 2rem"
+          >Punch</a
+        >
+      </nav>
     </div>
     <div class="col-1"></div>
   </div>
@@ -34,7 +50,7 @@
   <div id="punch-wrapper"></div>
 </div>
 
-  <script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
-  <script src="/static/data_explorers/explorer.js"></script>
-  <script src="/static/hubs/dataexplorer.js"></script>
+<script src="https://unpkg.com/gridjs/dist/gridjs.umd.js"></script>
+<script src="/static/data_explorers/explorer.js"></script>
+<script src="/static/hubs/dataexplorer.js"></script>
 {% endblock %}
