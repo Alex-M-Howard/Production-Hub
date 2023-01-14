@@ -8,11 +8,11 @@
 }
 
 .box{
-    box-shadow: 1px 1px #000;
+    box-shadow: 1px 1px rgb(45, 44, 44);
 }
 
 .navbar{
-    background-color: #000;
+    background-color: rgb(45, 44, 44);
 }
 
 .nav-link {
@@ -40,7 +40,7 @@
 }
 
 #nav-drop{
-    color: #000;
+    color: rgb(45, 44, 44);
 }
 
 .dropdown-submenu{
