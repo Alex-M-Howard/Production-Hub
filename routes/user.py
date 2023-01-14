@@ -43,7 +43,7 @@ def signup_page():
     """ Show sign up form - Validate and create user upon success - Reject and redo on failure """
 
     if current_user_id in session:
-        return redirect(url_for('home'))
+        return redirect(url_for('dashboard'))
 
     form = SignupForm()
 
@@ -85,7 +85,8 @@ def signup_page():
 def login_page():
     """ Show login form """
     
-    
+    if current_user_id in session:
+        return redirect(url_for('dashboard'))
 
     if request.method == "GET":
         return render_template('/user/login.html')
