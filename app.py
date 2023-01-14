@@ -55,7 +55,7 @@ def add_user_globally():
 
     else:
         g.user = None
-        return redirect(url_for("user.login_page"))
+        
 
 # Custom error handlers
 

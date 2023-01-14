@@ -84,8 +84,8 @@ def signup_page():
 @user.route('/login', methods=["GET", "POST"])
 def login_page():
     """ Show login form """
-    if current_user_id in session:
-        return redirect(url_for('dashboard'))
+    
+    
 
     if request.method == "GET":
         return render_template('/user/login.html')
