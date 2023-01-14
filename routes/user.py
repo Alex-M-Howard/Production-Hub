@@ -103,7 +103,7 @@ def login_page():
             session['email'] = email
             flash(f"Hello, {user.first_name}!", "success")
 
-            return redirect(url_for('home'))
+            return redirect(url_for('dashboard'))
         else:
             flash("Invalid Credentials.", "danger")
             return redirect(url_for('user.login_page'))
