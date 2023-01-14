@@ -152,6 +152,16 @@ def home():
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route("/todo")
+def todo():
+    return render_template('/projects/todo.html')
+
+@app.route("/memory-game")
+def memory_game():
+    return render_template('/projects/memory.html')
+
+
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.environ.get("$PORT"))

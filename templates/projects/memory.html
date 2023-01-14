@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block title %}Memory Game!{% endblock %}
+{% block style %} 
+  <link rel="stylesheet" href="/static/projects/memory.css" />
+{% endblock %}
+
+{% block content %}
+    <div class="match hidden">
+      <h1>Match!</h1>
+    </div>
+    <h1>Memory Game!</h1>
+    <section>
+      <div id="game">
+      </div>
+    </section>
+    <script src="/static/projects/memory.js"></script>
+{% endblock %}
