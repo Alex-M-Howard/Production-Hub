@@ -13,8 +13,8 @@ localStorage! Make sure that when the page refreshes, the todos //Completed
 on the page remain there.
 */
 document.addEventListener('DOMContentLoaded', function () {
-    const button = document.querySelector('button');
-    const ul = document.querySelector("ul");
+    const button = document.querySelector('#add-button');
+    const ul = document.querySelector("#todo-list");
 
     function createListElement(text) {
         const newLi = document.createElement("li");
@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         }
 
+
+        
     }
 
     function saveToStorage() {
@@ -52,7 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
         localStorage.setItem("todo", JSON.stringify(store));
     }
 
+    try{
     loadFromStorage()
+    } catch (e) {
+        console.log(e)
+    }
 
     button.addEventListener('click', function (event) {
         event.preventDefault();

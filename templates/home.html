@@ -52,52 +52,32 @@
 <div class="container" id="projects">
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
   <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="Todo">
+    <div class="card" style="background-color:rgb(212, 212, 212)">
+      <img src="/static/images/projects/todo.gif" class="card-img-top" alt="Todo">
       <div class="card-body">
+        <hr>
         <h5 class="card-title">Todo List</h5>
         <p class="card-text">Where it all started. The days when LocalStorage was still tricky to get right. 
-        <br>
-        <br>
-          <a href="{{url_for('todo')}}"><button class="btn btn-primary" style="width:100%;">Go</button></a>
+          <a href="{{url_for('todo')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
         </p>
       </div>
     </div>
   </div>
   <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="Memory Game">
+    <div class="card" style="background-color:rgb(212, 212, 212)">
+      <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Memory Game">
       <div class="card-body">
+        <hr>
+        
         <h5 class="card-title">Memory Game</h5>
         <p class="card-text">Getting a little more difficult. I felt I couldn't get the hang of styling
           and making the cards look nice. Getting the boxes to line up and move responsively was my next challenge. How do you center a div, anyway?
         </p>
-        <br>
-        <a href="{{url_for('memory_game')}}"><button class="btn btn-primary" style="width:100%;">Go</button></a>
+      
+        <a href="{{url_for('memory_game')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
       </div>
     </div>
   </div>
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
-      </div>
-    </div>
-  </div>
-  <div class="col">
-    <div class="card">
-      <img src="..." class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      </div>
-    </div>
-  </div>
-</div>
-
-
 </div>
 
 
