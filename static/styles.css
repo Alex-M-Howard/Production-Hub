@@ -8,7 +8,7 @@
 }
 
 .box{
-    box-shadow: 1px 1px #000;
+    box-shadow: 1px 1px rgb(45, 44, 44);
 }
 
 .navbar{
@@ -353,7 +353,7 @@ padding: 10px;
   color: white;
   font-weight: 600;
   font-size: 1.15rem;
-
+  border: none;
 }
 
 .request-success{
