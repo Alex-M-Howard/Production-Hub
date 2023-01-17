@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% block title %} {% endblock %}
 {% block content %}
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 <div class="wrapper mt-5">
     <div class="typing">
@@ -46,39 +47,75 @@
 </div>
 
 
-<hr>
+<hr class="my-5">
 
 
 <div class="container" id="projects">
-<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
-  <div class="col">
-    <div class="card" style="background-color:rgb(212, 212, 212)">
-      <img src="/static/images/projects/todo.gif" class="card-img-top" alt="Todo">
-      <div class="card-body">
-        <hr>
-        <h5 class="card-title">Todo List</h5>
-        <p class="card-text">Where it all started. The days when LocalStorage was still tricky to get right. 
-          <a href="{{url_for('todo')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
-        </p>
+  <h3 class="text-center mb-3">My journey so far</h3>
+  <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+    <div class="col">
+      <div class="card" style="background-color:rgb(212, 212, 212)">
+        <img src="/static/images/projects/todo.gif" class="card-img-top" alt="Todo">
+        <div class="card-body">
+          <hr>
+          <h5 class="card-title">Todo List</h5>
+          <p class="card-text">Where it all started. The days when LocalStorage was still tricky to get right. 
+            <a href="{{url_for('todo')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
+          </p>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="col">
-    <div class="card" style="background-color:rgb(212, 212, 212)">
-      <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Memory Game">
-      <div class="card-body">
-        <hr>
+    <div class="col">
+      <div class="card" style="background-color:rgb(212, 212, 212)">
+        <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Memory Game">
+        <div class="card-body">
+          <hr>
+
+          <h5 class="card-title">Memory Game</h5>
+          <p class="card-text">Getting a little more difficult. I felt I couldn't get the hang of styling
+            and making the cards look nice. Getting the boxes to line up and move responsively was my next challenge. How do you center a div, anyway?
+          </p>
         
-        <h5 class="card-title">Memory Game</h5>
-        <p class="card-text">Getting a little more difficult. I felt I couldn't get the hang of styling
-          and making the cards look nice. Getting the boxes to line up and move responsively was my next challenge. How do you center a div, anyway?
-        </p>
-      
-        <a href="{{url_for('memory_game')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
+          <a href="{{url_for('memory_game')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card" style="background-color:rgb(212, 212, 212)">
+        <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Frasier Connect 4">
+        <div class="card-body">
+          <hr>
+
+          <h5 class="card-title">Frasier Connect 4</h5>
+          <p class="card-text">This was the first project that I actually felt proud of. I know now that I did some things that could be
+            simplified. Instead of using arrays to manipulate the board, I remember using the DOM extensively to achieve this goal. Everyone I tell that I didn't use an array
+            looks at me like I'm crazy. 
+             <blockquote class="blockquote mb-0">
+                                    <p>Not since Quasimodo strolled the streets of medieval Paris have so many people uttered the phrase, "That poor man."</p>
+                                    <footer class="blockquote-footer">Frasier Crane</footer>
+                                </blockquote>
+          </p>
+        
+          <a href="{{url_for('frasier')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+                 
+
+
+
+<footer id="sticky-footer">
+    <div class="container">
+          <a href="https://www.linkedin.com/in/alex-m-howard/" style="color:white; text-decoration:none;"><img src="/static/images/LinkedIn_Logo.svg" alt="LinkedIn"></a>
+    </div>
+    <div class="container">
+    </div>
+    <div class="container text-center">
+         <a href="https://github.com/Alex-M-Howard"><img src="/static/images/github-logo.svg" alt="GitHub" style="width: 75px; height:75px;"></a>
+    </div>
+  </footer>
 
 {% endblock %}
