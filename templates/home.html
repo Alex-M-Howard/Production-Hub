@@ -52,7 +52,7 @@
 
 <div class="container" id="projects">
 <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
-  <div class="col">
+  <div class="col my-4 mx-4">
     <div class="card" style="background-color:rgb(212, 212, 212);">
       <img src="/static/images/projects/todo.gif" class="card-img-top" alt="Todo">
       <div class="card-body">
@@ -64,7 +64,8 @@
         </p>
       </div>
     </div>
-    <div class="col">
+  </div>
+    <div class="col my-4 mx-4">
       <div class="card" style="background-color:rgb(212, 212, 212)">
         <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Memory Game">
         <div class="card-body">
@@ -79,28 +80,8 @@
         </div>
       </div>
     </div>
-    <div class="col">
-      <div class="card" style="background-color:rgb(212, 212, 212)">
-        <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Frasier Connect 4">
-        <div class="card-body">
-          <hr>
-
-          <h5 class="card-title">Frasier Connect 4</h5>
-          <p class="card-text">This was the first project that I actually felt proud of. I know now that I did some things that could be
-            simplified. Instead of using arrays to manipulate the board, I remember using the DOM extensively to achieve this goal. Everyone I tell that I didn't use an array
-            looks at me like I'm crazy. 
-             <blockquote class="blockquote mb-0">
-                                    <p>Not since Quasimodo strolled the streets of medieval Paris have so many people uttered the phrase, "That poor man."</p>
-                                    <footer class="blockquote-footer">Frasier Crane</footer>
-                                </blockquote>
-          </p>
-        
-          <a href="{{url_for('frasier')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="col">
+    
+  <div class="col my-4 mx-4">
     <div class="card" style="background-color:rgb(212, 212, 212)">
       <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Memory Game">
       <div class="card-body">
@@ -111,11 +92,11 @@
           As you saw in the previous project, it was just empty white squares. Now we get to see Crane vs. Crane II. 
         </p>
       
-        <a href="{{url_for('memory_game')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
+        <a href="{{url_for('frasier')}}"><button class="btn btn-primary my-2" style="width:100%;">Go</button></a>
       </div>
     </div>
   </div>
-  <div class="col">
+  <div class="col my-4 mx-4">
     <div class="card" style="background-color:rgb(212, 212, 212)">
       <img src="/static/images/projects/memory.gif" class="card-img-top" alt="Memory Game">
       <div class="card-body">
@@ -131,20 +112,20 @@
     </div>
   </div>
 </div>
-
+</div>
                  
 
 
 
-<footer id="sticky-footer">
+<footer id="sticky-footer" style="height:75px;" class="mt-5">
     <div class="container">
-          <a href="https://www.linkedin.com/in/alex-m-howard/" style="color:white; text-decoration:none;"><img src="/static/images/LinkedIn_Logo.svg" alt="LinkedIn"></a>
+          <a href="https://www.linkedin.com/in/alex-m-howard/" style="color:white; text-decoration:none;"><img src="/static/images/LinkedIn_Logo.svg" alt="LinkedIn" style="height:50px"></a>
     </div>
     <div class="container">
     </div>
     <div class="container text-center">
          <a href="https://github.com/Alex-M-Howard"><img src="/static/images/github-logo.svg" alt="GitHub" style="width: 75px; height:75px;"></a>
     </div>
-  </footer>
+</footer>
 
 {% endblock %}

@@ -160,6 +160,10 @@ def todo():
 def memory_game():
     return render_template('/projects/memory.html')
 
+@app.route("/frasier")
+def frasier():
+    return render_template('/projects/frasier/index.html')
+
 
 
 
