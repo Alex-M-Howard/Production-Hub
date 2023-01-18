@@ -164,7 +164,9 @@ def memory_game():
 def frasier():
     return render_template('/projects/frasier/index.html')
 
-
+@app.route("/resume")
+def resume():
+    return render_template('/resume.html')
 
 
 if __name__ == "__main__":
