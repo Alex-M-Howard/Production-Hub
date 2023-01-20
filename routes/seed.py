@@ -70,7 +70,6 @@ def seed_eco():
 @seed.route("/blanks")
 def seed_blanks():
     """These are example blanks ONLY"""
-    return 'NOT AUTHORIZED'  # Needed only for seeding the database
     
     example_sizes = [
     (17, 96, 15, 5),
@@ -101,7 +100,6 @@ def seed_blanks():
 
 @seed.route("/materials")
 def seed_materials():
-    return 'NOT AUTHORIZED' # Needed only for seeding the database
 
     materials = [
         ('VIT', 14),
@@ -138,7 +136,7 @@ def seed_materials():
     to_add = []
     
     for each in materials:
-        new_material = Material(
+        new_material = Materials(
             material_name = each[0],
             gauge = each[1]
         )
