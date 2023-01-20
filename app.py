@@ -94,7 +94,7 @@ app.register_blueprint(admin)
 
 @app.route("/")
 def home():
-    return render_template('dashboard.html')
+    return redirect(url_for('proto.home'))
 
 
 if __name__ == "__main__":
