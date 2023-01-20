@@ -10,7 +10,7 @@ BUCKET_NAME = 'prod-site-example'
 REGION_NAME = 'us-east-1'
 REPO_NAME = 'Production-Hub'
 
-def upload_file(file, filename):
+def upload_error_file(file, filename):
     """Upload a file to an S3 bucket
 
     :param file_name: File to upload
