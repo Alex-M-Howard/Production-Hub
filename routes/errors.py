@@ -6,7 +6,7 @@ from models.file import File
 from models.forms import AddError, EditError
 
 from datetime import datetime
-from utilities import upload_file, list_all_objects_version, create_presigned_url
+from utilities import upload_error_file, list_all_objects_version, create_presigned_url
 
 errors = Blueprint(
     'errors',
@@ -104,7 +104,7 @@ def add_file(id):
             files = request.files.getlist('images')
             
             for file in files:
-                upload_file(file=file, filename=file.filename)
+                upload_error_file(file=file, filename=file.filename)
                 
                 response = list_all_objects_version(file.filename)
                 new_file = File(file_name=file.filename, error_id=id)
