@@ -230,7 +230,7 @@ $("#add-blank").on("click", async (event) => {
         
         $(".mat-butts").removeClass("mat-butts-active");
         if ($(`.mat-butts:contains(${newMaterial})`).length === 0) {
-          $("nav").append(
+          $(".mat-butts").append(
             $(
               `<a class="nav-link mat-butts mx-1 my-1" href="#" style="width:30%;">${newMaterial}</a>`
             ));
