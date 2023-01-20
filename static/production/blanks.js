@@ -295,6 +295,7 @@ function createUseButtons() {
 
     if($("table tbody tr").length === 0) {
       $("table").addClass("hidden");
+      $(`.mat-butts:contains(${material})`).remove();
     }
 
   })
