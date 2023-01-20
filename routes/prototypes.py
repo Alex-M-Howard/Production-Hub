@@ -50,7 +50,7 @@ def home():
             print(e)
             pass
 
-    return render_template('/dashboard.html', projects=projects, requests=requests)
+    return render_template('dashboard.html', projects=projects, requests=requests)
 
 
 @proto.route('/all_projects')
