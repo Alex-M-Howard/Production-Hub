@@ -196,7 +196,7 @@ Stores user information
   <br>
 
   `
-    Sample repr-> '<User #: ID: 1, First Name: Alex, Last Name: Smith, Email: asmith@bluestarcooking.com>'
+    Sample repr-> '<User #: ID: 1, First Name: Alex, Last Name: Smith, Email: asmith@test.com>'
   `
 
 ---

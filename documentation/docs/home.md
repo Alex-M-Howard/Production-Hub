@@ -1,4 +1,4 @@
-# Bluestar App Docs
+#  App Docs
 
 <hr>
 ## Technology Stack
@@ -60,7 +60,7 @@
 #### Project Tree
 
 ```
-Prizer-BS-Site/
+Production-Site/
 ├─app.py
 ├─config.py
 ├─db.py

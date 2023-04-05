@@ -1,5 +1,5 @@
-site_name: Prizer-Bluestar Production Hub
-site_url: https://bluestar-prod-docs.com
+site_name: Production Hub
+site_url: https://production-hub.docs.com
 nav:
   - Home: home.md
   - Models: models.md

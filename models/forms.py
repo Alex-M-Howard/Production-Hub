@@ -58,7 +58,7 @@ class SignupForm(FlaskForm):
 class LoginForm(FlaskForm):
     """Form for user to login"""
 
-    email = StringField("Bluestar Username/Email", validators=[
+    email = StringField(" Username/Email", validators=[
                         InputRequired(), Email(granular_message=True)])
     password = PasswordField("Password", validators=[InputRequired(message='You must enter a password'), Length(
         min=6, message="Password must be at least 6 characters in length")])

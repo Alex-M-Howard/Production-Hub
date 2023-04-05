@@ -1,371 +1,688 @@
 <!DOCTYPE html>
-<html class="writer-html5" lang="en" >
-<head>
+<html class="writer-html5" lang="en">
+  <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="canonical" href="https://bluestar-prod-docs.com/models/" />
-      <link rel="shortcut icon" href="/static/documentation/img/favicon.ico" />
-    <title>Models - Prizer-Bluestar Production Hub</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://-prod-docs.com/models/" />
+    <link rel="shortcut icon" href="/static/documentation/img/favicon.ico" />
+    <title>Models - Production Hub</title>
     <link rel="stylesheet" href="/static/documentation/css/theme.css" />
     <link rel="stylesheet" href="/static/documentation/css/theme_extra.css" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css" />
-    
-      <script>
-        // Current page data
-        var mkdocs_page_name = "Models";
-        var mkdocs_page_input_path = "models.md";
-        var mkdocs_page_url = "/models/";
-      </script>
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/styles/github.min.css"
+    />
+
+    <script>
+      // Current page data
+      var mkdocs_page_name = "Models";
+      var mkdocs_page_input_path = "models.md";
+      var mkdocs_page_url = "/models/";
+    </script>
+
     <script src="/static/documentation/js/jquery-3.6.0.min.js" defer></script>
     <!--[if lt IE 9]>
       <script src="/static/documentation/js/html5shiv.min.js"></script>
     <![endif]-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
-      <script>hljs.initHighlightingOnLoad();</script> 
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.5.0/highlight.min.js"></script>
+    <script>
+      hljs.initHighlightingOnLoad();
+    </script>
+  </head>
 
-<body class="wy-body-for-nav" role="document">
+  <body class="wy-body-for-nav" role="document">
+    <div class="wy-grid-for-nav">
+      <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+        <div class="wy-side-scroll">
+          <div class="wy-side-nav-search">
+            <a href="{{url_for('proto.home')}}" class="icon icon-home">
+              Production Hub
+            </a>
+            <div role="search">
+              <form
+                id="rtd-search-form"
+                class="wy-form"
+                action="{{url_for('docs.search')}}"
+                method="get"
+              >
+                <input
+                  type="text"
+                  name="q"
+                  placeholder="Search docs"
+                  title="Type search term here"
+                />
+              </form>
+            </div>
+          </div>
 
-  <div class="wy-grid-for-nav">
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-          <a href="{{url_for('proto.home')}}" class="icon icon-home"> Prizer-Bluestar Production Hub
-        </a><div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="{{url_for('docs.search')}}" method="get">
-      <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
-
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="{{url_for('docs.home')}}">Home</a>
-                </li>
-              </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="./">Models</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#error">Error</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#file">File</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#material">Material</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#blank">Blank</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#sizes">Sizes</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#nest">Nest</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#machine">Machine</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#part">Part</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#request">Request</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#machine_1">Machine</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#user">User</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#project">Project</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#protopart">ProtoPart</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#protofile">ProtoFile</a>
-    </li>
-    </ul>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="{{url_for('docs.routes')}}">Routes</a>
-                </li>
-              </ul>
-      </div>
-    </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
-          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-          <a href="{{url_for('proto.home')}}">Prizer-Bluestar Production Hub</a>
-        
+          <div
+            class="wy-menu wy-menu-vertical"
+            data-spy="affix"
+            role="navigation"
+            aria-label="Navigation menu"
+          >
+            <ul>
+              <li class="toctree-l1">
+                <a class="reference internal" href="{{url_for('docs.home')}}"
+                  >Home</a
+                >
+              </li>
+            </ul>
+            <ul class="current">
+              <li class="toctree-l1 current">
+                <a class="reference internal current" href="./">Models</a>
+                <ul class="current">
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#error">Error</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#file">File</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#material">Material</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#blank">Blank</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#sizes">Sizes</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#nest">Nest</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#machine">Machine</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#part">Part</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#request">Request</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#machine_1">Machine</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#user">User</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#project">Project</a>
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#protopart"
+                      >ProtoPart</a
+                    >
+                  </li>
+                  <li class="toctree-l2">
+                    <a class="reference internal" href="#protofile"
+                      >ProtoFile</a
+                    >
+                  </li>
+                </ul>
+              </li>
+            </ul>
+            <ul>
+              <li class="toctree-l1">
+                <a class="reference internal" href="{{url_for('docs.routes')}}"
+                  >Routes</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
       </nav>
-      <div class="wy-nav-content">
-        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href=".." class="icon icon-home" alt="Docs"></a> &raquo;</li>
-      <li>Models</li>
-    <li class="wy-breadcrumbs-aside">
-    </li>
-  </ul>
-  <hr/>
-</div>
-          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-            <div class="section" itemprop="articleBody">
-              
+
+      <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+        <nav
+          class="wy-nav-top"
+          role="navigation"
+          aria-label="Mobile navigation menu"
+        >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="{{url_for('proto.home')}}"> Production Hub</a>
+        </nav>
+        <div class="wy-nav-content">
+          <div class="rst-content">
+            <div role="navigation" aria-label="breadcrumbs navigation">
+              <ul class="wy-breadcrumbs">
+                <li>
+                  <a href=".." class="icon icon-home" alt="Docs"></a> &raquo;
+                </li>
+                <li>Models</li>
+                <li class="wy-breadcrumbs-aside"></li>
+              </ul>
+              <hr />
+            </div>
+            <div
+              role="main"
+              class="document"
+              itemscope="itemscope"
+              itemtype="http://schema.org/Article"
+            >
+              <div class="section" itemprop="articleBody">
                 <h1 id="database-models">Database Models</h1>
-<hr />
-<h3 id="error">Error</h3>
-<p>Used to store errors that occur during the manufacturing process. This is used to track errors and find root causes for future improvements and build prevention into our process.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>part_number</strong> - <code>string</code> - Part number (Not all part numbers are integers)<br />
-- <strong>description</strong> - <code>string</code> - Description of the error<br />
-- <strong>machine</strong> - <code>string</code> - Machine that the error occurred on (Can be empty if not machine specific)<br />
-- <strong>root_cause</strong> - <code>string</code> - Root cause of the error if found<br />
-- <strong>notes</strong> - <code>string</code> - Notes about the error that can be added to any time<br />
-- <strong>name</strong> - <code>string</code> - Name of person who reported the error for tracking purposes<br />
-- <strong>date</strong> - <code>date</code> - Date the error was reported <br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;Error #: 5, Date: 12/15/2022, Description: Machine punched holes on edge of sheet&gt;</code></p>
-<hr />
-<h3 id="file">File</h3>
-<p>Used to store file info that are uploaded to the AWS S3 Bucket. Mainly used to structure the page so we can make the correct
-calls to the AWS S3 Bucket when fetching files/building presigned urls/etc. If file is linked to an error, the error id will be stored in the error_id column.</p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>file_name</strong> - <code>string</code> - Name of the file<br />
-- <strong>error_id</strong> - <code>int</code> - Error id that the file is linked to from errors table<br />
-- <strong>version</strong> - <code>string</code> - Version of the file. This is to maintain version control of files in S3 Bucket<br />
-- <strong>presigned_url</strong> - <code>string</code> - Presigned url to the file in S3 Bucket to allow downloads without further authentication<br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;File: ID:2, Name:problem1.jpg, Error ID: 3, Version: uj5o.4VGlKcoUZAWIdu5UOqq&gt;</code></p>
-<hr />
-<h3 id="material">Material</h3>
-<p>Used to store materials used in our manufacturing process.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>gauge</strong> - <code>int</code> - Gauge of the material<br />
-- <strong>material_name</strong> - <code>string</code> - Name of the material<br />
-- <strong>blanks</strong> - <code>ORM Object</code> - List of blanks that are in our inventory of this material type<br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;Material: ID: 1, Gauge: 18, Material Name: AZ&gt;</code></p>
-<hr />
-<h3 id="blank">Blank</h3>
-<p>Used to store blanks of a material. This is used to track the inventory of blanks and the sizes of the blanks.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>material_id</strong> - <code>int</code> - Foreign key linked to materials table<br />
-- <strong>length</strong> - <code>Integer</code> - Length of the blank<br />
-- <strong>width</strong> - <code>Integer</code> - Width of the blank<br />
-- <strong>quantity</strong> - <code>Integer</code> - Quantity of the blank<br />
-- <strong>material</strong> - <code>ORM Object</code> - Material object that the blank is linked to<br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;Blank: ID: 1, Material Name: AZ, Length: 96, Width: 5, Quantity: 10&gt;</code></p>
-<hr />
-<h3 id="sizes">Sizes</h3>
-<p>Store sheet sizes for the different materials  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>material_id</strong> - <code>int</code> - Foreign key linked to materials table<br />
-- <strong>length</strong> - <code>Integer</code> - Length of the blank<br />
-- <strong>width</strong> - <code>Integer</code> - Width of the blank<br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;Size: Material ID: 1, Material Name: AZ, Length: 48, Width: 96&gt;</code></p>
-<hr />
-<h3 id="nest">Nest</h3>
-<p>Used to store machine nesting information for the lasers and punch press. Useful for ensuring nests are the same between machines.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>nest_name</strong> - <code>string</code> - Name of the nest<br />
-- <strong>nested_with</strong> - <code>string</code> - Lists parts nested. Future want: Link to parts table<br />
-- <strong>sheet_x</strong> - <code>float</code> - X dimension of the sheet<br />
-- <strong>sheet_y</strong> - <code>float</code> - Y dimension of the sheet<br />
-- <strong>scrap</strong> - <code>float</code> - Scrap percentage of the nest<br />
-- <strong>punch_forming</strong> - <code>boolean</code> - Punch press using forming tool on this nest<br />
-- <strong>clamp_position_change</strong> - <code>boolean</code> - Punch press clamp position change on this nest<br />
-- <strong>setup_time</strong> - <code>float</code> - Setup time for the nest or part when forming<br />
-- <strong>process_time</strong> - <code>float</code> - Process time for the nest or part when forming<br />
-- <strong>date</strong> - <code>date</code> - Date the nest was created<br />
-- <strong>machine_id</strong> - <code>int</code> - Machine id that the nest was created on from machines table<br />
-- <strong>material_id</strong> - <code>int</code> - Material id that the nest was created on from materials table<br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;Nest #: N174743, Material ID: 5, Machine ID: 2, Date: 12/7/2022&gt;</code></p>
-<hr />
-<h3 id="machine">Machine</h3>
-<p>Stores different machines, Lasers, Punch Press, etc.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>name</strong> - <code>string</code> - Name of the machine<br />
-- <strong>machine_type</strong> - <code>string</code> - Type of machine<br />
-  <br></p>
-<pre><code>`
+                <hr />
+                <h3 id="error">Error</h3>
+                <p>
+                  Used to store errors that occur during the manufacturing
+                  process. This is used to track errors and find root causes for
+                  future improvements and build prevention into our process.
+                </p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>part_number</strong> - <code>string</code> - Part
+                  number (Not all part numbers are integers)<br />
+                  - <strong>description</strong> - <code>string</code> -
+                  Description of the error<br />
+                  - <strong>machine</strong> - <code>string</code> - Machine
+                  that the error occurred on (Can be empty if not machine
+                  specific)<br />
+                  - <strong>root_cause</strong> - <code>string</code> - Root
+                  cause of the error if found<br />
+                  - <strong>notes</strong> - <code>string</code> - Notes about
+                  the error that can be added to any time<br />
+                  - <strong>name</strong> - <code>string</code> - Name of person
+                  who reported the error for tracking purposes<br />
+                  - <strong>date</strong> - <code>date</code> - Date the error
+                  was reported <br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Error #: 5, Date: 12/15/2022,
+                    Description: Machine punched holes on edge of
+                    sheet&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="file">File</h3>
+                <p>
+                  Used to store file info that are uploaded to the AWS S3
+                  Bucket. Mainly used to structure the page so we can make the
+                  correct calls to the AWS S3 Bucket when fetching
+                  files/building presigned urls/etc. If file is linked to an
+                  error, the error id will be stored in the error_id column.
+                </p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>file_name</strong> - <code>string</code> - Name of
+                  the file<br />
+                  - <strong>error_id</strong> - <code>int</code> - Error id that
+                  the file is linked to from errors table<br />
+                  - <strong>version</strong> - <code>string</code> - Version of
+                  the file. This is to maintain version control of files in S3
+                  Bucket<br />
+                  - <strong>presigned_url</strong> - <code>string</code> -
+                  Presigned url to the file in S3 Bucket to allow downloads
+                  without further authentication<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;File: ID:2, Name:problem1.jpg, Error
+                    ID: 3, Version: uj5o.4VGlKcoUZAWIdu5UOqq&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="material">Material</h3>
+                <p>
+                  Used to store materials used in our manufacturing process.
+                </p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>gauge</strong> - <code>int</code> - Gauge of the
+                  material<br />
+                  - <strong>material_name</strong> - <code>string</code> - Name
+                  of the material<br />
+                  - <strong>blanks</strong> - <code>ORM Object</code> - List of
+                  blanks that are in our inventory of this material type<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Material: ID: 1, Gauge: 18, Material
+                    Name: AZ&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="blank">Blank</h3>
+                <p>
+                  Used to store blanks of a material. This is used to track the
+                  inventory of blanks and the sizes of the blanks.
+                </p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>material_id</strong> - <code>int</code> - Foreign
+                  key linked to materials table<br />
+                  - <strong>length</strong> - <code>Integer</code> - Length of
+                  the blank<br />
+                  - <strong>width</strong> - <code>Integer</code> - Width of the
+                  blank<br />
+                  - <strong>quantity</strong> - <code>Integer</code> - Quantity
+                  of the blank<br />
+                  - <strong>material</strong> - <code>ORM Object</code> -
+                  Material object that the blank is linked to<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Blank: ID: 1, Material Name: AZ,
+                    Length: 96, Width: 5, Quantity: 10&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="sizes">Sizes</h3>
+                <p>Store sheet sizes for the different materials</p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>material_id</strong> - <code>int</code> - Foreign
+                  key linked to materials table<br />
+                  - <strong>length</strong> - <code>Integer</code> - Length of
+                  the blank<br />
+                  - <strong>width</strong> - <code>Integer</code> - Width of the
+                  blank<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Size: Material ID: 1, Material Name:
+                    AZ, Length: 48, Width: 96&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="nest">Nest</h3>
+                <p>
+                  Used to store machine nesting information for the lasers and
+                  punch press. Useful for ensuring nests are the same between
+                  machines.
+                </p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>nest_name</strong> - <code>string</code> - Name of
+                  the nest<br />
+                  - <strong>nested_with</strong> - <code>string</code> - Lists
+                  parts nested. Future want: Link to parts table<br />
+                  - <strong>sheet_x</strong> - <code>float</code> - X dimension
+                  of the sheet<br />
+                  - <strong>sheet_y</strong> - <code>float</code> - Y dimension
+                  of the sheet<br />
+                  - <strong>scrap</strong> - <code>float</code> - Scrap
+                  percentage of the nest<br />
+                  - <strong>punch_forming</strong> - <code>boolean</code> -
+                  Punch press using forming tool on this nest<br />
+                  - <strong>clamp_position_change</strong> -
+                  <code>boolean</code> - Punch press clamp position change on
+                  this nest<br />
+                  - <strong>setup_time</strong> - <code>float</code> - Setup
+                  time for the nest or part when forming<br />
+                  - <strong>process_time</strong> - <code>float</code> - Process
+                  time for the nest or part when forming<br />
+                  - <strong>date</strong> - <code>date</code> - Date the nest
+                  was created<br />
+                  - <strong>machine_id</strong> - <code>int</code> - Machine id
+                  that the nest was created on from machines table<br />
+                  - <strong>material_id</strong> - <code>int</code> - Material
+                  id that the nest was created on from materials table<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Nest #: N174743, Material ID: 5,
+                    Machine ID: 2, Date: 12/7/2022&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="machine">Machine</h3>
+                <p>Stores different machines, Lasers, Punch Press, etc.</p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>name</strong> - <code>string</code> - Name of the
+                  machine<br />
+                  - <strong>machine_type</strong> - <code>string</code> - Type
+                  of machine<br />
+                  <br />
+                </p>
+                <pre><code>`
   Sample repr-&gt; &lt;Machine Name: Amada Laser , Type: Laser&gt;  
 `
 </code></pre>
-<hr />
-<h3 id="part">Part</h3>
-<p>Used to store a part originating from an ECO that has been released.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>eco_number</strong> - <code>string</code> - ECO number that the part was released from<br />
-- <strong>part_number</strong> - <code>string</code> - Part number. Sometimes contains letters<br />
-- <strong>description</strong> - <code>string</code> - Description of the part from ECO<br />
-- <strong>revision</strong> - <code>int</code> - Revision number of the part<br />
-- <strong>measuring_unit</strong> - <code>string</code> - Measuring unit of the part that defaults to 'EA'<br />
-- <strong>item_type</strong> - <code>string</code> - Item type of the part from ECO<br />
-- <strong>material_code</strong> - <code>string</code> - Material code of the part from ECO that defaults to 'M' for manufactured part<br />
-- <strong>replaces</strong> - <code>string</code> - Replaces current part listed<br />
-- <strong>material_disposition</strong> - <code>string</code> - Material disposition of the part from ECO. Maybe a future table?<br />
-- <strong>effectivity_date</strong> - <code>string</code> - Effectivity date of the part from ECO. Not always a date. Needs standardized with actual date format<br />
-- <strong>continue_to_buy</strong> - <code>string</code> - Continue to buy of the part from ECO<br />
-- <strong>comments</strong> - <code>string</code> - Comments of the part from ECO that usually lists material or changes made on rev up<br />
-- <strong>amada</strong> - <code>string</code> - Part nested on Amada Laser<br />
-- <strong>trumpf</strong> - <code>string</code> - Part nested on Trumpf Laser<br />
-- <strong>punch</strong> - <code>string</code> - Part nested on Punch Press<br />
-- <strong>forming</strong> - <code>string</code> - Part program created for forming machines<br />
-- <strong>status</strong> - <code>string</code> - Status of the part. Can be 'Released' or 'Pending'<br />
-- <strong>added</strong> - <code>date</code> - Date the part was added to the database<br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;Part #: 123456, Rev: 2, ECO#: 2355&gt;</code></p>
-<hr />
-<h3 id="request">Request</h3>
-<p>Used to store requests for parts to be made, or nests to be created/modified.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>to_change</strong> - <code>string</code> - Part number that is being changed or nest that is being created/modified<br />
-- <strong>description</strong> - <code>string</code> - Description of the request<br />
-- <strong>request_type</strong> - <code>string</code> - Type of request. Can be 'Part Request', 'Laser Change' or 'Forming Change'<br />
-- <strong>requested_by</strong> - <code>string</code> - Name of the person who requested the change for tracking purposes<br />
-- <strong>date</strong> - <code>date</code> - Date the request was made<br />
-- <strong>date_completed</strong> - <code>date</code> - Date the request was completed. Request will still show for 5 days after completion  <br />
-  <br></p>
-<p><code>Sample repr-&gt; &lt;Request #: 1, What to Change: N174743, Description: Add 999999 as filler, Requester: Alex, Type: Laser Change&gt;</code></p>
-<hr />
-<h3 id="machine_1">Machine</h3>
-<p>Used to store machine information.  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>name</strong> - <code>string</code> - Name of the machine<br />
-- <strong>machine_type</strong> - <code>string</code> - Type of machine. Can be 'Laser', 'Punch', or 'Forming'<br />
-  <br>  </p>
-<p><code>Sample repr-&gt; &lt;Machine: ID: 1, Name: Salvagnini, Type: Forming&gt;</code></p>
-<hr />
-<h3 id="user">User</h3>
-<p>Stores user information  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>first_name</strong> - <code>string</code> - First name of the user<br />
-- <strong>last_name</strong> - <code>string</code> - Last name of the user<br />
-- <strong>email</strong> - <code>string</code> - Email of the user. Must be unique<br />
-- <strong>password</strong> - <code>string</code> - Password of the user<br />
-- <strong>isadmin</strong> - <code>boolean</code> - Is the user an admin<br />
-  <br></p>
-<p><code>Sample repr-&gt; '&lt;User #: ID: 1, First Name: Alex, Last Name: Smith, Email: asmith@bluestarcooking.com&gt;'</code></p>
-<hr />
-<h3 id="project">Project</h3>
-<p>Stores project information  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>created</strong> - <code>date</code> - Date the project was created<br />
-- <strong>updated</strong> - <code>date</code> - Date the project was last updated<br />
-- <strong>updated_by</strong> - <code>string</code> - Name of the user who last updated the project<br />
-- <strong>completed</strong> - <code>date</code> - Date the project was completed<br />
-- <strong>user_name</strong> - <code>string</code> - Name of the user who created the project<br />
-- <strong>project_name</strong> - <code>string</code> - Name of the project<br />
-- <strong>project_type</strong> - <code>string</code> - Type of project<br />
-- <strong>product_line</strong> - <code>string</code> - Product line of the project<br />
-- <strong>eco</strong> - <code>string</code> - ECO number of the project<br />
-- <strong>notes</strong> - <code>string</code> - Notes for the project<br />
-- <strong>date_requested</strong> - <code>date</code> - Projected completion date or requested completion<br />
-- <strong>progress</strong> - <code>Integer</code> - Progress of the project<br />
-- <strong>late</strong> - <code>boolean</code> - Project late status. This is unused with addition of datetime module logic<br />
-- <strong>status</strong> - <code>string</code> - Status of the project. Can be 'Incomplete' or 'Completed'<br />
-  <br></p>
-<p><code>Sample repr-&gt; '&lt;Project #: ID: 1, Name: Project 1, Owner: Alex Smith, Created: 12-15-1990, Updated: 12-16-1990, Completed : None&gt;'</code></p>
-<hr />
-<h3 id="protopart">ProtoPart</h3>
-<p>Stores proto part information  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>part_number</strong> - <code>string</code> - Part number of the proto part<br />
-- <strong>description</strong> - <code>string</code> - Description of the proto part<br />
-- <strong>updated_by</strong> - <code>string</code> - Name of the user who last updated the proto part<br />
-- <strong>project_id</strong> - <code>int</code> - Foreign key to project table<br />
-- <strong>material</strong> - <code>string</code> - Material of the proto part<br />
-- <strong>processes</strong> - <code>string</code> - Processes of the proto part. Is unused with addition of individual proccesses to this table.<br />
-- <strong>bin_location</strong> - <code>string</code> - Bin location of the proto part<br />
-- <strong>notes</strong> - <code>string</code> - Notes for the proto part<br />
-- <strong>status</strong> - <code>string</code> - Status of the proto part. Can be 'Incomplete' or 'Completed'<br />
-- <strong>punch</strong> - <code>boolean</code> - Punch needed?<br />
-- <strong>form</strong> - <code>boolean</code> - Form needed?<br />
-- <strong>weld</strong> - <code>boolean</code> - Weld needed?<br />
-- <strong>polish</strong> - <code>boolean</code> - Polish needed?<br />
-- <strong>paint</strong> - <code>boolean</code> - Paint needed?<br />
-- <strong>assembly</strong> - <code>boolean</code> - Assembly needed?<br />
-- <strong>enamel</strong> - <code>boolean</code> - Enamel needed?<br />
-- <strong>fav</strong> - <code>boolean</code> - FAV needed?<br />
-- <strong>other</strong> - <code>boolean</code> - Other needed?<br />
-- <strong>punch_status</strong> - <code>boolean</code> - Punch Complete?<br />
-- <strong>form_status</strong> - <code>boolean</code> - Form Complete?<br />
-- <strong>weld_status</strong> - <code>boolean</code> - Weld Complete?<br />
-- <strong>polish_status</strong> - <code>boolean</code> - Polish Complete?<br />
-- <strong>paint_status</strong> - <code>boolean</code> - Paint Complete?<br />
-- <strong>assembly_status</strong> - <code>boolean</code> - Assembly Complete?<br />
-- <strong>enamel_status</strong> - <code>boolean</code> - Enamel Complete?<br />
-- <strong>fav_status</strong> - <code>boolean</code> - FAV Complete?<br />
-- <strong>other_status</strong> - <code>boolean</code> - Other Complete?<br />
-- <strong>files</strong> - <code>ORM object</code> - ORM object for files associated with the proto part<br />
-  <br></p>
-<p><code>Sample repr-&gt; '&lt;ProtoPart #: ID: 1, Part #: 123456, Description: Part 1, Project: Project 1, Status: Incomplete&gt;'</code></p>
-<hr />
-<h3 id="protofile">ProtoFile</h3>
-<p>Stores proto file information  </p>
-<p><strong>Keys:</strong><br />
-- <strong>id</strong> - <code>int</code> - Primary key<br />
-- <strong>file_name</strong> - <code>string</code> - Name of the file<br />
-- <strong>version</strong> - <code>string</code> - Version of the file<br />
-- <strong>description</strong> - <code>string</code> - Description of the file<br />
-- <strong>updated</strong> - <code>date</code> - Date the file was last updated<br />
-- <strong>updated_by</strong> - <code>string</code> - Name of the user who last updated the file<br />
-- <strong>project_id</strong> - <code>int</code> - Foreign key to project table<br />
-- <strong>part_id</strong> - <code>int</code> - Foreign key to proto part table<br />
-- <strong>notes</strong> - <code>string</code> - Notes for the file  </p>
-              
+                <hr />
+                <h3 id="part">Part</h3>
+                <p>
+                  Used to store a part originating from an ECO that has been
+                  released.
+                </p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>eco_number</strong> - <code>string</code> - ECO
+                  number that the part was released from<br />
+                  - <strong>part_number</strong> - <code>string</code> - Part
+                  number. Sometimes contains letters<br />
+                  - <strong>description</strong> - <code>string</code> -
+                  Description of the part from ECO<br />
+                  - <strong>revision</strong> - <code>int</code> - Revision
+                  number of the part<br />
+                  - <strong>measuring_unit</strong> - <code>string</code> -
+                  Measuring unit of the part that defaults to 'EA'<br />
+                  - <strong>item_type</strong> - <code>string</code> - Item type
+                  of the part from ECO<br />
+                  - <strong>material_code</strong> - <code>string</code> -
+                  Material code of the part from ECO that defaults to 'M' for
+                  manufactured part<br />
+                  - <strong>replaces</strong> - <code>string</code> - Replaces
+                  current part listed<br />
+                  - <strong>material_disposition</strong> -
+                  <code>string</code> - Material disposition of the part from
+                  ECO. Maybe a future table?<br />
+                  - <strong>effectivity_date</strong> - <code>string</code> -
+                  Effectivity date of the part from ECO. Not always a date.
+                  Needs standardized with actual date format<br />
+                  - <strong>continue_to_buy</strong> - <code>string</code> -
+                  Continue to buy of the part from ECO<br />
+                  - <strong>comments</strong> - <code>string</code> - Comments
+                  of the part from ECO that usually lists material or changes
+                  made on rev up<br />
+                  - <strong>amada</strong> - <code>string</code> - Part nested
+                  on Amada Laser<br />
+                  - <strong>trumpf</strong> - <code>string</code> - Part nested
+                  on Trumpf Laser<br />
+                  - <strong>punch</strong> - <code>string</code> - Part nested
+                  on Punch Press<br />
+                  - <strong>forming</strong> - <code>string</code> - Part
+                  program created for forming machines<br />
+                  - <strong>status</strong> - <code>string</code> - Status of
+                  the part. Can be 'Released' or 'Pending'<br />
+                  - <strong>added</strong> - <code>date</code> - Date the part
+                  was added to the database<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Part #: 123456, Rev: 2, ECO#:
+                    2355&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="request">Request</h3>
+                <p>
+                  Used to store requests for parts to be made, or nests to be
+                  created/modified.
+                </p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>to_change</strong> - <code>string</code> - Part
+                  number that is being changed or nest that is being
+                  created/modified<br />
+                  - <strong>description</strong> - <code>string</code> -
+                  Description of the request<br />
+                  - <strong>request_type</strong> - <code>string</code> - Type
+                  of request. Can be 'Part Request', 'Laser Change' or 'Forming
+                  Change'<br />
+                  - <strong>requested_by</strong> - <code>string</code> - Name
+                  of the person who requested the change for tracking
+                  purposes<br />
+                  - <strong>date</strong> - <code>date</code> - Date the request
+                  was made<br />
+                  - <strong>date_completed</strong> - <code>date</code> - Date
+                  the request was completed. Request will still show for 5 days
+                  after completion <br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Request #: 1, What to Change: N174743,
+                    Description: Add 999999 as filler, Requester: Alex, Type:
+                    Laser Change&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="machine_1">Machine</h3>
+                <p>Used to store machine information.</p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>name</strong> - <code>string</code> - Name of the
+                  machine<br />
+                  - <strong>machine_type</strong> - <code>string</code> - Type
+                  of machine. Can be 'Laser', 'Punch', or 'Forming'<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; &lt;Machine: ID: 1, Name: Salvagnini,
+                    Type: Forming&gt;</code
+                  >
+                </p>
+                <hr />
+                <h3 id="user">User</h3>
+                <p>Stores user information</p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>first_name</strong> - <code>string</code> - First
+                  name of the user<br />
+                  - <strong>last_name</strong> - <code>string</code> - Last name
+                  of the user<br />
+                  - <strong>email</strong> - <code>string</code> - Email of the
+                  user. Must be unique<br />
+                  - <strong>password</strong> - <code>string</code> - Password
+                  of the user<br />
+                  - <strong>isadmin</strong> - <code>boolean</code> - Is the
+                  user an admin<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; '&lt;User #: ID: 1, First Name: Alex, Last
+                    Name: Smith, Email: asmith@cooking.com&gt;'</code
+                  >
+                </p>
+                <hr />
+                <h3 id="project">Project</h3>
+                <p>Stores project information</p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>created</strong> - <code>date</code> - Date the
+                  project was created<br />
+                  - <strong>updated</strong> - <code>date</code> - Date the
+                  project was last updated<br />
+                  - <strong>updated_by</strong> - <code>string</code> - Name of
+                  the user who last updated the project<br />
+                  - <strong>completed</strong> - <code>date</code> - Date the
+                  project was completed<br />
+                  - <strong>user_name</strong> - <code>string</code> - Name of
+                  the user who created the project<br />
+                  - <strong>project_name</strong> - <code>string</code> - Name
+                  of the project<br />
+                  - <strong>project_type</strong> - <code>string</code> - Type
+                  of project<br />
+                  - <strong>product_line</strong> - <code>string</code> -
+                  Product line of the project<br />
+                  - <strong>eco</strong> - <code>string</code> - ECO number of
+                  the project<br />
+                  - <strong>notes</strong> - <code>string</code> - Notes for the
+                  project<br />
+                  - <strong>date_requested</strong> - <code>date</code> -
+                  Projected completion date or requested completion<br />
+                  - <strong>progress</strong> - <code>Integer</code> - Progress
+                  of the project<br />
+                  - <strong>late</strong> - <code>boolean</code> - Project late
+                  status. This is unused with addition of datetime module
+                  logic<br />
+                  - <strong>status</strong> - <code>string</code> - Status of
+                  the project. Can be 'Incomplete' or 'Completed'<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; '&lt;Project #: ID: 1, Name: Project 1,
+                    Owner: Alex Smith, Created: 12-15-1990, Updated: 12-16-1990,
+                    Completed : None&gt;'</code
+                  >
+                </p>
+                <hr />
+                <h3 id="protopart">ProtoPart</h3>
+                <p>Stores proto part information</p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>part_number</strong> - <code>string</code> - Part
+                  number of the proto part<br />
+                  - <strong>description</strong> - <code>string</code> -
+                  Description of the proto part<br />
+                  - <strong>updated_by</strong> - <code>string</code> - Name of
+                  the user who last updated the proto part<br />
+                  - <strong>project_id</strong> - <code>int</code> - Foreign key
+                  to project table<br />
+                  - <strong>material</strong> - <code>string</code> - Material
+                  of the proto part<br />
+                  - <strong>processes</strong> - <code>string</code> - Processes
+                  of the proto part. Is unused with addition of individual
+                  proccesses to this table.<br />
+                  - <strong>bin_location</strong> - <code>string</code> - Bin
+                  location of the proto part<br />
+                  - <strong>notes</strong> - <code>string</code> - Notes for the
+                  proto part<br />
+                  - <strong>status</strong> - <code>string</code> - Status of
+                  the proto part. Can be 'Incomplete' or 'Completed'<br />
+                  - <strong>punch</strong> - <code>boolean</code> - Punch
+                  needed?<br />
+                  - <strong>form</strong> - <code>boolean</code> - Form
+                  needed?<br />
+                  - <strong>weld</strong> - <code>boolean</code> - Weld
+                  needed?<br />
+                  - <strong>polish</strong> - <code>boolean</code> - Polish
+                  needed?<br />
+                  - <strong>paint</strong> - <code>boolean</code> - Paint
+                  needed?<br />
+                  - <strong>assembly</strong> - <code>boolean</code> - Assembly
+                  needed?<br />
+                  - <strong>enamel</strong> - <code>boolean</code> - Enamel
+                  needed?<br />
+                  - <strong>fav</strong> - <code>boolean</code> - FAV needed?<br />
+                  - <strong>other</strong> - <code>boolean</code> - Other
+                  needed?<br />
+                  - <strong>punch_status</strong> - <code>boolean</code> - Punch
+                  Complete?<br />
+                  - <strong>form_status</strong> - <code>boolean</code> - Form
+                  Complete?<br />
+                  - <strong>weld_status</strong> - <code>boolean</code> - Weld
+                  Complete?<br />
+                  - <strong>polish_status</strong> - <code>boolean</code> -
+                  Polish Complete?<br />
+                  - <strong>paint_status</strong> - <code>boolean</code> - Paint
+                  Complete?<br />
+                  - <strong>assembly_status</strong> - <code>boolean</code> -
+                  Assembly Complete?<br />
+                  - <strong>enamel_status</strong> - <code>boolean</code> -
+                  Enamel Complete?<br />
+                  - <strong>fav_status</strong> - <code>boolean</code> - FAV
+                  Complete?<br />
+                  - <strong>other_status</strong> - <code>boolean</code> - Other
+                  Complete?<br />
+                  - <strong>files</strong> - <code>ORM object</code> - ORM
+                  object for files associated with the proto part<br />
+                  <br />
+                </p>
+                <p>
+                  <code
+                    >Sample repr-&gt; '&lt;ProtoPart #: ID: 1, Part #: 123456,
+                    Description: Part 1, Project: Project 1, Status:
+                    Incomplete&gt;'</code
+                  >
+                </p>
+                <hr />
+                <h3 id="protofile">ProtoFile</h3>
+                <p>Stores proto file information</p>
+                <p>
+                  <strong>Keys:</strong><br />
+                  - <strong>id</strong> - <code>int</code> - Primary key<br />
+                  - <strong>file_name</strong> - <code>string</code> - Name of
+                  the file<br />
+                  - <strong>version</strong> - <code>string</code> - Version of
+                  the file<br />
+                  - <strong>description</strong> - <code>string</code> -
+                  Description of the file<br />
+                  - <strong>updated</strong> - <code>date</code> - Date the file
+                  was last updated<br />
+                  - <strong>updated_by</strong> - <code>string</code> - Name of
+                  the user who last updated the file<br />
+                  - <strong>project_id</strong> - <code>int</code> - Foreign key
+                  to project table<br />
+                  - <strong>part_id</strong> - <code>int</code> - Foreign key to
+                  proto part table<br />
+                  - <strong>notes</strong> - <code>string</code> - Notes for the
+                  file
+                </p>
+              </div>
             </div>
-          </div><footer>
-    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="{{url_for('docs.home')}}" class="btn btn-neutral float-left" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="{{url_for('docs.routes')}}" class="btn btn-neutral float-right" title="Routes">Next <span class="icon icon-circle-arrow-right"></span></a>
+            <footer>
+              <div
+                class="rst-footer-buttons"
+                role="navigation"
+                aria-label="Footer Navigation"
+              >
+                <a
+                  href="{{url_for('docs.home')}}"
+                  class="btn btn-neutral float-left"
+                  title="Home"
+                  ><span class="icon icon-circle-arrow-left"></span> Previous</a
+                >
+                <a
+                  href="{{url_for('docs.routes')}}"
+                  class="btn btn-neutral float-right"
+                  title="Routes"
+                  >Next <span class="icon icon-circle-arrow-right"></span
+                ></a>
+              </div>
+
+              <hr />
+
+              <div role="contentinfo">
+                <!-- Copyright etc -->
+              </div>
+            </footer>
+          </div>
+        </div>
+      </section>
     </div>
 
-  <hr/>
+    <div class="rst-versions" role="note" aria-label="Versions">
+      <span class="rst-current-version" data-toggle="rst-current-version">
+        <span
+          ><a href="{{url_for('docs.home')}}" style="color: #fcfcfc"
+            >&laquo; Previous</a
+          ></span
+        >
 
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-  </div>
-
-</footer>
-          
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="Versions">
-  <span class="rst-current-version" data-toggle="rst-current-version">
-    
-    
-      <span><a href="{{url_for('docs.home')}}" style="color: #fcfcfc">&laquo; Previous</a></span>
-    
-    
-      <span><a href="{{url_for('docs.routes')}}" style="color: #fcfcfc">Next &raquo;</a></span>
-    
-  </span>
-</div>
-    <script>var base_url = '/static/documentation/';</script>
+        <span
+          ><a href="{{url_for('docs.routes')}}" style="color: #fcfcfc"
+            >Next &raquo;</a
+          ></span
+        >
+      </span>
+    </div>
+    <script>
+      var base_url = "/static/documentation/";
+    </script>
     <script src="/static/documentation/js/theme_extra.js" defer></script>
     <script src="/static/documentation/js/theme.js" defer></script>
-      <script src="/static/documentation/search/main.js" defer></script>
+    <script src="/static/documentation/search/main.js" defer></script>
     <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
+      window.onload = function () {
+        SphinxRtdTheme.Navigation.enable(true);
+      };
     </script>
-
-</body>
+  </body>
 </html>
