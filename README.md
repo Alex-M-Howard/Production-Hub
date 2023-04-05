@@ -1,8 +1,5 @@
-# Production-Hub (Personal Site)
-
-https://alex-m-howard.com
+This was born out of the need to bring different teams to a central location. There are standard work documents, programming requests, parts database, prototype and error logs, and more. 
 
 
-This is a combination of a homepage with my information and there is a link on the navbar for the production hub.
 
 
