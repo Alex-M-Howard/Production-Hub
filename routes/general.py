@@ -47,8 +47,16 @@ def blanks_inventory():
             material_id = Materials.query.filter_by(
                 material_name=data['material'], gauge=data['gauge']).first().id
         except Exception as e:
-            print(e)
-            return jsonify({'success': False, 'message': 'Material not found'})
+            new_material = Materials(
+                material_name=data['material'],
+                gauge=data['gauge']
+            )
+            db.session.add(new_material)
+            db.session.commit()
+            
+            material_id = Materials.query.filter_by(
+                material_name=data['material'], gauge=data['gauge']).first().id
+            
         blanks = Blanks.query.filter_by(
             material_id=material_id, length=data['length'], width=data['width']).first()
         

@@ -72,6 +72,9 @@ def show_projects():
 
 @proto.route('/createProject', methods=["GET", "POST"])
 def create_project():
+    if not g.user:
+        return redirect(url_for('user.login_page'))
+    
     form = ProjectForm()
 
     if form.validate_on_submit():
@@ -338,6 +341,9 @@ def get_my_projects_complete():
 
 @proto.route("/<project_name>/create_part", methods=["GET", "POST"])
 def create_part(project_name):
+    if not g.user:
+        return redirect(url_for('user.login_page'))
+    
     project = Project.query.filter_by(project_name=project_name).one()
 
     if flask.request.method == "GET":
@@ -450,6 +456,9 @@ def show_part(project_name, part_number):
 
 @proto.route("/<project_name>/<part_number>/edit", methods=["GET", "POST"])
 def edit_part(project_name, part_number):
+    if not g.user:
+        return redirect(url_for('user.login_page'))
+    
     project = Project.query.filter_by(project_name=project_name).one()
     part = ProtoPart.query.filter_by(
         part_number=part_number, project_id=project.id).one()
@@ -506,6 +515,9 @@ def edit_part(project_name, part_number):
 @proto.route("/<project_name>/<part_number>/add_file", methods=["GET", "POST"])
 def add_file(project_name, part_number):
 
+    if not g.user:
+        return redirect(url_for('user.login_page'))
+    
     form = AddFileForm()
 
     if form.validate_on_submit():
@@ -577,6 +589,9 @@ def show_versions(project_name, part_number, file_name):
 
 @proto.route('/<project_name>/<part_number>/<file_name>/versions/<version_id>', methods=["POST"])
 def delete_file(project_name, part_number, file_name, version_id):
+    if not g.user:
+        return redirect(url_for('user.login_page'))
+    
     try:
         delete_s3_object(file_name, version_id=version_id)
         project = Project.query.filter_by(project_name=project_name).one()

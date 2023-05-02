@@ -93,11 +93,14 @@ def login_page():
 
     if request.method == "POST":
         email = request.form.get('email').lower()
-
+        
         user = User.authenticate(
             email=email,
             password=request.form.get('password')
         )
+
+        print(request.form)
+        
 
         if user:
             do_login(user)
@@ -158,6 +161,9 @@ def do_logout():
 
 @user.route('/change-password', methods=["GET", "POST"])
 def change_password():
+    if g.user.id == 4:
+        return redirect(url_for('home')) # Guest user shouldn't change password
+    
     if request.method == "GET":
         return render_template('/user/change_password.html')
 

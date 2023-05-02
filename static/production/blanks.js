@@ -3,7 +3,6 @@ let originalData;
 
 createUseButtons();
 
-
 /**
  * Button event that filters list of blanks based on material
  */
@@ -25,51 +24,45 @@ function materialClick(click) {
   });
 }
 
-
 $(".mat-butts").on("click", (click) => {
-  materialClick(click)
-})
-
+  materialClick(click);
+});
 
 /**
- * 
+ *
  * First visit to page -> get blanks data
  * call createTable
  */
 axios.get("/blanks/data").then((response) => {
-    currentData = response.data;
-})
-
+  currentData = response.data;
+});
 
 /**
- * 
- * @param {string} material 
+ *
+ * @param {string} material
  * @returns array containing filtered material
  */
 const getBlanks = (material) => {
-
   let filteredData = currentData;
 
   console.log(filteredData);
-  
-  return filteredData.filter(blank => {
-      return blank.material_name.includes(material)
-  })
 
-}
-
+  return filteredData.filter((blank) => {
+    return blank.material_name.includes(material);
+  });
+};
 
 /** createTable
- * 
- * @param {JSON} data 
+ *
+ * @param {JSON} data
  * Create table row and table data elements (Every other one striped for readability)
  * Append to #results
- * 
+ *
  */
 const createTable = (blanks) => {
-    blanks.forEach((blank) => {
-            $("#results").append(
-              $(`
+  blanks.forEach((blank) => {
+    $("#results").append(
+      $(`
                 <tr>
                     <td class='use-box'>
                       <div class="d-grid">
@@ -81,18 +74,17 @@ const createTable = (blanks) => {
                     <td class='text-center length'>${blank.length}</td>
                     <td class='text-center width'>${blank.width}</td>
                 </tr>`)
-            );
-    })
+    );
+  });
   $("table").removeClass("hidden");
-}
-
+};
 
 /** Sorting
- * 
+ *
  * Sort events
  * Calls app.js dynamicSort() and dynamicReverseSort()
  * Calls createTable()
- * 
+ *
  */
 $("#gauge-sort").on("click", () => {
   let material = $(".mat-butts-active").text();
@@ -100,18 +92,16 @@ $("#gauge-sort").on("click", () => {
 
   $("#results").empty();
   createTable(blanks.sort(numberSort("gauge")));
-      createUseButtons();
-
+  createUseButtons();
 });
 
 $("#gauge-rev-sort").on("click", () => {
-    let material = $(".mat-butts-active").text();
-    let blanks = getBlanks(material);
+  let material = $(".mat-butts-active").text();
+  let blanks = getBlanks(material);
 
   $("#results").empty();
   createTable(blanks.sort(numberReverseSort("gauge")));
-      createUseButtons();
-
+  createUseButtons();
 });
 
 $("#quantity-sort").on("click", () => {
@@ -120,8 +110,7 @@ $("#quantity-sort").on("click", () => {
 
   $("#results").empty();
   createTable(blanks.sort(numberSort("quantity")));
-      createUseButtons();
-
+  createUseButtons();
 });
 
 $("#quantity-rev-sort").on("click", () => {
@@ -130,7 +119,7 @@ $("#quantity-rev-sort").on("click", () => {
 
   $("#results").empty();
   createTable(blanks.sort(numberReverseSort("quantity")));
-      createUseButtons();
+  createUseButtons();
 });
 
 $("#length-sort").on("click", () => {
@@ -139,8 +128,7 @@ $("#length-sort").on("click", () => {
 
   $("#results").empty();
   createTable(blanks.sort(numberSort("length")));
-      createUseButtons();
-
+  createUseButtons();
 });
 
 $("#length-rev-sort").on("click", () => {
@@ -149,8 +137,7 @@ $("#length-rev-sort").on("click", () => {
 
   $("#results").empty();
   createTable(blanks.sort(numberReverseSort("length")));
-      createUseButtons();
-
+  createUseButtons();
 });
 
 $("#width-sort").on("click", () => {
@@ -159,8 +146,7 @@ $("#width-sort").on("click", () => {
 
   $("#results").empty();
   createTable(blanks.sort(numberSort("width")));
-      createUseButtons();
-
+  createUseButtons();
 });
 
 $("#width-rev-sort").on("click", () => {
@@ -169,7 +155,7 @@ $("#width-rev-sort").on("click", () => {
 
   $("#results").empty();
   createTable(blanks.sort(numberReverseSort("width")));
-      createUseButtons();
+  createUseButtons();
 });
 
 /**
@@ -180,62 +166,63 @@ $("#add-blank").on("click", async (event) => {
   let errorFlag = false;
   $("#alerts").empty();
 
-  let gauge = $("#gauge").val()
-  let material = $("#material").val()
-  let quantity = $("#quantity").val()
-  let length = $("#length").val()
-  let width = $("#width").val()
+  let gauge = $("#gauge").val();
+  let material = $("#material").val();
+  let quantity = $("#quantity").val();
+  let length = $("#length").val();
+  let width = $("#width").val();
 
   if (!gauge) {
-    showAlert("Please enter a gauge")
+    showAlert("Please enter a gauge");
     errorFlag = true;
   }
   if (material === "Choose...") {
-    showAlert("Please select a material")
+    showAlert("Please select a material");
     errorFlag = true;
   }
   if (!quantity) {
     quantity = 1;
   }
   if (!length) {
-    showAlert("Please enter the length")
+    showAlert("Please enter the length");
     errorFlag = true;
   }
   if (!width) {
-    showAlert("Please enter the width")
+    showAlert("Please enter the width");
     errorFlag = true;
   }
 
-  if (errorFlag) { return }
-    
+  if (errorFlag) {
+    return;
+  }
 
-  let newMaterial = material
-  let success = true
+  let newMaterial = material;
+  let success = true;
 
   await axios
     .post("/blanks/inventory", { gauge, material, quantity, length, width })
     .then((response) => {
       if (response.data["success"] === false) {
-          showAlert("Material not found. Check gauge and material selection.");
+        showAlert("Material not found. Check gauge and material selection.");
         success = false;
-        return
+        return;
       }
-      
+
       axios.get("/blanks/data").then((response) => {
         console.log(response.data);
 
         currentData = response.data;
         $("#results").empty();
 
-        
         $(".mat-butts").removeClass("mat-butts-active");
         if ($(`.mat-butts:contains(${newMaterial})`).length === 0) {
           $(".nav-pills").append(
             $(
               `<a class="nav-link mat-butts mx-1 my-1" href="#" style="width:30%;">${newMaterial}</a>`
-            ));
+            )
+          );
           $(".mat-butts").on("click", (click) => {
-            materialClick(click)
+            materialClick(click);
           });
         }
         $(`.mat-butts:contains(${newMaterial})`).addClass("mat-butts-active");
@@ -243,32 +230,30 @@ $("#add-blank").on("click", async (event) => {
         let blanks = getBlanks(newMaterial);
         createTable(blanks);
         createUseButtons();
-
-
       });
     });
-  if (!success) { return; }
-  
-   
-  gauge = $("#gauge").val('');
+  if (!success) {
+    return;
+  }
+
+  gauge = $("#gauge").val("");
   material = $("#material").val("Choose...");
-  quantity = $("#quantity").val('');
-  length = $("#length").val('');
-  width = $("#width").val('');
-  
-
-})
-
+  quantity = $("#quantity").val("");
+  length = $("#length").val("");
+  width = $("#width").val("");
+});
 
 /**
- * 
+ *
  * @param {string} message
- * Shows bootstrap alert based on input verification 
+ * Shows bootstrap alert based on input verification
  */
 function showAlert(message) {
-  let error = $(`<div class='alert alert-danger my-0' role='alert'>${ message }</div>`)
-  
-  $("#alerts").append(error)
+  let error = $(
+    `<div class='alert alert-danger my-0' role='alert'>${message}</div>`
+  );
+
+  $("#alerts").append(error);
 }
 
 /**
@@ -276,8 +261,8 @@ function showAlert(message) {
  */
 function createUseButtons() {
   $(".use-button").on("click", (event) => {
-    let row = $(event.target).closest('tr').children();
-    
+    let row = $(event.target).closest("tr").children();
+
     let quantity = $(row)[1].innerText;
     let gauge = $(row)[2].innerText;
     let material = $(".mat-butts-active").text();
@@ -285,18 +270,19 @@ function createUseButtons() {
     let width = $(row)[4].innerText;
 
     console.table({ quantity, gauge, material, length, width });
-    
-    axios.delete("/blanks/inventory", { data: { gauge, material, quantity, length, width } })
+
+    axios.delete("/blanks/inventory", {
+      data: { gauge, material, quantity, length, width },
+    });
 
     $(row)[1].innerText = parseInt($(row)[1].innerText) - 1;
     if (parseInt($(row)[1].innerText) < 1) {
-      $(event.target).closest('tr').remove()
+      $(event.target).closest("tr").remove();
     }
 
-    if($("table tbody tr").length === 0) {
+    if ($("table tbody tr").length === 0) {
       $("table").addClass("hidden");
       $(`.mat-butts:contains(${material})`).remove();
     }
-
-  })
+  });
 }
